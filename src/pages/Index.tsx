@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 import { AppSidebar } from "@/components/AppSidebar";
 import { AppHeader } from "@/components/AppHeader";
 import { HeroSection } from "@/components/HeroSection";
@@ -11,32 +12,58 @@ import { SupportedFormats } from "@/components/SupportedFormats";
 import { FAQ } from "@/components/FAQ";
 import { AppFooter } from "@/components/AppFooter";
 
-const mockResults = [
-  { title: "Dança viral do momento! 🔥💃", author: "@mariasilvadanca", views: "2.5M", likes: "150K", duration: "0:45", type: "video" as const },
-  { title: "Receita fácil de bolo de chocolate 🍫", author: "@chefluiz", views: "890K", likes: "67K", duration: "1:20", type: "video" as const },
-  { title: "Tutorial maquiagem glow ✨", author: "@belezanatural", views: "1.2M", likes: "98K", duration: "0:30", type: "short" as const },
-  { title: "Show ao vivo - Sertanejo", author: "@musicabrasil", views: "450K", likes: "32K", duration: "45:00", type: "live" as const },
-];
+export interface VideoResult {
+  title: string;
+  author: string;
+  thumbnail: string;
+  likes: string;
+  comments: string;
+  downloadUrl: string;
+  type: "video" | "short" | "live" | "foto";
+}
 
 export default function Index() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("home");
   const [activeTab, setActiveTab] = useState("videos");
   const [isLoading, setIsLoading] = useState(false);
-  const [results, setResults] = useState<typeof mockResults>([]);
+  const [results, setResults] = useState<VideoResult[]>([]);
 
-  const handleSearch = (url: string) => {
+  const handleSearch = async (url: string) => {
     const kwaiPattern = /kwai\.com|kw\.ai|kwai/i;
     if (!kwaiPattern.test(url)) {
       toast.error("Link inválido. Verifique e tente novamente.");
       return;
     }
     setIsLoading(true);
-    setTimeout(() => {
-      setResults(mockResults);
+    setResults([]);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("kwai-download", {
+        body: { url },
+      });
+
+      if (error) {
+        toast.error("Erro ao processar vídeo. Tente outro link.");
+        return;
+      }
+
+      if (data?.error) {
+        toast.error(data.error);
+        return;
+      }
+
+      if (data?.success && data?.data) {
+        setResults([data.data]);
+        toast.success("Vídeo pronto para download!");
+      } else {
+        toast.error("Não foi possível encontrar o vídeo.");
+      }
+    } catch {
+      toast.error("Erro de conexão. Tente novamente.");
+    } finally {
       setIsLoading(false);
-      toast.success("Vídeo pronto para download!");
-    }, 1500);
+    }
   };
 
   return (
