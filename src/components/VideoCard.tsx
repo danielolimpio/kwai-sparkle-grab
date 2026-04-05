@@ -1,4 +1,4 @@
-import { Play, Eye, Heart, Download, Music, CheckCircle, ExternalLink } from "lucide-react";
+import { Play, Eye, Heart, Download, CheckCircle, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -16,30 +16,45 @@ const typeLabels: Record<string, string> = {
   video: "Vídeo",
 };
 
+function buildDirectDownloadUrl(downloadUrl: string, title: string) {
+  const safeTitle = (title || "video-kwai")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+    .toLowerCase();
+
+  const filename = `${safeTitle || "video-kwai"}.mp4`;
+  return `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/kwai-download?download=1&source=${encodeURIComponent(downloadUrl)}&filename=${encodeURIComponent(filename)}`;
+}
+
 export function VideoCard({ title, author, thumbnail, likes, comments, downloadUrl, type }: VideoCardProps) {
   const [downloading, setDownloading] = useState(false);
   const [completed, setCompleted] = useState(false);
 
   const isVertical = false;
+  const directDownloadUrl = buildDirectDownloadUrl(downloadUrl, title);
 
   const handleDownload = () => {
     setDownloading(true);
-    // Open the download URL directly
-    const link = document.createElement("a");
-    link.href = downloadUrl;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.click();
 
-    setTimeout(() => {
+    const link = document.createElement("a");
+    link.href = directDownloadUrl;
+    link.download = "";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    window.setTimeout(() => {
       setDownloading(false);
       setCompleted(true);
-    }, 2000);
+    }, 1200);
   };
 
   return (
     <div className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 animate-fade-in">
-      {/* Type badge */}
       <div className="px-4 pt-3">
         <span className="gradient-kwai text-primary-foreground text-xs font-semibold px-3 py-1 rounded-lg">
           {typeLabels[type]}
@@ -47,7 +62,6 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
       </div>
 
       <div className="flex flex-col sm:flex-row p-4 gap-4">
-        {/* Thumbnail */}
         <div
           className={cn(
             "relative rounded-xl overflow-hidden bg-muted flex-shrink-0 flex items-center justify-center",
@@ -73,7 +87,6 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
           )}
         </div>
 
-        {/* Info */}
         <div className="flex-1 min-w-0">
           <h3 className="font-semibold text-foreground text-sm sm:text-base line-clamp-2 mb-1">{title}</h3>
           <p className="text-primary text-sm font-medium mb-2">{author}</p>
@@ -86,7 +99,6 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
             )}
           </div>
 
-          {/* Actions */}
           <div className="flex items-center gap-2 flex-wrap">
             {completed ? (
               <span className="flex items-center gap-1 text-xs font-semibold text-success">
@@ -104,13 +116,12 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
             )}
 
             <a
-              href={downloadUrl}
-              target="_blank"
+              href={directDownloadUrl}
               rel="noopener noreferrer"
               className="border border-border text-foreground text-xs font-medium px-3 py-1.5 rounded-lg hover:bg-muted transition-colors flex items-center gap-1"
             >
               <ExternalLink className="h-3 w-3" />
-              Abrir
+              Baixar direto
             </a>
           </div>
         </div>
