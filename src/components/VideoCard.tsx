@@ -9,14 +9,11 @@ interface VideoCardProps {
   likes: string;
   comments?: string;
   downloadUrl: string;
-  type: "video" | "short" | "live" | "foto";
+  type: "video";
 }
 
 const typeLabels: Record<string, string> = {
   video: "Vídeo",
-  short: "Short",
-  live: "Live",
-  foto: "Foto",
 };
 
 export function VideoCard({ title, author, thumbnail, likes, comments, downloadUrl, type }: VideoCardProps) {
