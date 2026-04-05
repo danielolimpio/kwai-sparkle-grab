@@ -1,4 +1,4 @@
-import { Bell, HelpCircle, Menu, Play } from "lucide-react";
+import { Menu, Play } from "lucide-react";
 
 interface AppHeaderProps {
   onMenuToggle: () => void;
@@ -20,14 +20,6 @@ export function AppHeader({ onMenuToggle }: AppHeaderProps) {
           </div>
           <span className="font-bold text-foreground">KwaiSave</span>
         </div>
-      </div>
-      <div className="flex items-center gap-2">
-        <button className="p-2 rounded-xl hover:bg-muted transition-colors text-muted-foreground hover:text-foreground">
-          <Bell className="h-5 w-5" />
-        </button>
-        <button className="p-2 rounded-xl hover:bg-muted transition-colors text-muted-foreground hover:text-foreground">
-          <HelpCircle className="h-5 w-5" />
-        </button>
       </div>
     </header>
   );
