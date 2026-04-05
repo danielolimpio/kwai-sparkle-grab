@@ -9,21 +9,18 @@ interface VideoCardProps {
   likes: string;
   comments?: string;
   downloadUrl: string;
-  type: "video" | "short" | "live" | "foto";
+  type: "video";
 }
 
 const typeLabels: Record<string, string> = {
   video: "Vídeo",
-  short: "Short",
-  live: "Live",
-  foto: "Foto",
 };
 
 export function VideoCard({ title, author, thumbnail, likes, comments, downloadUrl, type }: VideoCardProps) {
   const [downloading, setDownloading] = useState(false);
   const [completed, setCompleted] = useState(false);
 
-  const isVertical = type === "short";
+  const isVertical = false;
 
   const handleDownload = () => {
     setDownloading(true);
@@ -73,11 +70,6 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
             >
               <Play className="h-10 w-10 text-primary-foreground/90 fill-current drop-shadow-lg" />
             </div>
-          )}
-          {type === "live" && (
-            <span className="absolute top-2 left-2 bg-destructive text-destructive-foreground text-xs px-2 py-0.5 rounded-md font-bold animate-pulse-live">
-              LIVE
-            </span>
           )}
         </div>
 

@@ -1,13 +1,9 @@
-import { Video, Clapperboard, Radio, Image, Music, FileImage, Subtitles, Hash } from "lucide-react";
+import { Video, Music, FileImage, Hash } from "lucide-react";
 
 const formats = [
-  { icon: Video, title: "Vídeos", desc: "MP4 até 1080p Full HD" },
-  { icon: Clapperboard, title: "Shorts", desc: "Vídeos verticais curtos" },
-  { icon: Radio, title: "Lives", desc: "Transmissões ao vivo (replay)" },
-  { icon: Image, title: "Fotos", desc: "Imagens em alta resolução" },
+  { icon: Video, title: "Vídeos", desc: "MP4 até 1080p sem marca d'água" },
   { icon: Music, title: "Áudio/MP3", desc: "Extrair áudio dos vídeos" },
   { icon: FileImage, title: "Capas", desc: "Thumbnails originais" },
-  { icon: Subtitles, title: "Legendas", desc: "Quando disponíveis" },
   { icon: Hash, title: "Hashtags", desc: "Tags e descrições" },
 ];
 

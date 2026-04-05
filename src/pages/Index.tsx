@@ -19,7 +19,7 @@ export interface VideoResult {
   likes: string;
   comments: string;
   downloadUrl: string;
-  type: "video" | "short" | "live" | "foto";
+  type: "video";
 }
 
 export default function Index() {
