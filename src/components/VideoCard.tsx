@@ -71,11 +71,6 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
               <Play className="h-10 w-10 text-primary-foreground/90 fill-current drop-shadow-lg" />
             </div>
           )}
-          {type === "live" && (
-            <span className="absolute top-2 left-2 bg-destructive text-destructive-foreground text-xs px-2 py-0.5 rounded-md font-bold animate-pulse-live">
-              LIVE
-            </span>
-          )}
         </div>
 
         {/* Info */}
