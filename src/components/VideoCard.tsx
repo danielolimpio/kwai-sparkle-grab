@@ -20,7 +20,7 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
   const [downloading, setDownloading] = useState(false);
   const [completed, setCompleted] = useState(false);
 
-  const isVertical = type === "short";
+  const isVertical = false;
 
   const handleDownload = () => {
     setDownloading(true);
