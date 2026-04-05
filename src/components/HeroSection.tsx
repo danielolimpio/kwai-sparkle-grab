@@ -36,7 +36,7 @@ export function HeroSection({ onSearch, isLoading }: HeroSectionProps) {
         <span className="gradient-kwai-text">Sem Marca d'Água</span>
       </h1>
       <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-8">
-        A melhor ferramenta para baixar vídeos, Shorts e lives do Kwai em alta qualidade, sem a logo do app. Rápido, fácil e 100% grátis!
+        Baixe vídeos do Kwai em alta qualidade de forma rápida, simples e sem abrir telas extras de reprodução.
       </p>
 
       <form onSubmit={handleSubmit} className="max-w-[700px] mx-auto">

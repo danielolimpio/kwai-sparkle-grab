@@ -1,13 +1,7 @@
-import { Video, Clapperboard, Radio, Image, Flame } from "lucide-react";
+import { Video } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const tabs = [
-  { id: "videos", label: "Vídeos", icon: Video },
-  { id: "shorts", label: "Shorts", icon: Clapperboard },
-  { id: "lives", label: "Lives", icon: Radio },
-  { id: "fotos", label: "Fotos", icon: Image },
-  { id: "trends", label: "Trends", icon: Flame },
-];
+const tabs = [{ id: "videos", label: "Vídeos", icon: Video }];
 
 interface ContentTabsProps {
   activeTab: string;
