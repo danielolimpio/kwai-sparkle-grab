@@ -1,21 +1,12 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft, Heart, Zap, Shield, Users, Target, Star, Award, TrendingUp, Globe } from "lucide-react";
+import { Heart, Zap, Shield, Users, Target, Star, Award, TrendingUp, Globe } from "lucide-react";
+import { PageLayout } from "@/components/PageLayout";
 import kwaiHero1 from "@/assets/kwai-hero-1.png";
 import kwaiHero2 from "@/assets/kwai-hero-2.png";
 
 export default function Sobre() {
   return (
-    <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-30 bg-card border-b border-border">
-        <div className="max-w-4xl mx-auto px-4 h-14 flex items-center gap-3">
-          <Link to="/" className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
-            <ArrowLeft className="h-5 w-5" />
-            <span className="text-sm font-medium">Voltar</span>
-          </Link>
-        </div>
-      </header>
-
-      <main className="max-w-4xl mx-auto px-4 py-10">
+    <PageLayout>
+      <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">
             <Heart className="h-6 w-6 text-primary-foreground" />
@@ -25,12 +16,10 @@ export default function Sobre() {
         <h1 className="text-3xl md:text-4xl font-extrabold text-foreground mt-4 mb-2">Sobre o KwaiSave</h1>
         <p className="text-muted-foreground mb-8">A melhor ferramenta para baixar vídeos do Kwai sem marca d'água</p>
 
-        {/* Hero image */}
         <div className="rounded-2xl overflow-hidden mb-10 border border-border">
           <img src={kwaiHero1} alt="KwaiSave - Baixe vídeos do Kwai" className="w-full h-auto object-cover" />
         </div>
 
-        {/* Mission */}
         <div className="bg-card border border-border rounded-2xl p-6 md:p-8 mb-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="gradient-kwai p-2 rounded-lg">
@@ -39,14 +28,13 @@ export default function Sobre() {
             <h2 className="text-lg font-bold text-foreground">Nossa Missão</h2>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-            O KwaiSave nasceu com uma missão simples: permitir que qualquer pessoa baixe seus vídeos favoritos do Kwai de forma rápida, gratuita e sem complicações. Acreditamos que o conteúdo que você ama deve estar sempre ao seu alcance, mesmo sem conexão com a internet.
+            O KwaiSave nasceu com uma missão simples: permitir que qualquer pessoa baixe seus vídeos favoritos do Kwai de forma rápida, gratuita e sem complicações.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Nossa plataforma foi desenvolvida com foco na experiência do usuário, utilizando tecnologia de ponta para oferecer downloads em alta qualidade e sem marca d'água. Tudo isso sem necessidade de cadastro, sem limites e totalmente gratuito.
+            Nossa plataforma foi desenvolvida com foco na experiência do usuário, utilizando tecnologia de ponta para oferecer downloads em alta qualidade e sem marca d'água.
           </p>
         </div>
 
-        {/* Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
           {[
             { value: "1M+", label: "Downloads", icon: TrendingUp },
@@ -62,12 +50,10 @@ export default function Sobre() {
           ))}
         </div>
 
-        {/* Second image */}
         <div className="rounded-2xl overflow-hidden mb-10 border border-border">
           <img src={kwaiHero2} alt="Plataforma Kwai" className="w-full h-auto object-cover" />
         </div>
 
-        {/* Values */}
         <div className="bg-card border border-border rounded-2xl p-6 md:p-8 mb-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="gradient-kwai p-2 rounded-lg">
@@ -93,16 +79,12 @@ export default function Sobre() {
           </div>
         </div>
 
-        {/* Disclaimer */}
         <div className="bg-muted rounded-2xl p-6 text-center">
           <p className="text-xs text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            <strong className="text-foreground">Aviso:</strong> O KwaiSave não é afiliado, endossado ou patrocinado pelo Kwai ou Kuaishou Technology. Todos os direitos sobre os vídeos pertencem aos seus respectivos criadores. Utilize o serviço de forma responsável e respeite os direitos autorais.
+            <strong className="text-foreground">Aviso:</strong> O KwaiSave não é afiliado, endossado ou patrocinado pelo Kwai ou Kuaishou Technology. Todos os direitos sobre os vídeos pertencem aos seus respectivos criadores.
           </p>
-          <Link to="/" className="inline-flex items-center gap-2 mt-4 gradient-kwai text-primary-foreground font-semibold px-6 py-2.5 rounded-xl shadow-kwai hover:shadow-kwai-lg transition-all">
-            Voltar ao Início
-          </Link>
         </div>
-      </main>
-    </div>
+      </div>
+    </PageLayout>
   );
 }

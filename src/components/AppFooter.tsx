@@ -11,9 +11,10 @@ export function AppFooter() {
           <Link to="/contato" className="hover:text-primary transition-colors">Contato</Link>
           <Link to="/sobre" className="hover:text-primary transition-colors">Sobre</Link>
           <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
+          <Link to="/downloads" className="hover:text-primary transition-colors">Downloads</Link>
         </div>
         <p className="text-center text-xs text-muted-foreground mb-2">
-          © 2024 Baixar Vídeos Kwai. Não somos afiliados ao Kwai.
+          © 2026 Baixar Vídeos Kwai. Não somos afiliados ao Kwai.
         </p>
         <p className="text-center text-xs text-muted-foreground max-w-xl mx-auto">
           Este site não é afiliado, endossado ou patrocinado pelo Kwai ou Kuaishou Technology. Respeite os direitos autorais.

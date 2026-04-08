@@ -12,6 +12,7 @@ const DMCA = lazy(() => import("./pages/DMCA.tsx"));
 const Contato = lazy(() => import("./pages/Contato.tsx"));
 const Sobre = lazy(() => import("./pages/Sobre.tsx"));
 const Blog = lazy(() => import("./pages/Blog.tsx"));
+const Downloads = lazy(() => import("./pages/Downloads.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/contato" element={<Contato />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/downloads" element={<Downloads />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
