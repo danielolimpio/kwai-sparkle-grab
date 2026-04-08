@@ -1,4 +1,4 @@
-import { Download, Link, ClipboardPaste } from "lucide-react";
+import { Download, Link, ClipboardPaste, X } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
