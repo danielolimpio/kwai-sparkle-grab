@@ -1,4 +1,4 @@
-import { Download, Link, ClipboardPaste } from "lucide-react";
+import { Download, Link, ClipboardPaste, X } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -51,14 +51,26 @@ export function HeroSection({ onSearch, isLoading }: HeroSectionProps) {
             placeholder="Cole o link do Kwai aqui..."
             className="w-full h-14 pl-12 pr-24 rounded-xl border border-input bg-card text-foreground placeholder:text-muted-foreground text-base focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/20 transition-all"
           />
-          <button
-            type="button"
-            onClick={handlePaste}
-            className="absolute right-2 flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-primary hover:bg-primary/10 transition-colors"
-          >
-            <ClipboardPaste className="h-4 w-4" />
-            <span className="hidden sm:inline">Colar</span>
-          </button>
+          <div className="absolute right-2 flex items-center gap-1">
+            {url && (
+              <button
+                type="button"
+                onClick={() => { setUrl(""); }}
+                className="flex items-center gap-1 px-2 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-destructive/10 hover:text-destructive transition-colors"
+              >
+                <X className="h-4 w-4" />
+                <span className="hidden sm:inline">Limpar</span>
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={handlePaste}
+              className="flex items-center gap-1 px-2 py-2 rounded-lg text-sm font-medium text-primary hover:bg-primary/10 transition-colors"
+            >
+              <ClipboardPaste className="h-4 w-4" />
+              <span className="hidden sm:inline">Colar</span>
+            </button>
+          </div>
         </div>
 
         <button
