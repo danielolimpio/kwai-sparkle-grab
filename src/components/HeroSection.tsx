@@ -88,6 +88,15 @@ export function HeroSection({ onSearch, isLoading }: HeroSectionProps) {
           {isLoading ? "Processando..." : "Baixar Agora"}
         </button>
       </form>
+      {/* Showcase images */}
+      <div className="max-w-5xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 px-2">
+        <div className="rounded-2xl overflow-hidden border border-border shadow-lg hover:shadow-kwai-lg hover:-translate-y-1 transition-all duration-300">
+          <img src={kwaiHero1} alt="Baixar vídeos do Kwai sem marca d'água" className="w-full h-auto object-cover" loading="lazy" />
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-border shadow-lg hover:shadow-kwai-lg hover:-translate-y-1 transition-all duration-300">
+          <img src={kwaiHero2} alt="Plataforma Kwai - vídeos em alta qualidade" className="w-full h-auto object-cover" loading="lazy" />
+        </div>
+      </div>
     </section>
   );
 }
