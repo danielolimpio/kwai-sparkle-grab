@@ -1,6 +1,7 @@
 import { Play, Eye, Heart, Download, CheckCircle, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { addToDownloadHistory } from "@/pages/Downloads";
 
 interface VideoCardProps {
   title: string;
@@ -38,6 +39,9 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
 
   const handleDownload = () => {
     setDownloading(true);
+
+    // Save to local history
+    addToDownloadHistory({ title, author, thumbnail: thumbnail || "" });
 
     const link = document.createElement("a");
     link.href = directDownloadUrl;
