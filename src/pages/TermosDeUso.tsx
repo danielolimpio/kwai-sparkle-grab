@@ -1,26 +1,15 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft, Shield, FileText, Scale, AlertTriangle, CheckCircle, Users, BookOpen } from "lucide-react";
+import { Shield, FileText, Scale, AlertTriangle, CheckCircle, Users, BookOpen } from "lucide-react";
+import { PageLayout } from "@/components/PageLayout";
 
 export default function TermosDeUso() {
   return (
-    <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-30 bg-card border-b border-border">
-        <div className="max-w-4xl mx-auto px-4 h-14 flex items-center gap-3">
-          <Link to="/" className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
-            <ArrowLeft className="h-5 w-5" />
-            <span className="text-sm font-medium">Voltar</span>
-          </Link>
-        </div>
-      </header>
-
-      <main className="max-w-4xl mx-auto px-4 py-10">
+    <PageLayout>
+      <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">
             <FileText className="h-6 w-6 text-primary-foreground" />
           </div>
-          <div>
-            <span className="gradient-kwai text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">Documento Legal</span>
-          </div>
+          <span className="gradient-kwai text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">Documento Legal</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-extrabold text-foreground mt-4 mb-2">Termos de Uso</h1>
         <p className="text-muted-foreground mb-8">Última atualização: 08 de abril de 2026</p>
@@ -75,12 +64,9 @@ export default function TermosDeUso() {
 
         <div className="mt-12 bg-card border border-border rounded-2xl p-6 text-center">
           <p className="text-sm text-muted-foreground">Ao utilizar o baixarvideoskwai.com, você declara ter lido e compreendido estes Termos de Uso.</p>
-          <Link to="/" className="inline-flex items-center gap-2 mt-4 gradient-kwai text-primary-foreground font-semibold px-6 py-2.5 rounded-xl shadow-kwai hover:shadow-kwai-lg transition-all">
-            Voltar ao Início
-          </Link>
         </div>
-      </main>
-    </div>
+      </div>
+    </PageLayout>
   );
 }
 
