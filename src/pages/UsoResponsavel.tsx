@@ -421,18 +421,18 @@ export default function UsoResponsavel() {
             <h2 className="text-xl font-bold text-foreground mb-6 text-center">Resumo Prático</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div className="bg-green-500/5 border border-green-500/20 rounded-xl p-5">
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-5">
                 <h3 className="font-bold text-foreground mb-3 flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
+                  <CheckCircle className="h-5 w-5 text-primary" />
                   Pode Baixar Quando
                 </h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-green-600 shrink-0" /> É seu próprio conteúdo</li>
-                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-green-600 shrink-0" /> Tem autorização por escrito do titular</li>
-                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-green-600 shrink-0" /> Está em domínio público</li>
-                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-green-600 shrink-0" /> Possui licença Creative Commons adequada</li>
-                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-green-600 shrink-0" /> É para uso estritamente pessoal e privado</li>
-                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-green-600 shrink-0" /> Se enquadra em exceções legais específicas</li>
+                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-primary shrink-0" /> É seu próprio conteúdo</li>
+                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-primary shrink-0" /> Tem autorização por escrito do titular</li>
+                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-primary shrink-0" /> Está em domínio público</li>
+                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-primary shrink-0" /> Possui licença Creative Commons adequada</li>
+                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-primary shrink-0" /> É para uso estritamente pessoal e privado</li>
+                  <li className="flex items-start gap-2"><ChevronRight className="h-4 w-4 mt-0.5 text-primary shrink-0" /> Se enquadra em exceções legais específicas</li>
                 </ul>
               </div>
 
