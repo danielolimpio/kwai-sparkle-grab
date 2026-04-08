@@ -87,6 +87,11 @@ export function HeroSection({ onSearch, isLoading }: HeroSectionProps) {
           )}
           {isLoading ? "Processando..." : "Baixar Agora"}
         </button>
+
+        <p className="mt-4 text-xs text-muted-foreground max-w-lg mx-auto leading-relaxed">
+          Certifique-se de não violar os direitos de terceiros com os vídeos que baixar do Kwai. Conteúdos protegidos por direitos autorais não podem ser baixados com esta ferramenta.{" "}
+          <a href="/uso-responsavel" className="text-primary font-semibold hover:underline">Saiba mais</a>
+        </p>
       </form>
       {/* Showcase images */}
       <div className="max-w-5xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 px-2">
