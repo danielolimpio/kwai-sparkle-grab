@@ -1,6 +1,8 @@
 import { Download, Link, ClipboardPaste, X } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import kwaiHero1 from "@/assets/kwai-hero-1.png";
+import kwaiHero2 from "@/assets/kwai-hero-2.png";
 
 interface HeroSectionProps {
   onSearch: (url: string) => void;
