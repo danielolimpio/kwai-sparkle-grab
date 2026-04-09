@@ -1,9 +1,11 @@
 import { Shield, FileText, Scale, AlertTriangle, CheckCircle, Users, BookOpen } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function TermosDeUso() {
   return (
     <PageLayout>
+      <SEOHead title="Termos de Uso" description="Leia os termos de uso do KwaiSave. Saiba suas responsabilidades ao utilizar nossa ferramenta de download de vídeos do Kwai." canonical="/termos-de-uso" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Termos de Uso", url: "/termos-de-uso" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">

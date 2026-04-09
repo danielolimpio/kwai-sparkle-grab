@@ -1,9 +1,11 @@
 import { Shield, AlertTriangle, Mail, FileWarning, Scale, Clock, CheckCircle } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function DMCA() {
   return (
     <PageLayout>
+      <SEOHead title="Política DMCA - Direitos Autorais" description="Política DMCA do KwaiSave. Saiba como enviar notificações de violação de direitos autorais e como procedemos." canonical="/dmca" breadcrumbs={[{ name: "Início", url: "/" }, { name: "DMCA", url: "/dmca" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">

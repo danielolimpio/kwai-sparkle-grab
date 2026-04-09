@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { PageLayout } from "@/components/PageLayout";
+import { SEOHead } from "@/components/SEOHead";
 import { MessageSquare, Mail, Clock, Send, Globe, HelpCircle } from "lucide-react";
 
 export default function Contato() {
@@ -23,6 +24,7 @@ export default function Contato() {
 
   return (
     <PageLayout>
+      <SEOHead title="Contato" description="Entre em contato com a equipe do KwaiSave. Envie dúvidas, sugestões ou solicite suporte técnico." canonical="/contato" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Contato", url: "/contato" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">
