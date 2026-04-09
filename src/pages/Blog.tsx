@@ -23,6 +23,7 @@ const tagColors: Record<string, string> = {
 export default function Blog() {
   return (
     <PageLayout>
+      <SEOHead title="Blog - Dicas e Tutoriais sobre Kwai" description="Confira dicas, tutoriais e novidades sobre como baixar vídeos do Kwai sem marca d'água. Artigos atualizados semanalmente." canonical="/blog" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Blog", url: "/blog" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">

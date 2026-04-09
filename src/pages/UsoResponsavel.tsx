@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 export default function UsoResponsavel() {
   return (
     <PageLayout>
+      <SEOHead title="Uso Responsável - Política de Download" description="Política de uso responsável do KwaiSave. Entenda como baixar vídeos do Kwai de forma ética, legal e responsável." canonical="/uso-responsavel" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Uso Responsável", url: "/uso-responsavel" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         {/* Header */}
         <div className="flex items-center gap-3 mb-2">
