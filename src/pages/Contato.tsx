@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { PageLayout } from "@/components/PageLayout";
+import { SEOHead } from "@/components/SEOHead";
 import { MessageSquare, Mail, Clock, Send, Globe, HelpCircle } from "lucide-react";
 
 export default function Contato() {

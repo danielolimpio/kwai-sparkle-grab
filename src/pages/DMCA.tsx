@@ -1,5 +1,6 @@
 import { Shield, AlertTriangle, Mail, FileWarning, Scale, Clock, CheckCircle } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function DMCA() {
   return (

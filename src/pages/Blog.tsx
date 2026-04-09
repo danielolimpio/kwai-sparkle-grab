@@ -1,5 +1,6 @@
 import { BookOpen, Calendar, Clock, ArrowRight, TrendingUp, Sparkles, Video, Shield, Zap } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
+import { SEOHead } from "@/components/SEOHead";
 import kwaiHero1 from "@/assets/kwai-hero-1.png";
 import kwaiHero2 from "@/assets/kwai-hero-2.png";
 

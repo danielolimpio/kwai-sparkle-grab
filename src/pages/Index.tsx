@@ -11,6 +11,16 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { SupportedFormats } from "@/components/SupportedFormats";
 import { FAQ } from "@/components/FAQ";
 import { AppFooter } from "@/components/AppFooter";
+import { SEOHead } from "@/components/SEOHead";
+
+const homeFAQ = [
+  { question: "É grátis para baixar vídeos do Kwai?", answer: "Sim! O KwaiSave é 100% grátis e sem limites. Baixe quantos vídeos quiser, sem cadastro e sem pagamento." },
+  { question: "Preciso fazer login no Kwai para baixar?", answer: "Não! Basta copiar o link do vídeo público do Kwai e colar aqui. Não pedimos login nem dados pessoais." },
+  { question: "Os vídeos baixam sem a logo do Kwai?", answer: "Sim! Nosso sistema remove a marca d'água automaticamente, entregando o vídeo limpo e em alta qualidade." },
+  { question: "Funciona no celular?", answer: "Sim! O KwaiSave funciona em qualquer dispositivo com navegador: celular, tablet e computador." },
+  { question: "Qual a qualidade dos downloads?", answer: "Oferecemos download na melhor qualidade disponível do vídeo original, incluindo HD e Full HD." },
+  { question: "É seguro usar o KwaiSave?", answer: "Totalmente! Não armazenamos seus dados, não pedimos login e o site é protegido por HTTPS." },
+];
 
 export interface VideoResult {
   title: string;
@@ -79,6 +89,13 @@ export default function Index() {
         <AppHeader onMenuToggle={() => setSidebarOpen((o) => !o)} />
 
         <main className="flex-1">
+          <SEOHead
+            title="Baixar Vídeos do Kwai Sem Marca d'Água"
+            description="Baixe vídeos do Kwai sem marca d'água em alta qualidade. Ferramenta 100% grátis, rápida e ilimitada. Funciona no celular e computador."
+            canonical="/"
+            breadcrumbs={[{ name: "Início", url: "/" }]}
+            faq={homeFAQ}
+          />
           <HeroSection onSearch={handleSearch} isLoading={isLoading} />
           <ContentTabs activeTab={activeTab} onTabChange={setActiveTab} />
           <FeatureCards />

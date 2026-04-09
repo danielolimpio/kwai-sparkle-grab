@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Download, Trash2, Play, Calendar } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
+import { SEOHead } from "@/components/SEOHead";
 
 interface DownloadItem {
   title: string;

@@ -1,5 +1,6 @@
 import { Shield, FileText, Scale, AlertTriangle, CheckCircle, Users, BookOpen } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function TermosDeUso() {
   return (

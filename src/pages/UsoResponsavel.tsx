@@ -4,6 +4,7 @@ import {
   HelpCircle, Mail, Clock, FileText, Info, ChevronRight
 } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
+import { SEOHead } from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 
 export default function UsoResponsavel() {

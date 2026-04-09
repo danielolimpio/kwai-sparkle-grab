@@ -1,5 +1,6 @@
 import { Shield, Lock, Eye, Database, Globe, Cookie, Bell, UserCheck } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function Privacidade() {
   return (
