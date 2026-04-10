@@ -1,5 +1,5 @@
 import { Download, Link, ClipboardPaste, X } from "lucide-react";
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import { toast } from "sonner";
 import kwaiHero1 from "@/assets/kwai-hero-1.png";
 import kwaiHero2 from "@/assets/kwai-hero-2.png";
@@ -7,9 +7,10 @@ import kwaiHero2 from "@/assets/kwai-hero-2.png";
 interface HeroSectionProps {
   onSearch: (url: string) => void;
   isLoading: boolean;
+  resultsSlot?: ReactNode;
 }
 
-export function HeroSection({ onSearch, isLoading }: HeroSectionProps) {
+export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionProps) {
   const [url, setUrl] = useState("");
 
   const handlePaste = async () => {
@@ -43,7 +44,7 @@ export function HeroSection({ onSearch, isLoading }: HeroSectionProps) {
 
       <form onSubmit={handleSubmit} className="max-w-[700px] mx-auto">
         <div className="relative flex items-center">
-          <div className="absolute left-4 text-primary">
+          <div className="absolute left-4 text-primary z-10">
             <Link className="h-5 w-5" />
           </div>
           <input
@@ -51,9 +52,9 @@ export function HeroSection({ onSearch, isLoading }: HeroSectionProps) {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="Cole o link do Kwai aqui..."
-            className="w-full h-14 pl-12 pr-24 rounded-xl border border-input bg-card text-foreground placeholder:text-muted-foreground text-base focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/20 transition-all"
+            className="w-full h-14 pl-12 pr-28 rounded-xl border border-input bg-card text-foreground placeholder:text-muted-foreground text-base focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/20 transition-all overflow-hidden text-ellipsis"
           />
-          <div className="absolute right-2 flex items-center gap-1">
+          <div className="absolute right-2 flex items-center gap-1 bg-card pl-2">
             {url && (
               <button
                 type="button"
@@ -93,6 +94,10 @@ export function HeroSection({ onSearch, isLoading }: HeroSectionProps) {
           <a href="/uso-responsavel" className="text-primary font-semibold hover:underline">Saiba mais</a>
         </p>
       </form>
+
+      {/* Results slot - between disclaimer and images */}
+      {resultsSlot}
+
       {/* Showcase images */}
       <div className="max-w-5xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 px-2">
         <div className="rounded-2xl overflow-hidden border border-border shadow-lg hover:shadow-kwai-lg hover:-translate-y-1 transition-all duration-300">
