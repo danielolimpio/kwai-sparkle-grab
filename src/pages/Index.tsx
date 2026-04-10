@@ -96,18 +96,22 @@ export default function Index() {
             breadcrumbs={[{ name: "Início", url: "/" }]}
             faq={homeFAQ}
           />
-          <HeroSection onSearch={handleSearch} isLoading={isLoading} />
+          <HeroSection
+            onSearch={handleSearch}
+            isLoading={isLoading}
+            resultsSlot={
+              results.length > 0 ? (
+                <section className="px-4 py-6 max-w-4xl mx-auto space-y-4 animate-fade-in">
+                  <h2 className="text-xl font-bold text-foreground">Resultados</h2>
+                  {results.map((r, i) => (
+                    <VideoCard key={i} {...r} />
+                  ))}
+                </section>
+              ) : undefined
+            }
+          />
           <ContentTabs activeTab={activeTab} onTabChange={setActiveTab} />
           <FeatureCards />
-
-          {results.length > 0 && (
-            <section className="px-4 py-6 max-w-4xl mx-auto space-y-4 animate-fade-in">
-              <h2 className="text-xl font-bold text-foreground">Resultados</h2>
-              {results.map((r, i) => (
-                <VideoCard key={i} {...r} />
-              ))}
-            </section>
-          )}
 
           <HowItWorks />
           <SupportedFormats />
