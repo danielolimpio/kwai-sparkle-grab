@@ -13,6 +13,7 @@ export function AppFooter() {
           <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
           <Link to="/downloads" className="hover:text-primary transition-colors">Downloads</Link>
           <Link to="/uso-responsavel" className="hover:text-primary transition-colors">Uso Responsável</Link>
+          <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
         </div>
         <p className="text-center text-xs text-muted-foreground mb-2">
           © 2026 Baixar Vídeos Kwai. Não somos afiliados ao Kwai.
