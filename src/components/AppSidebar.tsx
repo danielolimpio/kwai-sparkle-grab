@@ -1,4 +1,4 @@
-import { Video, Play, Info, BookOpen, Mail, Download } from "lucide-react";
+import { Video, Play, Info, BookOpen, Mail, Download, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useNavigate, useLocation } from "react-router-dom";
 import logoKwai from "@/assets/logo-kwai.png";
@@ -9,6 +9,7 @@ const navItems = [
   { icon: Info, label: "Sobre", path: "/sobre" },
   { icon: BookOpen, label: "Blog", path: "/blog" },
   { icon: Mail, label: "Contato", path: "/contato" },
+  { icon: HelpCircle, label: "FAQ", path: "/faq" },
 ];
 
 interface AppSidebarProps {

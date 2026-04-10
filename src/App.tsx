@@ -16,6 +16,7 @@ const Sobre = lazy(() => import("./pages/Sobre.tsx"));
 const Blog = lazy(() => import("./pages/Blog.tsx"));
 const Downloads = lazy(() => import("./pages/Downloads.tsx"));
 const UsoResponsavel = lazy(() => import("./pages/UsoResponsavel.tsx"));
+const FAQPage = lazy(() => import("./pages/FAQPage.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/downloads" element={<Downloads />} />
             <Route path="/uso-responsavel" element={<UsoResponsavel />} />
+            <Route path="/faq" element={<FAQPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
