@@ -14,12 +14,12 @@ import { AppFooter } from "@/components/AppFooter";
 import { SEOHead } from "@/components/SEOHead";
 
 const homeFAQ = [
-  { question: "É grátis para baixar vídeos do Kwai?", answer: "Sim! O KwaiSave é 100% grátis e sem limites. Baixe quantos vídeos quiser, sem cadastro e sem pagamento." },
-  { question: "Preciso fazer login no Kwai para baixar?", answer: "Não! Basta copiar o link do vídeo público do Kwai e colar aqui. Não pedimos login nem dados pessoais." },
-  { question: "Os vídeos baixam sem a logo do Kwai?", answer: "Sim! Nosso sistema remove a marca d'água automaticamente, entregando o vídeo limpo e em alta qualidade." },
-  { question: "Funciona no celular?", answer: "Sim! O KwaiSave funciona em qualquer dispositivo com navegador: celular, tablet e computador." },
-  { question: "Qual a qualidade dos downloads?", answer: "Oferecemos download na melhor qualidade disponível do vídeo original, incluindo HD e Full HD." },
-  { question: "É seguro usar o KwaiSave?", answer: "Totalmente! Não armazenamos seus dados, não pedimos login e o site é protegido por HTTPS." },
+  { question: "É grátis baixar vídeos Kwai no KwaiSave?", answer: "Sim! O KwaiSave é um baixador de vídeos do Kwai 100% grátis e sem limites. Baixe quantos vídeos quiser, sem cadastro e sem pagamento." },
+  { question: "Preciso fazer login para baixar vídeo do Kwai?", answer: "Não! Basta copiar o link do vídeo público do Kwai e colar aqui. Não pedimos login nem dados pessoais para salvar vídeo do Kwai." },
+  { question: "Os vídeos baixam sem a marca d'água do Kwai?", answer: "Sim! Nosso sistema permite baixar vídeo do Kwai sem marca d'água automaticamente, entregando o vídeo limpo e em alta qualidade." },
+  { question: "Funciona no celular para baixar Kwai vídeos?", answer: "Sim! O KwaiSave funciona em qualquer dispositivo com navegador: celular, tablet e computador. É o jeito mais fácil de baixar vídeos do Kwai online." },
+  { question: "Qual a qualidade do download vídeo Kwai?", answer: "Oferecemos download na melhor qualidade disponível do vídeo original, incluindo HD e Full HD. Kwai baixar vídeos nunca foi tão fácil." },
+  { question: "É seguro usar o KwaiSave para salvar vídeo do Kwai?", answer: "Totalmente! Não armazenamos seus dados, não pedimos login e o site é protegido por HTTPS. Baixar vídeo do Kwai por link aqui é 100% seguro." },
 ];
 
 export interface VideoResult {
@@ -90,8 +90,8 @@ export default function Index() {
 
         <main className="flex-1">
           <SEOHead
-            title="Baixar Vídeos do Kwai Sem Marca d'Água"
-            description="Baixe vídeos do Kwai sem marca d'água em alta qualidade. Ferramenta 100% grátis, rápida e ilimitada. Funciona no celular e computador."
+            title="Baixar Vídeos Kwai Sem Marca d'Água | Download Grátis"
+            description="Baixar vídeos Kwai sem marca d'água em alta qualidade. Baixador de vídeos do Kwai online e grátis. Salvar vídeo do Kwai por link, sem app e ilimitado."
             canonical="/"
             breadcrumbs={[{ name: "Início", url: "/" }]}
             faq={homeFAQ}

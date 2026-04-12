@@ -35,11 +35,11 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
   return (
     <section className="text-center py-10 px-4 animate-fade-in">
       <h1 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3 leading-tight">
-        Baixar Vídeos do Kwai{" "}
+        Baixar Vídeos Kwai{" "}
         <span className="gradient-kwai-text">Sem Marca d'Água</span>
       </h1>
       <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-8">
-        Baixe vídeos do Kwai em alta qualidade de forma rápida, simples e sem abrir telas extras de reprodução.
+        O melhor baixador de vídeos do Kwai online. Salvar vídeo do Kwai por link em alta qualidade, grátis e sem instalar nada.
       </p>
 
       <form onSubmit={handleSubmit} className="max-w-[700px] mx-auto">
@@ -51,8 +51,9 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
             type="text"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="Cole o link do Kwai aqui..."
+            placeholder="Cole o link do vídeo do Kwai aqui..."
             className="w-full h-14 pl-12 pr-28 rounded-xl border border-input bg-card text-foreground placeholder:text-muted-foreground text-base focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/20 transition-all overflow-hidden text-ellipsis"
+            aria-label="Cole o link do Kwai para baixar vídeo sem marca d'água"
           />
           <div className="absolute right-2 flex items-center gap-1 bg-card pl-2">
             {url && (
@@ -95,16 +96,16 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
         </p>
       </form>
 
-      {/* Results slot - between disclaimer and images */}
+      {/* Results slot */}
       {resultsSlot}
 
       {/* Showcase images */}
       <div className="max-w-5xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 px-2">
         <div className="rounded-2xl overflow-hidden border border-border shadow-lg hover:shadow-kwai-lg hover:-translate-y-1 transition-all duration-300">
-          <img src={kwaiHero1} alt="Baixar vídeos do Kwai sem marca d'água" className="w-full h-auto object-cover" loading="lazy" />
+          <img src={kwaiHero1} alt="Baixar vídeos do Kwai sem marca d'água — download grátis online" className="w-full h-auto object-cover" loading="lazy" />
         </div>
         <div className="rounded-2xl overflow-hidden border border-border shadow-lg hover:shadow-kwai-lg hover:-translate-y-1 transition-all duration-300">
-          <img src={kwaiHero2} alt="Plataforma Kwai - vídeos em alta qualidade" className="w-full h-auto object-cover" loading="lazy" />
+          <img src={kwaiHero2} alt="Kwai download vídeo em alta qualidade — salvar vídeo do Kwai por link" className="w-full h-auto object-cover" loading="lazy" />
         </div>
       </div>
     </section>

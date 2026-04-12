@@ -5,7 +5,7 @@ import { SEOHead } from "@/components/SEOHead";
 export default function DMCA() {
   return (
     <PageLayout>
-      <SEOHead title="Política DMCA - Direitos Autorais" description="Política DMCA do KwaiSave. Saiba como enviar notificações de violação de direitos autorais e como procedemos." canonical="/dmca" breadcrumbs={[{ name: "Início", url: "/" }, { name: "DMCA", url: "/dmca" }]} />
+      <SEOHead title="Política DMCA — Direitos Autorais | Baixar Vídeos Kwai" description="Política DMCA do KwaiSave, baixador de vídeos do Kwai. Saiba como enviar notificações sobre direitos autorais ao baixar vídeos do Kwai sem marca d'água." canonical="/dmca" breadcrumbs={[{ name: "Início", url: "/" }, { name: "DMCA", url: "/dmca" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">
@@ -20,28 +20,28 @@ export default function DMCA() {
           <AlertTriangle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
           <div>
             <h3 className="font-bold text-foreground text-sm mb-1">Respeito aos Direitos Autorais</h3>
-            <p className="text-sm text-muted-foreground">O baixarvideoskwai.com respeita os direitos de propriedade intelectual de terceiros e espera que seus usuários façam o mesmo.</p>
+            <p className="text-sm text-muted-foreground">O baixarvideoskwai.com respeita os direitos de propriedade intelectual. Nosso baixador de vídeos do Kwai atua de forma responsável perante a legislação vigente.</p>
           </div>
         </div>
 
         <div className="space-y-8">
           <Section icon={Shield} title="1. Nosso Compromisso">
-            <p>Estamos comprometidos em cumprir as disposições do Digital Millennium Copyright Act (DMCA). Se você acredita que seu conteúdo protegido por direitos autorais foi disponibilizado indevidamente através do nosso serviço, entre em contato conosco imediatamente.</p>
+            <p>Estamos comprometidos em cumprir o DMCA. Se você acredita que seu conteúdo foi disponibilizado indevidamente através do nosso serviço para baixar vídeos do Kwai, entre em contato imediatamente.</p>
           </Section>
 
           <Section icon={Mail} title="2. Como Enviar uma Notificação DMCA">
-            <p>Para enviar uma notificação válida de violação de direitos autorais, inclua as seguintes informações:</p>
+            <p>Para enviar uma notificação válida sobre violação de direitos autorais relacionada ao download vídeo Kwai, inclua:</p>
             <ul className="list-disc pl-5 space-y-2">
               <li><strong className="text-foreground">Identificação da obra:</strong> descrição clara do conteúdo protegido</li>
               <li><strong className="text-foreground">URL do conteúdo infrator:</strong> link específico do material em questão</li>
               <li><strong className="text-foreground">Seus dados de contato:</strong> nome completo, e-mail e telefone</li>
               <li><strong className="text-foreground">Declaração de boa-fé:</strong> que o uso não é autorizado pelo detentor dos direitos</li>
-              <li><strong className="text-foreground">Assinatura:</strong> física ou eletrônica do detentor dos direitos ou representante</li>
+              <li><strong className="text-foreground">Assinatura:</strong> física ou eletrônica do detentor dos direitos</li>
             </ul>
           </Section>
 
           <Section icon={Clock} title="3. Processo de Análise">
-            <p>Ao receber uma notificação DMCA válida, seguimos o seguinte processo:</p>
+            <p>Ao receber uma notificação DMCA válida sobre conteúdo baixado do Kwai:</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3">
               {[
                 { step: "1", title: "Recebimento", desc: "Análise da notificação em até 24h" },
@@ -58,7 +58,7 @@ export default function DMCA() {
           </Section>
 
           <Section icon={Scale} title="4. Contra-Notificação">
-            <p>Se você acredita que seu conteúdo foi removido por engano, pode enviar uma contra-notificação incluindo:</p>
+            <p>Se você acredita que seu conteúdo foi removido por engano do nosso baixador de vídeos do Kwai, envie uma contra-notificação incluindo:</p>
             <ul className="list-disc pl-5 space-y-1">
               <li>Identificação do material removido</li>
               <li>Declaração sob pena de perjúrio de que a remoção foi um erro</li>
@@ -70,14 +70,14 @@ export default function DMCA() {
           <Section icon={CheckCircle} title="5. Contato para DMCA">
             <div className="bg-muted rounded-xl p-4">
               <p className="font-semibold text-foreground text-sm mb-2">Envie sua notificação para:</p>
-              <p className="text-sm">📧 E-mail: <span className="text-primary font-medium">dmca@baixarvideoskwai.com</span></p>
-              <p className="text-sm mt-1">📝 Assunto: <span className="text-foreground font-medium">Notificação DMCA — [Descrição Breve]</span></p>
+              <p className="text-sm">E-mail: <span className="text-primary font-medium">dmca@baixarvideoskwai.com</span></p>
+              <p className="text-sm mt-1">Assunto: <span className="text-foreground font-medium">Notificação DMCA — [Descrição Breve]</span></p>
             </div>
           </Section>
         </div>
 
         <div className="mt-12 bg-card border border-border rounded-2xl p-6 text-center">
-          <p className="text-sm text-muted-foreground">Respeitamos os direitos autorais e agimos rapidamente em notificações válidas.</p>
+          <p className="text-sm text-muted-foreground">Respeitamos os direitos autorais e agimos rapidamente em notificações válidas sobre conteúdo do Kwai.</p>
         </div>
       </div>
     </PageLayout>

@@ -31,8 +31,9 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: SITE_NAME,
+    alternateName: ["Baixar Videos Kwai", "Baixador de Videos do Kwai", "Kwai Download Video"],
     url: SITE_URL,
-    description: "Baixe vídeos do Kwai sem marca d'água em alta qualidade.",
+    description: "Baixar vídeos Kwai sem marca d'água em alta qualidade. Baixador de vídeos do Kwai online, grátis e ilimitado.",
     potentialAction: {
       "@type": "SearchAction",
       target: {
@@ -47,8 +48,9 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Baixar Videos Kwai",
+    alternateName: ["KwaiSave", "Baixador de Videos do Kwai", "Kwai Download Vídeo"],
     url: SITE_URL,
-    description: "Baixe vídeos do Kwai sem marca d'água em alta qualidade. Ferramenta 100% grátis e ilimitada.",
+    description: "Baixar vídeos do Kwai sem marca d'água em alta qualidade. Baixador de vídeos do Kwai 100% grátis, online e ilimitado. Salvar vídeo do Kwai por link.",
     applicationCategory: "MultimediaApplication",
     operatingSystem: "Any",
     browserRequirements: "Requires JavaScript",
@@ -64,6 +66,7 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
       bestRating: "5",
       worstRating: "1",
     },
+    keywords: "baixar videos kwai, kwai baixar vídeos, baixar video do kwai, baixar video do kwai sem marca d agua, baixador de videos do kwai, download vídeo kwai, salvar video do kwai",
   };
 
   const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {

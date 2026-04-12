@@ -5,16 +5,16 @@ import kwaiHero1 from "@/assets/kwai-hero-1.png";
 import kwaiHero2 from "@/assets/kwai-hero-2.png";
 
 const posts = [
-  { id: 1, title: "Como Baixar Vídeos do Kwai Sem Marca d'Água em 2026", excerpt: "Aprenda o passo a passo completo para baixar vídeos do Kwai em alta qualidade, sem marca d'água e de forma totalmente gratuita.", date: "08 Abr 2026", readTime: "5 min", tag: "Tutorial", icon: Video, image: kwaiHero1 },
-  { id: 2, title: "Kwai vs TikTok: Qual Plataforma é Melhor para Criadores?", excerpt: "Comparação detalhada entre Kwai e TikTok analisando recursos, monetização, alcance e ferramentas disponíveis para criadores de conteúdo no Brasil.", date: "05 Abr 2026", readTime: "8 min", tag: "Análise", icon: TrendingUp, image: kwaiHero2 },
-  { id: 3, title: "10 Dicas para Criar Vídeos Virais no Kwai", excerpt: "Descubra as estratégias utilizadas pelos maiores criadores do Kwai para alcançar milhões de visualizações.", date: "01 Abr 2026", readTime: "6 min", tag: "Dicas", icon: Sparkles },
-  { id: 4, title: "Segurança Digital: Como Proteger Seus Dados ao Baixar Vídeos", excerpt: "Guia completo sobre segurança digital ao utilizar serviços de download online.", date: "28 Mar 2026", readTime: "4 min", tag: "Segurança", icon: Shield },
-  { id: 5, title: "Novidades do Kwai: Recursos Lançados em 2026", excerpt: "Confira todas as atualizações e novos recursos que o Kwai lançou neste ano.", date: "25 Mar 2026", readTime: "7 min", tag: "Novidades", icon: Zap },
+  { id: 1, title: "Como Baixar Vídeos do Kwai Sem Marca d'Água em 2026", excerpt: "Aprenda o passo a passo completo para baixar vídeos Kwai em alta qualidade, sem marca d'água e de forma totalmente gratuita. O melhor baixador de vídeos do Kwai online.", date: "08 Abr 2026", readTime: "5 min", tag: "Tutorial", icon: Video, image: kwaiHero1 },
+  { id: 2, title: "Kwai Baixar Vídeos: Guia Completo para Download em HD", excerpt: "Descubra como usar o KwaiSave para baixar vídeo do Kwai por link em qualquer dispositivo. Download vídeo Kwai rápido, grátis e sem instalar nada.", date: "05 Abr 2026", readTime: "8 min", tag: "Guia", icon: TrendingUp, image: kwaiHero2 },
+  { id: 3, title: "10 Dicas para Salvar Vídeo do Kwai com Qualidade Máxima", excerpt: "Confira as melhores práticas para baixar vídeos do Kwai online com a melhor qualidade disponível, incluindo Full HD e sem marca d'água.", date: "01 Abr 2026", readTime: "6 min", tag: "Dicas", icon: Sparkles },
+  { id: 4, title: "Segurança ao Baixar Vídeo do Kwai: O Que Você Precisa Saber", excerpt: "Guia completo sobre segurança digital ao utilizar um baixador de vídeos do Kwai. Como proteger seus dados ao fazer download vídeo Kwai online.", date: "28 Mar 2026", readTime: "4 min", tag: "Segurança", icon: Shield },
+  { id: 5, title: "Novidades do Kwai 2026: Baixar Kwai Vídeos com Novos Recursos", excerpt: "Confira as atualizações do Kwai e como o KwaiSave acompanha as mudanças para você continuar a baixar vídeos do Kwai sem marca d'água.", date: "25 Mar 2026", readTime: "7 min", tag: "Novidades", icon: Zap },
 ];
 
 const tagColors: Record<string, string> = {
   Tutorial: "bg-primary/10 text-primary",
-  Análise: "bg-accent/10 text-accent",
+  Guia: "bg-accent/10 text-accent",
   Dicas: "bg-primary/10 text-primary",
   Segurança: "bg-primary/10 text-primary",
   Novidades: "bg-accent/10 text-accent",
@@ -23,7 +23,7 @@ const tagColors: Record<string, string> = {
 export default function Blog() {
   return (
     <PageLayout>
-      <SEOHead title="Blog - Dicas e Tutoriais sobre Kwai" description="Confira dicas, tutoriais e novidades sobre como baixar vídeos do Kwai sem marca d'água. Artigos atualizados semanalmente." canonical="/blog" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Blog", url: "/blog" }]} />
+      <SEOHead title="Blog — Como Baixar Vídeos do Kwai | Dicas e Tutoriais" description="Dicas e tutoriais sobre como baixar vídeos Kwai sem marca d'água. Guias atualizados sobre download vídeo Kwai, salvar vídeo do Kwai por link e mais." canonical="/blog" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Blog", url: "/blog" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">
@@ -31,11 +31,11 @@ export default function Blog() {
           </div>
           <span className="gradient-kwai text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">Blog</span>
         </div>
-        <h1 className="text-3xl md:text-4xl font-extrabold text-foreground mt-4 mb-2">Blog do KwaiSave</h1>
-        <p className="text-muted-foreground mb-10">Dicas, tutoriais e novidades sobre o Kwai e downloads de vídeos</p>
+        <h1 className="text-3xl md:text-4xl font-extrabold text-foreground mt-4 mb-2">Blog — Baixar Vídeos do Kwai</h1>
+        <p className="text-muted-foreground mb-10">Dicas, tutoriais e guias sobre como baixar vídeos Kwai, salvar vídeo do Kwai e download vídeo Kwai em alta qualidade</p>
 
         <div className="bg-card border border-border rounded-2xl overflow-hidden mb-10 hover:shadow-lg transition-all duration-300">
-          {posts[0].image && <img src={posts[0].image} alt={posts[0].title} className="w-full h-48 sm:h-64 object-cover" />}
+          {posts[0].image && <img src={posts[0].image} alt="Como baixar vídeos do Kwai sem marca d'água" className="w-full h-48 sm:h-64 object-cover" />}
           <div className="p-6">
             <div className="flex items-center gap-2 mb-3">
               <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${tagColors[posts[0].tag]}`}>{posts[0].tag}</span>

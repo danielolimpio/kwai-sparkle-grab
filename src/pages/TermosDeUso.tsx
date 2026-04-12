@@ -5,7 +5,7 @@ import { SEOHead } from "@/components/SEOHead";
 export default function TermosDeUso() {
   return (
     <PageLayout>
-      <SEOHead title="Termos de Uso" description="Leia os termos de uso do KwaiSave. Saiba suas responsabilidades ao utilizar nossa ferramenta de download de vídeos do Kwai." canonical="/termos-de-uso" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Termos de Uso", url: "/termos-de-uso" }]} />
+      <SEOHead title="Termos de Uso — Baixar Vídeos do Kwai" description="Termos de uso do KwaiSave, o baixador de vídeos do Kwai. Conheça suas responsabilidades ao baixar vídeos Kwai sem marca d'água." canonical="/termos-de-uso" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Termos de Uso", url: "/termos-de-uso" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">
@@ -18,54 +18,53 @@ export default function TermosDeUso() {
 
         <div className="space-y-8">
           <Section icon={BookOpen} title="1. Aceitação dos Termos">
-            <p>Ao acessar e utilizar o site baixarvideoskwai.com ("Plataforma"), você concorda integralmente com estes Termos de Uso. Caso não concorde com qualquer disposição, recomendamos que não utilize nossos serviços.</p>
-            <p>Estes termos constituem um acordo juridicamente vinculativo entre você ("Usuário") e a Plataforma. Reservamo-nos o direito de atualizar estes termos a qualquer momento, sendo sua responsabilidade verificar periodicamente eventuais alterações.</p>
+            <p>Ao acessar e utilizar o site baixarvideoskwai.com ("Plataforma"), você concorda integralmente com estes Termos de Uso. Caso não concorde com qualquer disposição, recomendamos que não utilize nosso baixador de vídeos do Kwai.</p>
+            <p>Estes termos constituem um acordo juridicamente vinculativo entre você ("Usuário") e a Plataforma. Reservamo-nos o direito de atualizar estes termos a qualquer momento.</p>
           </Section>
 
           <Section icon={Shield} title="2. Descrição do Serviço">
-            <p>A Plataforma oferece um serviço gratuito de download de vídeos públicos do Kwai. Nosso serviço permite que usuários baixem conteúdo disponível publicamente na plataforma Kwai para uso pessoal e não comercial.</p>
+            <p>A Plataforma oferece um serviço gratuito para baixar vídeos do Kwai sem marca d'água. Nosso serviço permite o download vídeo Kwai público para uso pessoal e não comercial.</p>
             <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-              <li>Download de vídeos públicos em alta qualidade (até 1080p)</li>
-              <li>Processamento automático sem necessidade de cadastro</li>
-              <li>Serviço 100% gratuito e sem limites de uso</li>
+              <li>Baixar vídeos Kwai em alta qualidade (até 1080p) sem marca d'água</li>
+              <li>Processamento automático — sem necessidade de cadastro</li>
+              <li>Serviço 100% gratuito e ilimitado para salvar vídeo do Kwai</li>
               <li>Sem coleta de dados pessoais do usuário</li>
             </ul>
           </Section>
 
           <Section icon={Users} title="3. Responsabilidades do Usuário">
-            <p>Ao utilizar a Plataforma, o Usuário se compromete a:</p>
+            <p>Ao utilizar a Plataforma para baixar vídeo do Kwai, o Usuário se compromete a:</p>
             <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
               <li>Utilizar o serviço apenas para fins pessoais e não comerciais</li>
-              <li>Respeitar os direitos autorais e de propriedade intelectual dos criadores de conteúdo</li>
+              <li>Respeitar os direitos autorais dos criadores ao baixar vídeos do Kwai</li>
               <li>Não redistribuir, vender ou comercializar o conteúdo baixado</li>
-              <li>Não utilizar o serviço para atividades ilegais ou que violem os termos de uso do Kwai</li>
-              <li>Não realizar engenharia reversa, descompilar ou tentar acessar o código-fonte da Plataforma</li>
+              <li>Não utilizar o baixador de vídeos do Kwai para atividades ilegais</li>
+              <li>Não realizar engenharia reversa ou tentar acessar o código-fonte da Plataforma</li>
             </ul>
           </Section>
 
           <Section icon={Scale} title="4. Propriedade Intelectual">
-            <p>Todo o conteúdo disponível para download pertence aos seus respectivos criadores e detentores de direitos autorais. A Plataforma não reivindica propriedade sobre qualquer conteúdo baixado.</p>
-            <p>O design, logotipos, código-fonte e elementos visuais da Plataforma são de propriedade exclusiva do baixarvideoskwai.com e estão protegidos pelas leis de propriedade intelectual aplicáveis.</p>
+            <p>Todo conteúdo disponível para download vídeo Kwai pertence aos seus respectivos criadores e detentores de direitos autorais. A Plataforma não reivindica propriedade sobre qualquer vídeo baixado do Kwai.</p>
+            <p>O design, logotipos e código-fonte da Plataforma são de propriedade exclusiva do baixarvideoskwai.com e estão protegidos pelas leis de propriedade intelectual.</p>
           </Section>
 
           <Section icon={AlertTriangle} title="5. Limitação de Responsabilidade">
-            <p>A Plataforma é fornecida "como está" e "conforme disponível". Não garantimos que o serviço será ininterrupto, livre de erros ou que atenderá todas as suas expectativas. A Plataforma não se responsabiliza por:</p>
+            <p>A Plataforma para baixar vídeos Kwai é fornecida "como está". Não nos responsabilizamos por:</p>
             <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
               <li>Uso indevido do conteúdo baixado pelo Usuário</li>
-              <li>Violações de direitos autorais cometidas pelo Usuário</li>
-              <li>Indisponibilidade temporária do serviço</li>
+              <li>Violações de direitos autorais ao baixar vídeo do Kwai sem marca d'água</li>
+              <li>Indisponibilidade temporária do serviço de download</li>
               <li>Conteúdo de terceiros acessado através da Plataforma</li>
             </ul>
           </Section>
 
           <Section icon={CheckCircle} title="6. Modificações dos Termos">
-            <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento, sem aviso prévio. As alterações entram em vigor imediatamente após a publicação. O uso continuado da Plataforma após as alterações constitui aceitação dos novos termos.</p>
-            <p>Recomendamos que você revise esta página periodicamente para se manter informado sobre quaisquer atualizações.</p>
+            <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. As alterações entram em vigor imediatamente após a publicação. O uso continuado do baixador de vídeos do Kwai constitui aceitação dos novos termos.</p>
           </Section>
         </div>
 
         <div className="mt-12 bg-card border border-border rounded-2xl p-6 text-center">
-          <p className="text-sm text-muted-foreground">Ao utilizar o baixarvideoskwai.com, você declara ter lido e compreendido estes Termos de Uso.</p>
+          <p className="text-sm text-muted-foreground">Ao utilizar o baixarvideoskwai.com para baixar vídeos do Kwai, você declara ter lido e compreendido estes Termos de Uso.</p>
         </div>
       </div>
     </PageLayout>
