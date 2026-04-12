@@ -21,7 +21,6 @@ export function getDownloadHistory(): DownloadItem[] {
 export function addToDownloadHistory(item: Omit<DownloadItem, "downloadedAt">) {
   const history = getDownloadHistory();
   history.unshift({ ...item, downloadedAt: new Date().toISOString() });
-  // Keep max 50 items
   localStorage.setItem("kwai-downloads", JSON.stringify(history.slice(0, 50)));
 }
 
@@ -39,7 +38,7 @@ export default function Downloads() {
 
   return (
     <PageLayout>
-      <SEOHead title="Meus Downloads" description="Visualize o histórico de vídeos baixados do Kwai. Seus downloads ficam salvos localmente no seu dispositivo." canonical="/downloads" noindex breadcrumbs={[{ name: "Início", url: "/" }, { name: "Downloads", url: "/downloads" }]} />
+      <SEOHead title="Meus Downloads — Vídeos Baixados do Kwai" description="Histórico de vídeos baixados do Kwai sem marca d'água. Veja seus downloads de vídeos Kwai salvos localmente no navegador." canonical="/downloads" noindex breadcrumbs={[{ name: "Início", url: "/" }, { name: "Downloads", url: "/downloads" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">
@@ -49,8 +48,8 @@ export default function Downloads() {
         </div>
         <div className="flex items-center justify-between mt-4 mb-8">
           <div>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-foreground">Downloads</h1>
-            <p className="text-muted-foreground text-sm mt-1">Vídeos baixados neste dispositivo ({items.length})</p>
+            <h1 className="text-3xl md:text-4xl font-extrabold text-foreground">Meus Downloads do Kwai</h1>
+            <p className="text-muted-foreground text-sm mt-1">Vídeos baixados do Kwai neste dispositivo ({items.length})</p>
           </div>
           {items.length > 0 && (
             <button
@@ -70,7 +69,7 @@ export default function Downloads() {
             </div>
             <h2 className="text-lg font-bold text-foreground mb-2">Nenhum download ainda</h2>
             <p className="text-sm text-muted-foreground max-w-md mx-auto">
-              Quando você baixar vídeos do Kwai, as miniaturas aparecerão aqui para fácil acesso. Os dados são armazenados apenas no seu navegador.
+              Quando você baixar vídeos do Kwai sem marca d'água, as miniaturas aparecerão aqui. Os dados ficam salvos apenas no seu navegador.
             </p>
           </div>
         ) : (
@@ -79,7 +78,7 @@ export default function Downloads() {
               <div key={i} className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <div className="relative aspect-video bg-muted">
                   {item.thumbnail ? (
-                    <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover" loading="lazy" />
+                    <img src={item.thumbnail} alt={`Vídeo do Kwai baixado — ${item.title}`} className="w-full h-full object-cover" loading="lazy" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(8, 100%, 50%), hsl(27, 100%, 60%))" }}>
                       <Play className="h-8 w-8 text-primary-foreground/80 fill-current" />

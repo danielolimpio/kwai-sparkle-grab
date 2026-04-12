@@ -24,7 +24,7 @@ export default function Contato() {
 
   return (
     <PageLayout>
-      <SEOHead title="Contato" description="Entre em contato com a equipe do KwaiSave. Envie dúvidas, sugestões ou solicite suporte técnico." canonical="/contato" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Contato", url: "/contato" }]} />
+      <SEOHead title="Contato — Suporte para Baixar Vídeos Kwai" description="Entre em contato com o suporte do KwaiSave. Tire dúvidas sobre como baixar vídeos do Kwai sem marca d'água, download vídeo Kwai e mais." canonical="/contato" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Contato", url: "/contato" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">
@@ -32,8 +32,8 @@ export default function Contato() {
           </div>
           <span className="gradient-kwai text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">Fale Conosco</span>
         </div>
-        <h1 className="text-3xl md:text-4xl font-extrabold text-foreground mt-4 mb-2">Contato</h1>
-        <p className="text-muted-foreground mb-8">Tem alguma dúvida ou sugestão? Estamos aqui para ajudar!</p>
+        <h1 className="text-3xl md:text-4xl font-extrabold text-foreground mt-4 mb-2">Contato — Suporte KwaiSave</h1>
+        <p className="text-muted-foreground mb-8">Tem dúvidas sobre como baixar vídeos do Kwai ou precisa de ajuda? Estamos aqui!</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
           {[
@@ -72,7 +72,7 @@ export default function Contato() {
             </div>
             <div>
               <label className="text-sm font-medium text-foreground block mb-1.5">Assunto</label>
-              <input type="text" value={form.assunto} onChange={(e) => setForm({ ...form, assunto: e.target.value })} placeholder="Ex: Dúvida sobre download" className="w-full h-11 px-4 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
+              <input type="text" value={form.assunto} onChange={(e) => setForm({ ...form, assunto: e.target.value })} placeholder="Ex: Dúvida sobre baixar vídeo do Kwai" className="w-full h-11 px-4 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
             </div>
             <div>
               <label className="text-sm font-medium text-foreground block mb-1.5">Mensagem *</label>
@@ -94,10 +94,10 @@ export default function Contato() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { q: "O serviço é gratuito?", a: "Sim, 100% grátis e sem limites." },
-              { q: "Preciso me cadastrar?", a: "Não, basta colar o link e baixar." },
+              { q: "O serviço de download vídeo Kwai é gratuito?", a: "Sim, baixar vídeos Kwai aqui é 100% grátis e sem limites." },
+              { q: "Preciso me cadastrar para baixar vídeo do Kwai?", a: "Não, basta colar o link e baixar. Sem cadastro." },
               { q: "Em quanto tempo respondem?", a: "Em até 24 horas úteis." },
-              { q: "Posso sugerir melhorias?", a: "Claro! Use o formulário acima." },
+              { q: "Posso sugerir melhorias no baixador de vídeos?", a: "Claro! Use o formulário acima." },
             ].map((faq) => (
               <div key={faq.q} className="bg-muted rounded-xl p-4">
                 <p className="text-sm font-semibold text-foreground">{faq.q}</p>
