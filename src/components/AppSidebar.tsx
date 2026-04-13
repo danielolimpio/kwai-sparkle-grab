@@ -18,11 +18,11 @@ const navItems = [
 ];
 
 const externalLinks = [
-  { label: "Baixar Vídeos Instagram", url: "https://baixarvideosinstagram.com", logo: logoInstagram },
-  { label: "Baixar Vídeos Facebook", url: "https://baixarvideosfacebook.com", logo: logoFacebook },
-  { label: "Baixar Vídeo YouTube", url: "https://baixarvideoyoutube.com", logo: logoYoutube },
-  { label: "Baixar Vídeos TikTok", url: "https://baixarvideostiktok.com", logo: logoTiktok },
-  { label: "Baixar Vídeos Twitter", url: "https://baixarvideostwitter.com", logo: logoTwitter },
+  { label: "Baixar Instagram", url: "https://baixarvideosinstagram.com", logo: logoInstagram },
+  { label: "Baixar Facebook", url: "https://baixarvideosfacebook.com", logo: logoFacebook },
+  { label: "Baixar YouTube", url: "https://baixarvideoyoutube.com", logo: logoYoutube },
+  { label: "Baixar TikTok", url: "https://baixarvideostiktok.com", logo: logoTiktok },
+  { label: "Baixar Twitter", url: "https://baixarvideostwitter.com", logo: logoTwitter },
 ];
 
 interface AppSidebarProps {
