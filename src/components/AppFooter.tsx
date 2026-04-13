@@ -15,6 +15,13 @@ export function AppFooter() {
           <Link to="/uso-responsavel" className="hover:text-primary transition-colors">Uso Responsável</Link>
           <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
         </div>
+        <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground mb-4">
+          <a href="https://baixarvideosinstagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Baixar Instagram</a>
+          <a href="https://baixarvideosfacebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Baixar Facebook</a>
+          <a href="https://baixarvideoyoutube.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Baixar YouTube</a>
+          <a href="https://baixarvideostiktok.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Baixar TikTok</a>
+          <a href="https://baixarvideostwitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Baixar Twitter</a>
+        </div>
         <p className="text-center text-xs text-muted-foreground mb-2">
           © 2026 Baixar Vídeos Kwai. Não somos afiliados ao Kwai.
         </p>
