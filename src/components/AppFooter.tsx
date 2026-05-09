@@ -27,6 +27,8 @@ export function AppFooter() {
           <Link to="/downloads" className="hover:text-primary transition-colors">Downloads</Link>
           <Link to="/uso-responsavel" className="hover:text-primary transition-colors">Uso Responsável</Link>
           <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
+          <Link to="/baixar-tutorial" className="hover:text-primary transition-colors">Tutorial</Link>
+          <Link to="/kwai-apk" className="hover:text-primary transition-colors">Kwai APK</Link>
         </div>
         <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mb-4">
           {externalLinks.map((link) => (

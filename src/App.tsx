@@ -17,6 +17,8 @@ const Blog = lazy(() => import("./pages/Blog.tsx"));
 const Downloads = lazy(() => import("./pages/Downloads.tsx"));
 const UsoResponsavel = lazy(() => import("./pages/UsoResponsavel.tsx"));
 const FAQPage = lazy(() => import("./pages/FAQPage.tsx"));
+const BaixarTutorial = lazy(() => import("./pages/BaixarTutorial.tsx"));
+const KwaiAPK = lazy(() => import("./pages/KwaiAPK.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -39,6 +41,8 @@ const App = () => (
             <Route path="/downloads" element={<Downloads />} />
             <Route path="/uso-responsavel" element={<UsoResponsavel />} />
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/baixar-tutorial" element={<BaixarTutorial />} />
+            <Route path="/kwai-apk" element={<KwaiAPK />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
