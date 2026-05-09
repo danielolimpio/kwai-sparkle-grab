@@ -99,6 +99,9 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
       <meta name="description" content={description} />
       <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
       <link rel="canonical" href={fullCanonical} />
+      <link rel="alternate" hrefLang="pt-BR" href={fullCanonical} />
+      <link rel="alternate" hrefLang="pt" href={fullCanonical} />
+      <link rel="alternate" hrefLang="x-default" href={fullCanonical} />
 
       {/* Open Graph */}
       <meta property="og:type" content="website" />

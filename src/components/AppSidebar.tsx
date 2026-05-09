@@ -1,4 +1,4 @@
-import { Video, Play, Info, BookOpen, Mail, Download, HelpCircle } from "lucide-react";
+import { Video, Info, BookOpen, Mail, Download, HelpCircle, Smartphone, BookMarked } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useNavigate, useLocation } from "react-router-dom";
 import logoKwai from "@/assets/logo-kwai.png";
@@ -10,6 +10,8 @@ import logoTwitter from "@/assets/baixar-twitter.jpg";
 
 const navItems = [
   { icon: Video, label: "Vídeos", path: "/" },
+  { icon: BookMarked, label: "Tutorial", path: "/baixar-tutorial" },
+  { icon: Smartphone, label: "Kwai APK", path: "/kwai-apk" },
   { icon: Download, label: "Downloads", path: "/downloads" },
   { icon: Info, label: "Sobre", path: "/sobre" },
   { icon: BookOpen, label: "Blog", path: "/blog" },

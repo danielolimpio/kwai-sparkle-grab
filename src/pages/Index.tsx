@@ -10,16 +10,17 @@ import { VideoCard } from "@/components/VideoCard";
 import { HowItWorks } from "@/components/HowItWorks";
 import { SupportedFormats } from "@/components/SupportedFormats";
 import { FAQ } from "@/components/FAQ";
+import { SEOContentBlock } from "@/components/SEOContentBlock";
 import { AppFooter } from "@/components/AppFooter";
 import { SEOHead } from "@/components/SEOHead";
 
 const homeFAQ = [
-  { question: "É grátis baixar vídeos Kwai no KwaiSave?", answer: "Sim! O KwaiSave é um baixador de vídeos do Kwai 100% grátis e sem limites. Baixe quantos vídeos quiser, sem cadastro e sem pagamento." },
-  { question: "Preciso fazer login para baixar vídeo do Kwai?", answer: "Não! Basta copiar o link do vídeo público do Kwai e colar aqui. Não pedimos login nem dados pessoais para salvar vídeo do Kwai." },
-  { question: "Os vídeos baixam sem a marca d'água do Kwai?", answer: "Sim! Nosso sistema permite baixar vídeo do Kwai sem marca d'água automaticamente, entregando o vídeo limpo e em alta qualidade." },
-  { question: "Funciona no celular para baixar Kwai vídeos?", answer: "Sim! O KwaiSave funciona em qualquer dispositivo com navegador: celular, tablet e computador. É o jeito mais fácil de baixar vídeos do Kwai online." },
-  { question: "Qual a qualidade do download vídeo Kwai?", answer: "Oferecemos download na melhor qualidade disponível do vídeo original, incluindo HD e Full HD. Kwai baixar vídeos nunca foi tão fácil." },
-  { question: "É seguro usar o KwaiSave para salvar vídeo do Kwai?", answer: "Totalmente! Não armazenamos seus dados, não pedimos login e o site é protegido por HTTPS. Baixar vídeo do Kwai por link aqui é 100% seguro." },
+  { question: "Como baixar vídeos do Kwai sem marca d'água?", answer: "Para fazer download de vídeos do Kwai sem marca d'água, copie o link do vídeo no app Kwai, cole em nosso baixador online e clique em 'Baixar'. O arquivo será salvo em MP4 com qualidade original, sem logotipos ou marcas." },
+  { question: "É seguro usar este Kwai video downloader?", answer: "Sim. Nossa ferramenta é 100% online, não requer instalação de Kwai APK adicional, não coleta dados pessoais e processa os downloads diretamente do servidor oficial. Recomendamos sempre usar o Kwai app oficial para sua segurança." },
+  { question: "Funciona no PC ou apenas no celular?", answer: "Nosso baixador de vídeos do Kwai funciona em qualquer dispositivo com navegador: Android, iOS, Windows, Mac e Linux. Para usar no PC, basta acessar baixarvideoskwai.com e seguir os mesmos passos do mobile." },
+  { question: "Qual a diferença entre Kwai e Kuaishou?", answer: "Kwai é a versão internacional do Kuaishou, app chinês de vídeos curtos. Ambos pertencem à mesma empresa e compartilham funcionalidades como Kwai short video community. Nosso downloader suporta vídeos de ambas as plataformas." },
+  { question: "Posso baixar vídeos do Kwai em MP4?", answer: "Sim! Todos os downloads são convertidos automaticamente para o formato MP4, compatível com qualquer player de vídeo. Funciona como um kwai to mp4 converter integrado ao baixador." },
+  { question: "Preciso instalar APK ou aplicativo para usar?", answer: "Não! Diferente de soluções que exigem Kwai APK download ou Kwai downloader APK, nossa ferramenta é 100% online e roda diretamente no navegador, sem instalações adicionais." },
 ];
 
 export interface VideoResult {
@@ -115,6 +116,7 @@ export default function Index() {
 
           <HowItWorks />
           <SupportedFormats />
+          <SEOContentBlock />
           <FAQ />
         </main>
 
