@@ -42,6 +42,7 @@ export default function KwaiAPK() {
         description="Informações sobre Kwai APK download oficial 2026. Baixe o Kwai app original com segurança garantida — Android, iOS e novidades da versão mais recente."
         canonical="/kwai-apk"
         breadcrumbs={crumbs}
+        faq={apkFaq}
       />
 
       <div className="max-w-4xl mx-auto px-4 py-10">
