@@ -26,6 +26,13 @@ const dontDo = [
   "Compartilhar credenciais com sites de terceiros",
 ];
 
+const apkFaq = [
+  { question: "Onde baixar o Kwai APK original com segurança?", answer: "Sempre baixe o Kwai APK original na Google Play Store (Android), App Store (iOS) ou no site oficial da Kuaishou. Evite sites que oferecem 'Kwai mod APK' — eles podem conter malware." },
+  { question: "O Kwai APK é gratuito?", answer: "Sim. O Kwai app é totalmente gratuito tanto na Google Play quanto na App Store. Não pague por versões 'premium' não oficiais." },
+  { question: "Qual a versão mais recente do Kwai em 2026?", answer: "A versão 2026 do Kwai traz suporte a vídeos em 4K, 60fps, modo offline e melhorias no Kwai Golds. Atualize sempre pela loja oficial." },
+  { question: "Preciso do Kwai APK para baixar vídeos?", answer: "Não. Você não precisa instalar o Kwai APK para baixar vídeos do Kwai sem marca d'água — basta usar o KwaiSave online no navegador." },
+];
+
 export default function KwaiAPK() {
   const crumbs = [{ name: "Início", url: "/" }, { name: "Kwai APK", url: "/kwai-apk" }];
   return (
@@ -35,6 +42,7 @@ export default function KwaiAPK() {
         description="Informações sobre Kwai APK download oficial 2026. Baixe o Kwai app original com segurança garantida — Android, iOS e novidades da versão mais recente."
         canonical="/kwai-apk"
         breadcrumbs={crumbs}
+        faq={apkFaq}
       />
 
       <div className="max-w-4xl mx-auto px-4 py-10">

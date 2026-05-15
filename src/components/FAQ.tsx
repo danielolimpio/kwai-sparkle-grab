@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+export const homeFaqs = [
   { q: "É grátis baixar vídeos Kwai?", a: "Sim! O KwaiSave é um baixador de vídeos do Kwai 100% grátis e sem limites. Baixe quantos vídeos quiser, sem cadastro e sem pagamento." },
   { q: "Preciso fazer login para baixar vídeo do Kwai?", a: "Não! Basta copiar o link do vídeo público do Kwai e colar aqui. Não pedimos login nem dados pessoais para o download vídeo Kwai." },
   { q: "Os vídeos baixam sem a marca d'água do Kwai?", a: "Sim! Nosso sistema permite baixar vídeo do Kwai sem marca d'água automaticamente, entregando o vídeo limpo e em alta qualidade." },
@@ -13,6 +13,7 @@ const faqs = [
   { q: "Funciona baixar vídeo do Kwai de contas privadas?", a: "Não. Só é possível baixar vídeos do Kwai de contas públicas. Conteúdos privados são protegidos pela plataforma." },
   { q: "É seguro usar o KwaiSave para salvar vídeo do Kwai?", a: "Totalmente! Não armazenamos seus dados, não pedimos login e o site é protegido por HTTPS. Baixar vídeo do Kwai por link aqui é seguro." },
 ];
+const faqs = homeFaqs;
 
 export function FAQ() {
   return (
