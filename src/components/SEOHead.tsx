@@ -34,14 +34,6 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
     alternateName: ["Baixar Videos Kwai", "Baixador de Videos do Kwai", "Kwai Download Video"],
     url: SITE_URL,
     description: "Baixar vídeos Kwai sem marca d'água em alta qualidade. Baixador de vídeos do Kwai online, grátis e ilimitado.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE_URL}/?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 
   const appSchema = {
