@@ -30,6 +30,13 @@ const tips = [
   { icon: ShieldCheck, title: "100% seguro", desc: "Sem instalação de kwai apk, sem cadastro, sem coleta de dados. É um kwai downloader without watermark realmente confiável." },
 ];
 
+const tutorialFaq = [
+  { question: "Quanto tempo leva para baixar um vídeo do Kwai?", answer: "Em média, 5 a 15 segundos. O tempo varia conforme a duração e a resolução do vídeo, mas o KwaiSave processa o download de vídeos do Kwai diretamente, sem filas." },
+  { question: "Preciso instalar algum app para seguir este tutorial?", answer: "Não. Todo o processo é feito pelo navegador. Não é necessário Kwai APK, extensão ou aplicativo extra para baixar vídeo do Kwai sem marca d'água." },
+  { question: "Posso baixar vídeos do Kwai no iPhone?", answer: "Sim. O tutorial funciona em iPhone, iPad, Android, PC e Mac. No iOS, salve em 'Arquivos' ou compartilhe direto para a galeria depois do download." },
+  { question: "O vídeo baixado fica em MP4?", answer: "Sim. Todos os downloads ficam em MP4 sem marca d'água, prontos para tocar em qualquer player ou enviar pelo WhatsApp." },
+];
+
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
