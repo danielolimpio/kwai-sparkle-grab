@@ -63,6 +63,7 @@ export default function BaixarTutorial() {
         description="Aprenda como baixar vídeos do Kwai sem marca d'água em 3 passos. Tutorial ilustrado para download kwai video by link em MP4, grátis e online."
         canonical="/baixar-tutorial"
         breadcrumbs={crumbs}
+        faq={tutorialFaq}
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
