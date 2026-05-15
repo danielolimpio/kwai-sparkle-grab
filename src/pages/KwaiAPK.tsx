@@ -1,6 +1,7 @@
 import { Smartphone, ShieldCheck, AlertTriangle, Download, CheckCircle2, XCircle, Globe, Apple, Cpu, Award } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 import { SEOHead } from "@/components/SEOHead";
+import { RelatedLinks } from "@/components/RelatedLinks";
 import { Link } from "react-router-dom";
 
 const safeSources = [
@@ -26,13 +27,14 @@ const dontDo = [
 ];
 
 export default function KwaiAPK() {
+  const crumbs = [{ name: "Início", url: "/" }, { name: "Kwai APK", url: "/kwai-apk" }];
   return (
-    <PageLayout>
+    <PageLayout breadcrumbs={crumbs}>
       <SEOHead
         title="Kwai APK Download 2026 | Versão Original e Segura para Android"
         description="Informações sobre Kwai APK download oficial 2026. Baixe o Kwai app original com segurança garantida — Android, iOS e novidades da versão mais recente."
         canonical="/kwai-apk"
-        breadcrumbs={[{ name: "Início", url: "/" }, { name: "Kwai APK", url: "/kwai-apk" }]}
+        breadcrumbs={crumbs}
       />
 
       <div className="max-w-4xl mx-auto px-4 py-10">
@@ -147,6 +149,15 @@ export default function KwaiAPK() {
           </Link>
         </div>
       </div>
+
+      <RelatedLinks
+        items={[
+          { title: "Tutorial: Como Baixar Vídeos do Kwai", description: "Passo a passo ilustrado para download em MP4 sem marca d'água.", url: "/baixar-tutorial", icon: "tutorial" },
+          { title: "Perguntas Frequentes (FAQ)", description: "Tire dúvidas sobre o baixador de vídeos do Kwai.", url: "/faq", icon: "faq" },
+          { title: "Uso Responsável", description: "Boas práticas de direitos autorais ao baixar vídeos do Kwai.", url: "/uso-responsavel", icon: "uso" },
+          { title: "Blog KwaiSave", description: "Dicas e novidades sobre Kwai short video community.", url: "/blog", icon: "blog" },
+        ]}
+      />
     </PageLayout>
   );
 }
