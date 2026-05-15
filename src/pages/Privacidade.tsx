@@ -4,7 +4,7 @@ import { SEOHead } from "@/components/SEOHead";
 
 export default function Privacidade() {
   return (
-    <PageLayout>
+    <PageLayout breadcrumbs={[{ name: "Início", url: "/" }, { name: "Privacidade", url: "/privacidade" }]}>
       <SEOHead title="Política de Privacidade — Baixar Vídeos Kwai com Segurança" description="Saiba como o KwaiSave protege seus dados ao baixar vídeos do Kwai. Não coletamos informações pessoais. Download vídeo Kwai com total privacidade." canonical="/privacidade" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Privacidade", url: "/privacidade" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">

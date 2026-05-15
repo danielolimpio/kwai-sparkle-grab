@@ -37,7 +37,7 @@ export default function Downloads() {
   };
 
   return (
-    <PageLayout>
+    <PageLayout breadcrumbs={[{ name: "Início", url: "/" }, { name: "Meus Downloads", url: "/downloads" }]}>
       <SEOHead title="Meus Downloads — Vídeos Baixados do Kwai" description="Histórico de vídeos baixados do Kwai sem marca d'água. Veja seus downloads de vídeos Kwai salvos localmente no navegador." canonical="/downloads" noindex breadcrumbs={[{ name: "Início", url: "/" }, { name: "Downloads", url: "/downloads" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">

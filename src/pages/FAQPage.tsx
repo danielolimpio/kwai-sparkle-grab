@@ -192,7 +192,7 @@ const faqSchemaData = faqCategories.flatMap((cat) =>
 
 export default function FAQPage() {
   return (
-    <PageLayout>
+    <PageLayout breadcrumbs={[{ name: "Início", url: "/" }, { name: "FAQ", url: "/faq" }]}>
       <SEOHead
         title="FAQ — Perguntas Frequentes sobre Baixar Vídeos Kwai"
         description="Tire suas dúvidas sobre como baixar vídeos Kwai sem marca d'água. Respostas sobre download vídeo Kwai, qualidade, segurança, compatibilidade e como salvar vídeo do Kwai por link."

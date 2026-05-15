@@ -23,7 +23,7 @@ export default function Contato() {
   };
 
   return (
-    <PageLayout>
+    <PageLayout breadcrumbs={[{ name: "Início", url: "/" }, { name: "Contato", url: "/contato" }]}>
       <SEOHead title="Contato — Suporte para Baixar Vídeos Kwai" description="Entre em contato com o suporte do KwaiSave. Tire dúvidas sobre como baixar vídeos do Kwai sem marca d'água, download vídeo Kwai e mais." canonical="/contato" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Contato", url: "/contato" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
