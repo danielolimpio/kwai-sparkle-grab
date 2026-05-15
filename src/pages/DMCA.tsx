@@ -4,7 +4,7 @@ import { SEOHead } from "@/components/SEOHead";
 
 export default function DMCA() {
   return (
-    <PageLayout>
+    <PageLayout breadcrumbs={[{ name: "Início", url: "/" }, { name: "DMCA", url: "/dmca" }]}>
       <SEOHead title="Política DMCA — Direitos Autorais | Baixar Vídeos Kwai" description="Política DMCA do KwaiSave, baixador de vídeos do Kwai. Saiba como enviar notificações sobre direitos autorais ao baixar vídeos do Kwai sem marca d'água." canonical="/dmca" breadcrumbs={[{ name: "Início", url: "/" }, { name: "DMCA", url: "/dmca" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">

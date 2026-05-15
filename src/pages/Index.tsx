@@ -11,6 +11,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { SupportedFormats } from "@/components/SupportedFormats";
 import { FAQ } from "@/components/FAQ";
 import { SEOContentBlock } from "@/components/SEOContentBlock";
+import { RelatedLinks } from "@/components/RelatedLinks";
 import { AppFooter } from "@/components/AppFooter";
 import { SEOHead } from "@/components/SEOHead";
 
@@ -118,6 +119,17 @@ export default function Index() {
           <SupportedFormats />
           <SEOContentBlock />
           <FAQ />
+          <RelatedLinks
+            title="Explore mais conteúdos"
+            items={[
+              { title: "Tutorial: Como Baixar Vídeos do Kwai", description: "Guia passo a passo para baixar vídeos do Kwai sem marca d'água em MP4.", url: "/baixar-tutorial", icon: "tutorial" },
+              { title: "Kwai APK Download Oficial", description: "Onde baixar o Kwai app original para Android e iOS com segurança.", url: "/kwai-apk", icon: "apk" },
+              { title: "Perguntas Frequentes", description: "Tudo sobre o baixador de vídeos do Kwai e como usar.", url: "/faq", icon: "faq" },
+              { title: "Meus Downloads", description: "Histórico dos vídeos do Kwai que você já salvou.", url: "/downloads", icon: "download" },
+              { title: "Uso Responsável e Direitos Autorais", description: "Boas práticas ao salvar vídeo do Kwai de outros criadores.", url: "/uso-responsavel", icon: "uso" },
+              { title: "Blog KwaiSave", description: "Dicas, novidades e tendências do Kwai short video community.", url: "/blog", icon: "blog" },
+            ]}
+          />
         </main>
 
         <AppFooter />

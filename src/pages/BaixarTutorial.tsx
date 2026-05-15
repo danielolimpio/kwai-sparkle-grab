@@ -1,6 +1,7 @@
 import { ClipboardCopy, Link2, Download, CheckCircle2, Smartphone, Monitor, Zap, ShieldCheck, HelpCircle } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 import { SEOHead } from "@/components/SEOHead";
+import { RelatedLinks } from "@/components/RelatedLinks";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
@@ -47,13 +48,14 @@ const howToSchema = {
 };
 
 export default function BaixarTutorial() {
+  const crumbs = [{ name: "Início", url: "/" }, { name: "Tutorial", url: "/baixar-tutorial" }];
   return (
-    <PageLayout>
+    <PageLayout breadcrumbs={crumbs}>
       <SEOHead
         title="Como Baixar Vídeos do Kwai | Tutorial Passo a Passo 2026"
         description="Aprenda como baixar vídeos do Kwai sem marca d'água em 3 passos. Tutorial ilustrado para download kwai video by link em MP4, grátis e online."
         canonical="/baixar-tutorial"
-        breadcrumbs={[{ name: "Início", url: "/" }, { name: "Tutorial", url: "/baixar-tutorial" }]}
+        breadcrumbs={crumbs}
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
@@ -125,6 +127,15 @@ export default function BaixarTutorial() {
           </Link>
         </div>
       </div>
+
+      <RelatedLinks
+        items={[
+          { title: "Kwai APK Original 2026", description: "Saiba onde baixar o Kwai app oficial com segurança garantida.", url: "/kwai-apk", icon: "apk" },
+          { title: "Perguntas Frequentes", description: "Respostas para as dúvidas mais comuns sobre o baixador.", url: "/faq", icon: "faq" },
+          { title: "Meus Downloads", description: "Veja o histórico de vídeos do Kwai que você já baixou.", url: "/downloads", icon: "download" },
+          { title: "Uso Responsável", description: "Direitos autorais e regras ao salvar vídeo do Kwai.", url: "/uso-responsavel", icon: "uso" },
+        ]}
+      />
     </PageLayout>
   );
 }

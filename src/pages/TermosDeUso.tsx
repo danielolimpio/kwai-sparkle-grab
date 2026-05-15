@@ -4,7 +4,7 @@ import { SEOHead } from "@/components/SEOHead";
 
 export default function TermosDeUso() {
   return (
-    <PageLayout>
+    <PageLayout breadcrumbs={[{ name: "Início", url: "/" }, { name: "Termos de Uso", url: "/termos-de-uso" }]}>
       <SEOHead title="Termos de Uso — Baixar Vídeos do Kwai" description="Termos de uso do KwaiSave, o baixador de vídeos do Kwai. Conheça suas responsabilidades ao baixar vídeos Kwai sem marca d'água." canonical="/termos-de-uso" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Termos de Uso", url: "/termos-de-uso" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">

@@ -6,7 +6,7 @@ import kwaiHero2 from "@/assets/kwai-hero-2.png";
 
 export default function Sobre() {
   return (
-    <PageLayout>
+    <PageLayout breadcrumbs={[{ name: "Início", url: "/" }, { name: "Sobre", url: "/sobre" }]}>
       <SEOHead title="Sobre o KwaiSave — Baixador de Vídeos do Kwai" description="Conheça o KwaiSave, o melhor baixador de vídeos do Kwai. Ferramenta gratuita para baixar vídeos Kwai sem marca d'água em alta qualidade, online e por link." canonical="/sobre" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Sobre", url: "/sobre" }]} />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
