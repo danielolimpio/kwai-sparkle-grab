@@ -9,20 +9,13 @@ import { FeatureCards } from "@/components/FeatureCards";
 import { VideoCard } from "@/components/VideoCard";
 import { HowItWorks } from "@/components/HowItWorks";
 import { SupportedFormats } from "@/components/SupportedFormats";
-import { FAQ } from "@/components/FAQ";
+import { FAQ, homeFaqs } from "@/components/FAQ";
 import { SEOContentBlock } from "@/components/SEOContentBlock";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { AppFooter } from "@/components/AppFooter";
 import { SEOHead } from "@/components/SEOHead";
 
-const homeFAQ = [
-  { question: "Como baixar vídeos do Kwai sem marca d'água?", answer: "Para fazer download de vídeos do Kwai sem marca d'água, copie o link do vídeo no app Kwai, cole em nosso baixador online e clique em 'Baixar'. O arquivo será salvo em MP4 com qualidade original, sem logotipos ou marcas." },
-  { question: "É seguro usar este Kwai video downloader?", answer: "Sim. Nossa ferramenta é 100% online, não requer instalação de Kwai APK adicional, não coleta dados pessoais e processa os downloads diretamente do servidor oficial. Recomendamos sempre usar o Kwai app oficial para sua segurança." },
-  { question: "Funciona no PC ou apenas no celular?", answer: "Nosso baixador de vídeos do Kwai funciona em qualquer dispositivo com navegador: Android, iOS, Windows, Mac e Linux. Para usar no PC, basta acessar baixarvideoskwai.com e seguir os mesmos passos do mobile." },
-  { question: "Qual a diferença entre Kwai e Kuaishou?", answer: "Kwai é a versão internacional do Kuaishou, app chinês de vídeos curtos. Ambos pertencem à mesma empresa e compartilham funcionalidades como Kwai short video community. Nosso downloader suporta vídeos de ambas as plataformas." },
-  { question: "Posso baixar vídeos do Kwai em MP4?", answer: "Sim! Todos os downloads são convertidos automaticamente para o formato MP4, compatível com qualquer player de vídeo. Funciona como um kwai to mp4 converter integrado ao baixador." },
-  { question: "Preciso instalar APK ou aplicativo para usar?", answer: "Não! Diferente de soluções que exigem Kwai APK download ou Kwai downloader APK, nossa ferramenta é 100% online e roda diretamente no navegador, sem instalações adicionais." },
-];
+const homeFAQ = homeFaqs.map((f) => ({ question: f.q, answer: f.a }));
 
 export interface VideoResult {
   title: string;
