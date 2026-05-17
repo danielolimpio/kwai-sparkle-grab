@@ -102,10 +102,27 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
       {/* Showcase images */}
       <div className="max-w-5xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 px-2">
         <div className="rounded-2xl overflow-hidden border border-border shadow-lg hover:shadow-kwai-lg hover:-translate-y-1 transition-all duration-300">
-          <img src={kwaiHero1} alt="Baixar vídeos do Kwai sem marca d'água — download grátis online" className="w-full h-auto object-cover" loading="lazy" />
+          <img
+            src={kwaiHero1}
+            alt="Baixar vídeos do Kwai sem marca d'água — download grátis online"
+            width={1024}
+            height={576}
+            className="w-full h-auto object-cover"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+          />
         </div>
         <div className="rounded-2xl overflow-hidden border border-border shadow-lg hover:shadow-kwai-lg hover:-translate-y-1 transition-all duration-300">
-          <img src={kwaiHero2} alt="Kwai download vídeo em alta qualidade — salvar vídeo do Kwai por link" className="w-full h-auto object-cover" loading="lazy" />
+          <img
+            src={kwaiHero2}
+            alt="Kwai download vídeo em alta qualidade — salvar vídeo do Kwai por link"
+            width={1024}
+            height={576}
+            className="w-full h-auto object-cover"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </section>
