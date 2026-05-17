@@ -43,6 +43,12 @@ export default function KwaiAPK() {
         canonical="/kwai-apk"
         breadcrumbs={crumbs}
         faq={apkFaq}
+        schemaType="article"
+        article={{
+          headline: "Kwai APK Download 2026 — Versão Original e Segura para Android",
+          datePublished: "2026-04-01",
+          dateModified: "2026-05-15",
+        }}
       />
 
       <div className="max-w-4xl mx-auto px-4 py-10">

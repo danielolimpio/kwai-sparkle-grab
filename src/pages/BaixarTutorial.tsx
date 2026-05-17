@@ -64,6 +64,12 @@ export default function BaixarTutorial() {
         canonical="/baixar-tutorial"
         breadcrumbs={crumbs}
         faq={tutorialFaq}
+        schemaType="article"
+        article={{
+          headline: "Como Baixar Vídeos do Kwai — Tutorial Passo a Passo 2026",
+          datePublished: "2026-04-08",
+          dateModified: "2026-05-15",
+        }}
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
