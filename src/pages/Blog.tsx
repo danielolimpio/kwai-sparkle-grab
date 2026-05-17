@@ -23,7 +23,14 @@ const tagColors: Record<string, string> = {
 export default function Blog() {
   return (
     <PageLayout breadcrumbs={[{ name: "Início", url: "/" }, { name: "Blog", url: "/blog" }]}>
-      <SEOHead title="Blog — Como Baixar Vídeos do Kwai | Dicas e Tutoriais" description="Dicas e tutoriais sobre como baixar vídeos Kwai sem marca d'água. Guias atualizados sobre download vídeo Kwai, salvar vídeo do Kwai por link e mais." canonical="/blog" breadcrumbs={[{ name: "Início", url: "/" }, { name: "Blog", url: "/blog" }]} />
+      <SEOHead
+        title="Blog — Como Baixar Vídeos do Kwai | Dicas e Tutoriais"
+        description="Dicas e tutoriais sobre como baixar vídeos Kwai sem marca d'água. Guias atualizados sobre download vídeo Kwai, salvar vídeo do Kwai por link e mais."
+        canonical="/blog"
+        breadcrumbs={[{ name: "Início", url: "/" }, { name: "Blog", url: "/blog" }]}
+        schemaType="collection"
+        collection={posts.map((p) => ({ name: p.title, url: `/blog#post-${p.id}` }))}
+      />
       <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="flex items-center gap-3 mb-2">
           <div className="gradient-kwai p-2.5 rounded-xl shadow-kwai">
