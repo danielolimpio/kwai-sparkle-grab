@@ -1,0 +1,23 @@
+# KwaiSave — Baixar Vídeos do Kwai
+
+> Baixador online e gratuito de vídeos do Kwai sem marca d'água, em alta qualidade, por link e sem instalar nada.
+
+KwaiSave (baixarvideoskwai.com) é uma ferramenta web em português (PT-BR) para baixar vídeos padrão do Kwai. Não oferece suporte a Shorts, Lives ou Photos. O site não possui vínculo oficial com o Kwai e não armazena os vídeos baixados — todo histórico fica apenas no navegador do usuário.
+
+## Pages
+
+- [Início](/): Baixador principal — cole o link do Kwai e baixe o vídeo em MP4 sem marca d'água.
+- [Tutorial Passo a Passo](/baixar-tutorial): Como baixar vídeos do Kwai em 3 passos, com prints e dicas.
+- [Kwai APK](/kwai-apk): Guia sobre o aplicativo oficial Kwai para Android e iOS, segurança e versões.
+- [FAQ](/faq): Perguntas frequentes sobre downloads, qualidade, formatos e compatibilidade.
+- [Blog](/blog): Artigos e tutoriais sobre como baixar e usar vídeos do Kwai.
+- [Downloads](/downloads): Histórico local de vídeos baixados (armazenado no próprio navegador).
+- [Sobre](/sobre): Quem somos, missão e diferenciais do KwaiSave.
+- [Contato](/contato): Canais de contato para dúvidas, parcerias e suporte.
+- [Uso Responsável](/uso-responsavel): Orientações sobre direitos autorais e uso adequado dos downloads.
+
+## Optional
+
+- [Termos de Uso](/termos-de-uso): Termos legais de utilização do serviço.
+- [Política de Privacidade](/privacidade): Como tratamos dados e cookies.
+- [DMCA](/dmca): Política de remoção de conteúdo protegido por direitos autorais.
