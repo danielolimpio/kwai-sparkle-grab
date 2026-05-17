@@ -90,6 +90,7 @@ export default function Index() {
             canonical="/"
             breadcrumbs={[{ name: "Início", url: "/" }]}
             faq={homeFAQ}
+            schemaType="home"
           />
           <HeroSection
             onSearch={handleSearch}
