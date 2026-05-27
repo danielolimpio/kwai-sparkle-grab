@@ -24,7 +24,7 @@ export default function Blog() {
   return (
     <PageLayout breadcrumbs={[{ name: "Início", url: "/" }, { name: "Blog", url: "/blog" }]}>
       <SEOHead
-        title="Blog — Como Baixar Vídeos do Kwai | Dicas e Tutoriais"
+        title="Blog — Dicas para Baixar Vídeos Kwai"
         description="Dicas e tutoriais sobre como baixar vídeos Kwai sem marca d'água. Guias atualizados sobre download vídeo Kwai, salvar vídeo do Kwai por link e mais."
         canonical="/blog"
         breadcrumbs={[{ name: "Início", url: "/" }, { name: "Blog", url: "/blog" }]}

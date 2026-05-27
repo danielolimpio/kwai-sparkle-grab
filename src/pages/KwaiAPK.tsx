@@ -38,7 +38,7 @@ export default function KwaiAPK() {
   return (
     <PageLayout breadcrumbs={crumbs}>
       <SEOHead
-        title="Kwai APK Download 2026 | Versão Original e Segura para Android"
+        title="Kwai APK Download 2026 — Original"
         description="Informações sobre Kwai APK download oficial 2026. Baixe o Kwai app original com segurança garantida — Android, iOS e novidades da versão mais recente."
         canonical="/kwai-apk"
         breadcrumbs={crumbs}
