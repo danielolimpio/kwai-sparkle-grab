@@ -1,0 +1,26 @@
+{
+  "name": "KwaiSave - Baixar Vídeos do Kwai",
+  "short_name": "KwaiSave",
+  "description": "Baixador de vídeos do Kwai sem marca d'água, online e gratuito.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#FF5A1F",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
