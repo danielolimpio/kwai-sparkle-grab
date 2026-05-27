@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { HelmetProvider } from "react-helmet-async";
 import { lazy, Suspense } from "react";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { usePwaInstall } from "@/hooks/use-pwa-install";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -22,7 +23,9 @@ const KwaiAPK = lazy(() => import("./pages/KwaiAPK.tsx"));
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+  usePwaInstall();
+  return (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
       <Toaster />
@@ -50,5 +53,6 @@ const App = () => (
     </QueryClientProvider>
   </HelmetProvider>
 );
+};
 
 export default App;
