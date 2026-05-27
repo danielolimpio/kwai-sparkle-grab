@@ -194,8 +194,8 @@ export default function FAQPage() {
   return (
     <PageLayout breadcrumbs={[{ name: "Início", url: "/" }, { name: "FAQ", url: "/faq" }]}>
       <SEOHead
-        title="FAQ — Perguntas Frequentes sobre Baixar Vídeos Kwai"
-        description="Tire suas dúvidas sobre como baixar vídeos Kwai sem marca d'água. Respostas sobre download vídeo Kwai, qualidade, segurança, compatibilidade e como salvar vídeo do Kwai por link."
+        title="FAQ — Perguntas sobre Baixar Vídeos Kwai"
+        description="Tire suas dúvidas sobre baixar vídeos Kwai sem marca d'água. Veja respostas sobre qualidade, segurança e como salvar vídeo do Kwai por link."
         canonical="/faq"
         breadcrumbs={[
           { name: "Início", url: "/" },

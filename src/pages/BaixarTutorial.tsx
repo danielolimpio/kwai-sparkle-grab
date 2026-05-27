@@ -59,7 +59,7 @@ export default function BaixarTutorial() {
   return (
     <PageLayout breadcrumbs={crumbs}>
       <SEOHead
-        title="Como Baixar Vídeos do Kwai | Tutorial Passo a Passo 2026"
+        title="Baixar Vídeos do Kwai — Tutorial 2026"
         description="Aprenda como baixar vídeos do Kwai sem marca d'água em 3 passos. Tutorial ilustrado para download kwai video by link em MP4, grátis e online."
         canonical="/baixar-tutorial"
         breadcrumbs={crumbs}
