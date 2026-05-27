@@ -85,7 +85,7 @@ export default function Index() {
 
         <main className="flex-1">
           <SEOHead
-            title="Baixar Vídeos Kwai Sem Marca d'Água | Download Grátis"
+            title="Baixar Vídeos Kwai Sem Marca d'Água"
             description="Baixar vídeos Kwai sem marca d'água em alta qualidade. Baixador de vídeos do Kwai online e grátis. Salvar vídeo do Kwai por link, sem app e ilimitado."
             canonical="/"
             breadcrumbs={[{ name: "Início", url: "/" }]}
