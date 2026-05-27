@@ -35,6 +35,9 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           local-dir: ./dist/
           server-dir: /
+          protocol: ftps
+          security: loose
+          timeout: 60000
           dangerous-clean-slate: true
           dry-run: false
           log-level: verbose
