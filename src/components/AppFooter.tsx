@@ -44,6 +44,40 @@ export function AppFooter() {
             </a>
           ))}
         </div>
+        <div className="border-t border-border my-6" />
+        <div className="flex justify-center mb-6">
+          <a
+            href="https://batepapogratis.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Bate Papo Grátis"
+            className="group relative flex flex-col items-center gap-2 p-4 rounded-2xl bg-card border border-border overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/40"
+          >
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 -translate-x-full skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+            />
+            <img
+              src="/bate-papo-logo.png"
+              alt="Bate Papo - Chat grátis online"
+              width={160}
+              height={160}
+              loading="lazy"
+              decoding="async"
+              className="relative z-10 w-32 h-auto object-contain"
+            />
+            <img
+              src="/bate-papo-chat.gif"
+              alt="Balões de bate papo animados"
+              width={80}
+              height={80}
+              loading="lazy"
+              decoding="async"
+              className="relative z-10 w-16 h-16 object-contain"
+            />
+          </a>
+        </div>
+        <div className="border-t border-border mb-4" />
         <p className="text-center text-xs text-muted-foreground mb-2">
           © 2026 Baixar Vídeos Kwai. Não somos afiliados ao Kwai.
         </p>
