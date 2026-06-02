@@ -105,29 +105,29 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Bate Papo Grátis"
-            className="group relative mb-4 flex flex-col items-center gap-2 p-3 rounded-xl bg-muted/40 border border-border overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-primary/40"
+            className="group relative mb-4 flex flex-col items-center gap-0 p-3 rounded-xl bg-muted/40 border border-border overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-primary/40"
           >
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 -translate-x-full skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+              className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-0 transition-all duration-1000 ease-out group-hover:left-full group-hover:opacity-100"
             />
             <img
               src="/bate-papo-logo.png"
               alt="Bate Papo - Chat grátis online"
-              width={160}
-              height={160}
+              width={220}
+              height={220}
               loading="lazy"
               decoding="async"
-              className="relative z-10 w-28 h-auto object-contain"
+              className="relative z-10 w-44 h-auto object-contain -mb-2"
             />
             <img
               src="/bate-papo-chat.gif"
               alt="Balões de bate papo animados"
-              width={64}
-              height={64}
+              width={96}
+              height={96}
               loading="lazy"
               decoding="async"
-              className="relative z-10 w-12 h-12 object-contain"
+              className="relative z-10 w-20 h-20 object-contain -mt-1"
             />
           </a>
           <div className="border-t border-border mb-3" />
