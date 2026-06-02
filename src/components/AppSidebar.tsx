@@ -105,11 +105,11 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Bate Papo Grátis"
-            className="group relative mb-4 flex flex-col items-center gap-0 p-3 rounded-xl bg-muted/40 border border-border overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-primary/40"
+            className="group relative mb-4 flex flex-col items-center gap-0 p-2 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5"
           >
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-0 transition-all duration-1000 ease-out group-hover:left-full group-hover:opacity-100"
+              className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent opacity-0 transition-all duration-[1400ms] ease-out group-hover:left-full group-hover:opacity-100"
             />
             <img
               src="/bate-papo-logo.png"
@@ -118,7 +118,7 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
               height={220}
               loading="lazy"
               decoding="async"
-              className="relative z-10 w-44 h-auto object-contain -mb-2"
+              className="relative z-10 w-32 h-auto object-contain -mb-6"
             />
             <img
               src="/bate-papo-chat.gif"
@@ -127,7 +127,7 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
               height={96}
               loading="lazy"
               decoding="async"
-              className="relative z-10 w-20 h-20 object-contain -mt-1"
+              className="relative z-10 w-14 h-14 object-contain -mt-2"
             />
           </a>
           <div className="border-t border-border mb-3" />
