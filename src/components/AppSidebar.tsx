@@ -100,6 +100,37 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
         </nav>
 
         <div className="px-6 py-4 border-t border-border">
+          <a
+            href="https://batepapogratis.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Bate Papo Grátis"
+            className="group relative mb-4 flex flex-col items-center gap-2 p-3 rounded-xl bg-muted/40 border border-border overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-primary/40"
+          >
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 -translate-x-full skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+            />
+            <img
+              src="/bate-papo-logo.png"
+              alt="Bate Papo - Chat grátis online"
+              width={160}
+              height={160}
+              loading="lazy"
+              decoding="async"
+              className="relative z-10 w-28 h-auto object-contain"
+            />
+            <img
+              src="/bate-papo-chat.gif"
+              alt="Balões de bate papo animados"
+              width={64}
+              height={64}
+              loading="lazy"
+              decoding="async"
+              className="relative z-10 w-12 h-12 object-contain"
+            />
+          </a>
+          <div className="border-t border-border mb-3" />
           <p className="text-xs text-muted-foreground">KwaiSave v1.0</p>
           <p className="text-xs text-muted-foreground">© 2026 baixarvideoskwai.com</p>
         </div>
