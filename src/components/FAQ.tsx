@@ -13,6 +13,16 @@ export const homeFaqs = [
   { q: "Funciona baixar vídeo do Kwai de contas privadas?", a: "Não. Só é possível baixar vídeos do Kwai de contas públicas. Conteúdos privados são protegidos pela plataforma." },
   { q: "É seguro usar o KwaiSave para salvar vídeo do Kwai?", a: "Totalmente! Não armazenamos seus dados, não pedimos login e o site é protegido por HTTPS. Baixar vídeo do Kwai por link aqui é seguro." },
 ];
+
+homeFaqs.push(
+  { q: "Como baixar video do Kwai pelo celular?", a: "Para baixar video do Kwai pelo celular Android ou iPhone, abra o app Kwai, toque em Compartilhar, copie o link do vídeo e cole no KwaiSave. Em segundos você terá o baixar Kwai sem marca d'água pronto em MP4." },
+  { q: "Como baixar videos do Kwai sem marca d'água no PC?", a: "Para baixar videos do Kwai sem marca d'água no PC, basta colar o link do vídeo Kwai no KwaiSave e clicar em Baixar Agora. Não é preciso instalar Kwai APK, Kwai mod APK nem nenhum kwai video downloader extra — tudo é online." },
+  { q: "Posso baixar Kwai grátis sem instalar nada?", a: "Sim! O KwaiSave é um Kwai downloader 100% online. Você consegue baixar Kwai grátis, baixar vídeo Kwai online e fazer o download video Kwai direto pelo navegador, sem Kwai web app extra, sem extensão e sem cadastro." },
+  { q: "Dá para baixar video do Kwai por link em MP4 HD?", a: "Sim. O KwaiSave funciona como Kwai to MP4 converter, permitindo baixar video do Kwai por link em MP4 nas qualidades 1080p, 720p, 480p e 360p, sempre baixar vídeos sem marca d'água." },
+  { q: "O KwaiSave também serve como baixador do Kuaishou?", a: "Sim. Como o Kwai é a versão internacional do Kuaishou, o mesmo baixador de vídeos do Kwai funciona como Kuaishou downloader — basta colar a URL do vídeo para fazer o Kuaishou video download em MP4." },
+  { q: "Onde ficam os vídeos baixados do Kwai?", a: "Os vídeos baixados pelo KwaiSave ficam salvos na pasta padrão de Downloads do seu dispositivo (celular ou computador). Como o site não armazena nada, o arquivo MP4 é totalmente seu." },
+  { q: "É possível baixar Kwai sem marca d'água pelo Google Chrome?", a: "Sim. Você pode baixar Kwai sem marca d'água diretamente pelo Google Chrome, Safari, Edge ou Firefox. O KwaiSave dispensa instalar o Kwai pelo Google Play e funciona como kwai baixar pelo Google em qualquer navegador." },
+);
 const faqs = homeFaqs;
 
 export function FAQ() {

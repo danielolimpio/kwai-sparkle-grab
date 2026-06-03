@@ -76,7 +76,7 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
       bestRating: "5",
       worstRating: "1",
     },
-    keywords: "baixar videos kwai, kwai baixar vídeos, baixar video do kwai, baixar video do kwai sem marca d agua, baixador de videos do kwai, download vídeo kwai, salvar video do kwai",
+    keywords: "baixar video do kwai, baixar video kwai, baixar videos kwai, baixar vídeo do kwai, baixar kwai, baixar kwai grátis, baixar video do kwai sem marca d'água, baixar video kwai sem marca d'água, baixar videos do kwai sem marca d'água, baixar kwai sem marca d'água, kwai sem marca d'água, baixar video sem marca d'água, baixar vídeos sem marca d'água, baixar video do kwai online, baixar vídeo kwai online, baixar video do kwai por link, salvar vídeo do kwai, kwai download, kwai downloader, download video kwai, kwai baixar, kwai baixar vídeos, kwai baixar pelo google, kwai web, kwai video downloader, baixador de vídeos do kwai, kuaishou downloader, kuaishou video download, kwai to mp4, kwai mp4 download, como baixar video do kwai, como baixar videos do kwai sem marca d'água, magicdown, baixar do kwai sem marca d água",
   } : null;
 
   const articleSchema = schemaType === "article" && article ? {
