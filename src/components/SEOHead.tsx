@@ -76,7 +76,7 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
       bestRating: "5",
       worstRating: "1",
     },
-    keywords: "baixar video do kwai, baixar video kwai, baixar videos kwai, baixar vídeo do kwai, baixar kwai, baixar kwai grátis, baixar video do kwai sem marca d'água, baixar video kwai sem marca d'água, baixar videos do kwai sem marca d'água, baixar kwai sem marca d'água, kwai sem marca d'água, baixar video sem marca d'água, baixar vídeos sem marca d'água, baixar video do kwai online, baixar vídeo kwai online, baixar video do kwai por link, salvar vídeo do kwai, kwai download, kwai downloader, download video kwai, kwai baixar, kwai baixar vídeos, kwai baixar pelo google, kwai web, kwai video downloader, baixador de vídeos do kwai, kuaishou downloader, kuaishou video download, kwai to mp4, kwai mp4 download, como baixar video do kwai, como baixar videos do kwai sem marca d'água, magicdown, baixar do kwai sem marca d água",
+    keywords: "baixar video do kwai, baixar video kwai, baixar vídeo do kwai, baixar kwai, baixar kwai grátis, baixar video do kwai sem marca d'água, baixar kwai sem marca d'água, kwai sem marca d'água, baixar video sem marca d'água, baixar video do kwai online, baixar video do kwai por link, salvar vídeo do kwai, kwai download, kwai downloader, download video kwai, kwai baixar, kwai baixar pelo google, kwai web, kwai video downloader, baixador de vídeos do kwai, kuaishou downloader, kwai to mp4, kwai mp4 download, como baixar video do kwai, magicdown, download kwai, download kwai video, kwai video download, kwai downloader online, kwai no watermark, download kwai no watermark, save kwai video, kwai app download, kwai apk download, kwai for pc, kwai android download, kwai ios download, kuaishou downloader online, kuaishou no watermark, descargar kwai, descargar video kwai, descargar kwai sin marca de agua, télécharger kwai, télécharger vidéo kwai, kwai sans filigrane, kwai herunterladen, scaricare video kwai, kwai video indir, kwai filigransız indir, تحميل كواي, كواي بدون علامة مائية, unduh kwai, कवाई डाउनलोड, kwai watermark remover",
   } : null;
 
   const articleSchema = schemaType === "article" && article ? {
@@ -147,6 +147,15 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
       <link rel="canonical" href={fullCanonical} />
       <link rel="alternate" hrefLang="pt-BR" href={fullCanonical} />
       <link rel="alternate" hrefLang="pt" href={fullCanonical} />
+      <link rel="alternate" hrefLang="en" href={fullCanonical} />
+      <link rel="alternate" hrefLang="es" href={fullCanonical} />
+      <link rel="alternate" hrefLang="fr" href={fullCanonical} />
+      <link rel="alternate" hrefLang="de" href={fullCanonical} />
+      <link rel="alternate" hrefLang="it" href={fullCanonical} />
+      <link rel="alternate" hrefLang="id" href={fullCanonical} />
+      <link rel="alternate" hrefLang="tr" href={fullCanonical} />
+      <link rel="alternate" hrefLang="ar" href={fullCanonical} />
+      <link rel="alternate" hrefLang="hi" href={fullCanonical} />
       <link rel="alternate" hrefLang="x-default" href={fullCanonical} />
 
       {/* Open Graph */}
@@ -157,6 +166,15 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
       <meta property="og:image" content={OG_IMAGE} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content="pt_BR" />
+      <meta property="og:locale:alternate" content="en_US" />
+      <meta property="og:locale:alternate" content="es_ES" />
+      <meta property="og:locale:alternate" content="fr_FR" />
+      <meta property="og:locale:alternate" content="de_DE" />
+      <meta property="og:locale:alternate" content="it_IT" />
+      <meta property="og:locale:alternate" content="id_ID" />
+      <meta property="og:locale:alternate" content="tr_TR" />
+      <meta property="og:locale:alternate" content="ar_AR" />
+      <meta property="og:locale:alternate" content="hi_IN" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
