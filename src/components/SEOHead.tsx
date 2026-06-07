@@ -1,4 +1,7 @@
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
+import { LANG_META, SUPPORTED_LANGS } from "@/i18n";
+import { useCurrentLanguage } from "@/hooks/use-current-language";
 
 interface BreadcrumbItem {
   name: string;
@@ -42,8 +45,22 @@ const SITE_NAME = "KwaiSave";
 const OG_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4c93a6f8-946d-4bd7-87a5-3098021ed53e/id-preview-fed4d97f--b13535f0-46da-49d0-99d4-2ca3e62ee0c7.lovable.app-1775345774080.png";
 
 export function SEOHead({ title, description, canonical, breadcrumbs, faq, noindex, schemaType = "page", article, collection }: SEOHeadProps) {
-  const fullCanonical = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
+  const { lang } = useCurrentLanguage();
+  const location = useLocation();
+  const meta = LANG_META[lang];
+
+  // Build language-prefixed path. `canonical` is expected to be the language-neutral suffix
+  // (e.g. "/sobre" or "/"). If empty, derive from current pathname stripped of lang prefix.
+  const rawPath = canonical ?? (() => {
+    const parts = location.pathname.split("/").filter(Boolean);
+    if (parts[0] && (SUPPORTED_LANGS as readonly string[]).includes(parts[0])) parts.shift();
+    return "/" + parts.join("/");
+  })();
+  const suffix = rawPath === "/" || rawPath === "" ? "" : rawPath.startsWith("/") ? rawPath : `/${rawPath}`;
+  const fullCanonical = `${SITE_URL}/${lang}${suffix}`;
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} - ${SITE_NAME}`;
+
+  const altUrl = (l: string) => `${SITE_URL}/${l}${suffix}`;
 
   const websiteSchema = schemaType === "home" ? {
     "@context": "https://schema.org",
@@ -141,22 +158,18 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
 
   return (
     <Helmet>
+      <html lang={meta.htmlLang} dir={meta.dir} />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
       <link rel="canonical" href={fullCanonical} />
-      <link rel="alternate" hrefLang="pt-BR" href={fullCanonical} />
-      <link rel="alternate" hrefLang="pt" href={fullCanonical} />
-      <link rel="alternate" hrefLang="en" href={fullCanonical} />
-      <link rel="alternate" hrefLang="es" href={fullCanonical} />
-      <link rel="alternate" hrefLang="fr" href={fullCanonical} />
-      <link rel="alternate" hrefLang="de" href={fullCanonical} />
-      <link rel="alternate" hrefLang="it" href={fullCanonical} />
-      <link rel="alternate" hrefLang="id" href={fullCanonical} />
-      <link rel="alternate" hrefLang="tr" href={fullCanonical} />
-      <link rel="alternate" hrefLang="ar" href={fullCanonical} />
-      <link rel="alternate" hrefLang="hi" href={fullCanonical} />
-      <link rel="alternate" hrefLang="x-default" href={fullCanonical} />
+      <link rel="alternate" hrefLang="pt-BR" href={altUrl("pt")} />
+      <link rel="alternate" hrefLang="pt" href={altUrl("pt")} />
+      <link rel="alternate" hrefLang="es" href={altUrl("es")} />
+      <link rel="alternate" hrefLang="fr" href={altUrl("fr")} />
+      <link rel="alternate" hrefLang="ar" href={altUrl("ar")} />
+      <link rel="alternate" hrefLang="en" href={altUrl("en")} />
+      <link rel="alternate" hrefLang="x-default" href={altUrl("en")} />
 
       {/* Open Graph */}
       <meta property="og:type" content="website" />
@@ -165,16 +178,10 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
       <meta property="og:description" content={description} />
       <meta property="og:image" content={OG_IMAGE} />
       <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:locale" content="pt_BR" />
-      <meta property="og:locale:alternate" content="en_US" />
-      <meta property="og:locale:alternate" content="es_ES" />
-      <meta property="og:locale:alternate" content="fr_FR" />
-      <meta property="og:locale:alternate" content="de_DE" />
-      <meta property="og:locale:alternate" content="it_IT" />
-      <meta property="og:locale:alternate" content="id_ID" />
-      <meta property="og:locale:alternate" content="tr_TR" />
-      <meta property="og:locale:alternate" content="ar_AR" />
-      <meta property="og:locale:alternate" content="hi_IN" />
+      <meta property="og:locale" content={meta.ogLocale} />
+      {SUPPORTED_LANGS.filter((l) => l !== lang).map((l) => (
+        <meta key={l} property="og:locale:alternate" content={LANG_META[l].ogLocale} />
+      ))}
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
