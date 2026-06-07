@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useCurrentLanguage, buildPath } from "@/hooks/use-current-language";
 import logoInstagram from "@/assets/baixar-instagram.png";
 import logoFacebook from "@/assets/baixar-facebook.png";
 import logoYoutube from "@/assets/baixar-youtube.png";
@@ -14,21 +16,24 @@ const externalLinks = [
 ];
 
 export function AppFooter() {
+  const { t } = useTranslation();
+  const { lang } = useCurrentLanguage();
+  const L = (p: string) => buildPath(lang, p);
   return (
     <footer className="bg-card border-t border-border mt-8">
       <div className="max-w-5xl mx-auto px-4 py-8">
         <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground mb-4">
-          <Link to="/termos-de-uso" className="hover:text-primary transition-colors">Termos de Uso</Link>
-          <Link to="/privacidade" className="hover:text-primary transition-colors">Privacidade</Link>
-          <Link to="/dmca" className="hover:text-primary transition-colors">DMCA</Link>
-          <Link to="/contato" className="hover:text-primary transition-colors">Contato</Link>
-          <Link to="/sobre" className="hover:text-primary transition-colors">Sobre</Link>
-          <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
-          <Link to="/downloads" className="hover:text-primary transition-colors">Downloads</Link>
-          <Link to="/uso-responsavel" className="hover:text-primary transition-colors">Uso Responsável</Link>
-          <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
-          <Link to="/baixar-tutorial" className="hover:text-primary transition-colors">Tutorial</Link>
-          <Link to="/kwai-apk" className="hover:text-primary transition-colors">Kwai APK</Link>
+          <Link to={L("/termos-de-uso")} className="hover:text-primary transition-colors">{t("footer.links.terms")}</Link>
+          <Link to={L("/privacidade")} className="hover:text-primary transition-colors">{t("footer.links.privacy")}</Link>
+          <Link to={L("/dmca")} className="hover:text-primary transition-colors">{t("footer.links.dmca")}</Link>
+          <Link to={L("/contato")} className="hover:text-primary transition-colors">{t("footer.links.contact")}</Link>
+          <Link to={L("/sobre")} className="hover:text-primary transition-colors">{t("footer.links.about")}</Link>
+          <Link to={L("/blog")} className="hover:text-primary transition-colors">{t("footer.links.blog")}</Link>
+          <Link to={L("/downloads")} className="hover:text-primary transition-colors">{t("footer.links.downloads")}</Link>
+          <Link to={L("/uso-responsavel")} className="hover:text-primary transition-colors">{t("footer.links.responsible")}</Link>
+          <Link to={L("/faq")} className="hover:text-primary transition-colors">{t("footer.links.faq")}</Link>
+          <Link to={L("/baixar-tutorial")} className="hover:text-primary transition-colors">{t("footer.links.tutorial")}</Link>
+          <Link to={L("/kwai-apk")} className="hover:text-primary transition-colors">{t("footer.links.kwaiApk")}</Link>
         </div>
         <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mb-4">
           {externalLinks.map((link) => (
@@ -44,12 +49,8 @@ export function AppFooter() {
             </a>
           ))}
         </div>
-        <p className="text-center text-xs text-muted-foreground mb-2">
-          © 2026 Baixar Vídeos Kwai. Não somos afiliados ao Kwai.
-        </p>
-        <p className="text-center text-xs text-muted-foreground max-w-xl mx-auto">
-          Este site não é afiliado, endossado ou patrocinado pelo Kwai ou Kuaishou Technology. Respeite os direitos autorais.
-        </p>
+        <p className="text-center text-xs text-muted-foreground mb-2">{t("footer.copyright")}</p>
+        <p className="text-center text-xs text-muted-foreground max-w-xl mx-auto">{t("footer.disclaimer")}</p>
       </div>
     </footer>
   );
