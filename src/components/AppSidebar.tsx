@@ -1,6 +1,9 @@
 import { Video, Info, BookOpen, Mail, Download, HelpCircle, Smartphone, BookMarked } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useCurrentLanguage } from "@/hooks/use-current-language";
+import { buildPath } from "@/hooks/use-current-language";
 import logoKwai from "@/assets/logo-kwai.png";
 import logoInstagram from "@/assets/baixar-instagram.png";
 import logoFacebook from "@/assets/baixar-facebook.png";
@@ -8,16 +11,16 @@ import logoYoutube from "@/assets/baixar-youtube.png";
 import logoTiktok from "@/assets/baixar-tiktok.png";
 import logoTwitter from "@/assets/baixar-twitter.jpg";
 
-const navItems = [
-  { icon: Video, label: "Vídeos", path: "/" },
-  { icon: BookMarked, label: "Tutorial", path: "/baixar-tutorial" },
-  { icon: Smartphone, label: "Kwai APK", path: "/kwai-apk" },
-  { icon: Download, label: "Downloads", path: "/downloads" },
-  { icon: Info, label: "Sobre", path: "/sobre" },
-  { icon: BookOpen, label: "Blog", path: "/blog" },
-  { icon: Mail, label: "Contato", path: "/contato" },
-  { icon: HelpCircle, label: "FAQ", path: "/faq" },
-];
+const navConfig = [
+  { icon: Video, key: "videos", path: "/" },
+  { icon: BookMarked, key: "tutorial", path: "/baixar-tutorial" },
+  { icon: Smartphone, key: "kwaiApk", path: "/kwai-apk" },
+  { icon: Download, key: "downloads", path: "/downloads" },
+  { icon: Info, key: "about", path: "/sobre" },
+  { icon: BookOpen, key: "blog", path: "/blog" },
+  { icon: Mail, key: "contact", path: "/contato" },
+  { icon: HelpCircle, key: "faq", path: "/faq" },
+] as const;
 
 const externalLinks = [
   { label: "Baixar Instagram", url: "https://baixarvideosinstagram.com", logo: logoInstagram },
@@ -37,6 +40,9 @@ interface AppSidebarProps {
 export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
+  const { lang } = useCurrentLanguage();
+  const navItems = navConfig.map((n) => ({ ...n, label: t(`nav.${n.key}`), to: buildPath(lang, n.path) }));
 
   return (
     <>
@@ -50,23 +56,23 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
       >
         <div
           className="flex items-center gap-3 px-6 py-6 border-b border-border cursor-pointer shrink-0"
-          onClick={() => { navigate("/"); onClose(); }}
+          onClick={() => { navigate(buildPath(lang, "/")); onClose(); }}
         >
           <img src={logoKwai} alt="KwaiSave" className="h-10 w-10 rounded-xl shadow-kwai" />
           <div>
             <h1 className="text-lg font-bold text-foreground">KwaiSave</h1>
-            <p className="text-xs text-muted-foreground">Baixar Vídeos</p>
+            <p className="text-xs text-muted-foreground">{t("sidebar.tagline")}</p>
           </div>
         </div>
 
         <nav className="px-3 py-4 space-y-1">
           {navItems.map((item) => {
-            const isActive = location.pathname === item.path;
+            const isActive = location.pathname === item.to;
             return (
               <button
-                key={item.path}
+                key={item.to}
                 onClick={() => {
-                  navigate(item.path);
+                  navigate(item.to);
                   onClose();
                 }}
                 className={cn(
@@ -83,7 +89,7 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
           })}
 
           <div className="pt-4 mt-4 border-t border-border">
-            <p className="px-4 pb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Outros Baixadores</p>
+            <p className="px-4 pb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("sidebar.others")}</p>
             {externalLinks.map((link) => (
               <a
                 key={link.url}
@@ -127,8 +133,8 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
             />
           </a>
           <div className="border-t border-border mb-3" />
-          <p className="text-xs text-muted-foreground">KwaiSave v1.0</p>
-          <p className="text-xs text-muted-foreground">© 2026 baixarvideoskwai.com</p>
+          <p className="text-xs text-muted-foreground">KwaiSave {t("sidebar.version")}</p>
+          <p className="text-xs text-muted-foreground">{t("sidebar.copyright")}</p>
         </div>
       </aside>
     </>
