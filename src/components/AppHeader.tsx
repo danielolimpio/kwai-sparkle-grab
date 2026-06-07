@@ -42,7 +42,6 @@ export function AppHeader({ onMenuToggle }: AppHeaderProps) {
           )}
         </button>
       </div>
-      </button>
     </header>
   );
 }
