@@ -1,6 +1,8 @@
 import { Menu, Moon, Sun } from "lucide-react";
 import logoKwai from "@/assets/logo-kwai.png";
 import { useTheme } from "@/hooks/use-theme";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 interface AppHeaderProps {
   onMenuToggle: () => void;
@@ -8,6 +10,7 @@ interface AppHeaderProps {
 
 export function AppHeader({ onMenuToggle }: AppHeaderProps) {
   const { theme, toggleTheme } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <header className="sticky top-0 z-30 h-[60px] bg-card border-b border-border flex items-center justify-between px-4 lg:px-6">
@@ -15,7 +18,7 @@ export function AppHeader({ onMenuToggle }: AppHeaderProps) {
         <button
           onClick={onMenuToggle}
           className="lg:hidden p-2 rounded-xl hover:bg-muted transition-colors"
-          aria-label="Abrir menu"
+          aria-label={t("header.menu")}
         >
           <Menu className="h-5 w-5 text-foreground" />
         </button>
@@ -25,16 +28,20 @@ export function AppHeader({ onMenuToggle }: AppHeaderProps) {
         </div>
       </div>
 
-      <button
-        onClick={toggleTheme}
-        className="p-2 rounded-xl hover:bg-muted transition-colors"
-        aria-label={theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"}
-      >
-        {theme === "dark" ? (
-          <Sun className="h-5 w-5 text-foreground" />
-        ) : (
-          <Moon className="h-5 w-5 text-foreground" />
-        )}
+      <div className="flex items-center gap-1">
+        <LanguageSwitcher />
+        <button
+          onClick={toggleTheme}
+          className="p-2 rounded-xl hover:bg-muted transition-colors"
+          aria-label={theme === "dark" ? t("header.light") : t("header.dark")}
+        >
+          {theme === "dark" ? (
+            <Sun className="h-5 w-5 text-foreground" />
+          ) : (
+            <Moon className="h-5 w-5 text-foreground" />
+          )}
+        </button>
+      </div>
       </button>
     </header>
   );
