@@ -1,7 +1,6 @@
 import { Video } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const tabs = [{ id: "videos", label: "Vídeos", icon: Video }];
+import { useTranslation } from "react-i18next";
 
 interface ContentTabsProps {
   activeTab: string;
@@ -9,6 +8,8 @@ interface ContentTabsProps {
 }
 
 export function ContentTabs({ activeTab, onTabChange }: ContentTabsProps) {
+  const { t } = useTranslation();
+  const tabs = [{ id: "videos", label: t("tabs.videos") as string, icon: Video }];
   return (
     <div className="flex items-center justify-center gap-2 flex-wrap px-4 py-4">
       {tabs.map((tab) => (

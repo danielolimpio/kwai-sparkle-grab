@@ -1,6 +1,7 @@
 import { Play, Eye, Heart, Download, CheckCircle, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 import { addToDownloadHistory } from "@/pages/Downloads";
 
 interface VideoCardProps {
@@ -12,10 +13,6 @@ interface VideoCardProps {
   downloadUrl: string;
   type: "video";
 }
-
-const typeLabels: Record<string, string> = {
-  video: "Vídeo",
-};
 
 function buildDirectDownloadUrl(downloadUrl: string, title: string) {
   const safeTitle = (title || "video-kwai")
@@ -31,6 +28,7 @@ function buildDirectDownloadUrl(downloadUrl: string, title: string) {
 }
 
 export function VideoCard({ title, author, thumbnail, likes, comments, downloadUrl, type }: VideoCardProps) {
+  const { t } = useTranslation();
   const [downloading, setDownloading] = useState(false);
   const [completed, setCompleted] = useState(false);
 
@@ -61,7 +59,7 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
     <div className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 animate-fade-in">
       <div className="px-4 pt-3">
         <span className="gradient-kwai text-primary-foreground text-xs font-semibold px-3 py-1 rounded-lg">
-          {typeLabels[type]}
+          {t("videoCard.video")}
         </span>
       </div>
 
@@ -99,14 +97,14 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
               <span className="flex items-center gap-1"><Heart className="h-3.5 w-3.5" />{likes}</span>
             )}
             {comments && comments !== "0" && (
-              <span className="flex items-center gap-1"><Eye className="h-3.5 w-3.5" />{comments} comentários</span>
+              <span className="flex items-center gap-1"><Eye className="h-3.5 w-3.5" />{comments} {t("videoCard.comments")}</span>
             )}
           </div>
 
           <div className="flex items-center gap-2 flex-wrap">
             {completed ? (
               <span className="flex items-center gap-1 text-xs font-semibold text-success">
-                <CheckCircle className="h-4 w-4" /> Concluído
+                <CheckCircle className="h-4 w-4" /> {t("videoCard.done")}
               </span>
             ) : (
               <button
@@ -115,7 +113,7 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
                 className="gradient-kwai text-primary-foreground text-xs font-semibold px-4 py-1.5 rounded-lg shadow-kwai hover:shadow-kwai-lg hover:scale-105 active:scale-95 transition-all disabled:opacity-60 flex items-center gap-1.5"
               >
                 <Download className="h-3.5 w-3.5" />
-                {downloading ? "Baixando..." : "Download MP4"}
+                {downloading ? t("videoCard.downloading") : t("videoCard.download")}
               </button>
             )}
 
@@ -125,7 +123,7 @@ export function VideoCard({ title, author, thumbnail, likes, comments, downloadU
               className="border border-border text-foreground text-xs font-medium px-3 py-1.5 rounded-lg hover:bg-muted transition-colors flex items-center gap-1"
             >
               <ExternalLink className="h-3 w-3" />
-              Baixar direto
+              {t("videoCard.direct")}
             </a>
           </div>
         </div>

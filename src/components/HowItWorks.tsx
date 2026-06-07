@@ -1,15 +1,16 @@
 import { ClipboardPaste, ListChecks, Download } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const steps = [
-  { icon: ClipboardPaste, title: "Cole o link do Kwai", desc: "Copie o link do vídeo no Kwai e cole no campo acima para baixar." },
-  { icon: ListChecks, title: "Escolha o formato", desc: "Selecione a qualidade desejada para o download vídeo Kwai." },
-  { icon: Download, title: "Baixar vídeo do Kwai", desc: "Clique em baixar e salve o vídeo do Kwai sem marca d'água." },
-];
+const ICONS = [ClipboardPaste, ListChecks, Download];
 
 export function HowItWorks() {
+  const { t } = useTranslation();
+  const title = t("how.title") as string;
+  const items = (t("how.steps", { returnObjects: true }) as { title: string; desc: string }[]) || [];
+  const steps = items.map((s, i) => ({ ...s, icon: ICONS[i] || Download }));
   return (
-    <section className="px-4 py-10 max-w-4xl mx-auto" aria-label="Como baixar vídeos do Kwai online">
-      <h2 className="text-2xl font-bold text-foreground text-center mb-8">Como Baixar Vídeos do Kwai</h2>
+    <section className="px-4 py-10 max-w-4xl mx-auto" aria-label={title}>
+      <h2 className="text-2xl font-bold text-foreground text-center mb-8">{title}</h2>
       <div className="bg-card border border-border rounded-2xl p-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {steps.map((step, i) => (
