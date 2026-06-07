@@ -7,6 +7,7 @@ import { lazy, Suspense } from "react";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { usePwaInstall } from "@/hooks/use-pwa-install";
 import { LanguageRedirect, LegacyPtRedirect } from "@/components/LanguageRedirect";
+import { LangGuard } from "@/components/LangGuard";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -52,18 +53,18 @@ const App = () => {
             <Route path="/kwai-apk" element={<LegacyPtRedirect />} />
 
             {/* Language-prefixed routes */}
-            <Route path="/:lang" element={<Index />} />
-            <Route path="/:lang/termos-de-uso" element={<TermosDeUso />} />
-            <Route path="/:lang/privacidade" element={<Privacidade />} />
-            <Route path="/:lang/dmca" element={<DMCA />} />
-            <Route path="/:lang/contato" element={<Contato />} />
-            <Route path="/:lang/sobre" element={<Sobre />} />
-            <Route path="/:lang/blog" element={<Blog />} />
-            <Route path="/:lang/downloads" element={<Downloads />} />
-            <Route path="/:lang/uso-responsavel" element={<UsoResponsavel />} />
-            <Route path="/:lang/faq" element={<FAQPage />} />
-            <Route path="/:lang/baixar-tutorial" element={<BaixarTutorial />} />
-            <Route path="/:lang/kwai-apk" element={<KwaiAPK />} />
+            <Route path="/:lang" element={<LangGuard><Index /></LangGuard>} />
+            <Route path="/:lang/termos-de-uso" element={<LangGuard><TermosDeUso /></LangGuard>} />
+            <Route path="/:lang/privacidade" element={<LangGuard><Privacidade /></LangGuard>} />
+            <Route path="/:lang/dmca" element={<LangGuard><DMCA /></LangGuard>} />
+            <Route path="/:lang/contato" element={<LangGuard><Contato /></LangGuard>} />
+            <Route path="/:lang/sobre" element={<LangGuard><Sobre /></LangGuard>} />
+            <Route path="/:lang/blog" element={<LangGuard><Blog /></LangGuard>} />
+            <Route path="/:lang/downloads" element={<LangGuard><Downloads /></LangGuard>} />
+            <Route path="/:lang/uso-responsavel" element={<LangGuard><UsoResponsavel /></LangGuard>} />
+            <Route path="/:lang/faq" element={<LangGuard><FAQPage /></LangGuard>} />
+            <Route path="/:lang/baixar-tutorial" element={<LangGuard><BaixarTutorial /></LangGuard>} />
+            <Route path="/:lang/kwai-apk" element={<LangGuard><KwaiAPK /></LangGuard>} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
