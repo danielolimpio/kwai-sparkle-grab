@@ -1,14 +1,12 @@
 import { CheckCircle, Star, Infinity, Gift, Zap } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const features = [
-  { icon: CheckCircle, title: "Sem Marca d'Água", desc: "Baixar vídeo do Kwai sem marca d'água" },
-  { icon: Star, title: "Alta Qualidade", desc: "Download vídeo Kwai até 1080p Full HD" },
-  { icon: Infinity, title: "Download Ilimitado", desc: "Baixar vídeos Kwai sem limites" },
-  { icon: Gift, title: "100% Grátis", desc: "Baixador de vídeos do Kwai gratuito" },
-  { icon: Zap, title: "Super Rápido", desc: "Salvar vídeo do Kwai em segundos" },
-];
+const ICONS = [CheckCircle, Star, Infinity, Gift, Zap];
 
 export function FeatureCards() {
+  const { t } = useTranslation();
+  const items = (t("features.items", { returnObjects: true }) as { title: string; desc: string }[]) || [];
+  const features = items.map((it, i) => ({ ...it, icon: ICONS[i] || CheckCircle }));
   return (
     <section className="px-4 py-8" aria-label="Recursos do baixador de vídeos do Kwai">
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
