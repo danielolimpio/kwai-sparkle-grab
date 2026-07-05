@@ -19,9 +19,10 @@ const ar = {
     privacidade: { title: "سياسة الخصوصية — تحميل فيديوهات كواي بأمان", description: "كيف يحمي KwaiSave بياناتك." },
     dmca: { title: "سياسة DMCA — حقوق النشر | KwaiSave", description: "سياسة DMCA الخاصة بـ KwaiSave." },
     uso: { title: "الاستخدام المسؤول - سياسة التحميل", description: "سياسة الاستخدام المسؤول لتحميل فيديوهات كواي بشكل أخلاقي وقانوني." },
+    baixarKwai: { title: "تحميل فيديوهات كواي — منزل مجاني بدون علامة مائية | KwaiSave", description: "تحميل فيديوهات كواي بدون علامة مائية بصيغة MP4 عالي الجودة. منزل فيديوهات كواي أون لاين، مجاني، غير محدود وعبر الرابط." },
   },
   sidebar: { tagline: "تحميل الفيديوهات", others: "منزلات أخرى", version: "v1.0", copyright: "© 2026 baixarvideoskwai.com" },
-  nav: { videos: "فيديوهات", tutorial: "الدرس", kwaiApk: "Kwai APK", downloads: "التنزيلات", about: "حولنا", blog: "المدونة", contact: "اتصل بنا", faq: "الأسئلة" },
+  nav: { videos: "الرئيسية", baixarKwai: "تحميل فيديوهات كواي", tutorial: "الدرس", kwaiApk: "Kwai APK", downloads: "التنزيلات", about: "حولنا", blog: "المدونة", contact: "اتصل بنا", faq: "الأسئلة" },
   header: { menu: "فتح القائمة", dark: "الوضع الداكن", light: "الوضع الفاتح", language: "اللغة" },
   hero: {
     h1a: "تحميل فيديوهات كواي", h1b: "بدون علامة مائية",
@@ -37,7 +38,7 @@ const ar = {
     img2Alt: "تحميل فيديو كواي بجودة عالية — حفظ بالرابط",
   },
   results: { title: "النتائج" },
-  tabs: { videos: "فيديوهات" },
+  tabs: { videos: "الرئيسية" },
   features: { title: "", items: [
     { title: "بدون علامة مائية", desc: "تحميل فيديو كواي بدون علامة مائية" },
     { title: "جودة عالية", desc: "تحميل كواي حتى 1080p Full HD" },

@@ -1,4 +1,4 @@
-import { Video } from "lucide-react";
+import { Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 
@@ -9,7 +9,7 @@ interface ContentTabsProps {
 
 export function ContentTabs({ activeTab, onTabChange }: ContentTabsProps) {
   const { t } = useTranslation();
-  const tabs = [{ id: "videos", label: t("tabs.videos") as string, icon: Video }];
+  const tabs = [{ id: "videos", label: t("tabs.videos") as string, icon: Home }];
   return (
     <div className="flex items-center justify-center gap-2 flex-wrap px-4 py-4">
       {tabs.map((tab) => (

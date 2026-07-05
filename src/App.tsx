@@ -22,6 +22,7 @@ const UsoResponsavel = lazy(() => import("./pages/UsoResponsavel.tsx"));
 const FAQPage = lazy(() => import("./pages/FAQPage.tsx"));
 const BaixarTutorial = lazy(() => import("./pages/BaixarTutorial.tsx"));
 const KwaiAPK = lazy(() => import("./pages/KwaiAPK.tsx"));
+const BaixarVideosKwai = lazy(() => import("./pages/BaixarVideosKwai.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="/faq" element={<LegacyPtRedirect />} />
             <Route path="/baixar-tutorial" element={<LegacyPtRedirect />} />
             <Route path="/kwai-apk" element={<LegacyPtRedirect />} />
+            <Route path="/baixar-videos-kwai" element={<LegacyPtRedirect />} />
 
             {/* Language-prefixed routes */}
             <Route path="/:lang" element={<LangGuard><Index /></LangGuard>} />
@@ -65,6 +67,7 @@ const App = () => {
             <Route path="/:lang/faq" element={<LangGuard><FAQPage /></LangGuard>} />
             <Route path="/:lang/baixar-tutorial" element={<LangGuard><BaixarTutorial /></LangGuard>} />
             <Route path="/:lang/kwai-apk" element={<LangGuard><KwaiAPK /></LangGuard>} />
+            <Route path="/:lang/baixar-videos-kwai" element={<LangGuard><BaixarVideosKwai /></LangGuard>} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
