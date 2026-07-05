@@ -19,9 +19,10 @@ const fr = {
     privacidade: { title: "Politique de Confidentialité — Télécharger Vidéos Kwai en Toute Sécurité", description: "Comment KwaiSave protège vos données lors du téléchargement de vidéos Kwai." },
     dmca: { title: "Politique DMCA — Droits d'Auteur | KwaiSave", description: "Politique DMCA de KwaiSave. Comment soumettre des notifications de droits d'auteur." },
     uso: { title: "Utilisation Responsable - Politique de Téléchargement", description: "Politique d'utilisation responsable pour télécharger des vidéos Kwai de manière éthique et légale." },
+    baixarKwai: { title: "Télécharger Vidéos Kwai — Téléchargeur Gratuit Sans Filigrane | KwaiSave", description: "Télécharger des vidéos Kwai sans filigrane en MP4 HD. Téléchargeur de vidéos Kwai en ligne, gratuit, illimité et par lien." },
   },
   sidebar: { tagline: "Télécharger Vidéos", others: "Autres Téléchargeurs", version: "v1.0", copyright: "© 2026 baixarvideoskwai.com" },
-  nav: { videos: "Vidéos", tutorial: "Tutoriel", kwaiApk: "Kwai APK", downloads: "Téléchargements", about: "À propos", blog: "Blog", contact: "Contact", faq: "FAQ" },
+  nav: { videos: "Accueil", baixarKwai: "Télécharger Vidéos Kwai", tutorial: "Tutoriel", kwaiApk: "Kwai APK", downloads: "Téléchargements", about: "À propos", blog: "Blog", contact: "Contact", faq: "FAQ" },
   header: { menu: "Ouvrir le menu", dark: "Mode sombre", light: "Mode clair", language: "Langue" },
   hero: {
     h1a: "Télécharger des Vidéos Kwai", h1b: "Sans Filigrane",
@@ -37,7 +38,7 @@ const fr = {
     img2Alt: "Téléchargement vidéo Kwai en haute qualité — enregistrer par lien",
   },
   results: { title: "Résultats" },
-  tabs: { videos: "Vidéos" },
+  tabs: { videos: "Accueil" },
   features: { title: "", items: [
     { title: "Sans Filigrane", desc: "Télécharger vidéo Kwai sans filigrane" },
     { title: "Haute Qualité", desc: "Téléchargement Kwai jusqu'à 1080p Full HD" },

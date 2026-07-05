@@ -19,9 +19,10 @@ const es = {
     privacidade: { title: "Política de Privacidad — Descargar Videos Kwai con Seguridad", description: "Cómo KwaiSave protege tus datos al descargar videos de Kwai." },
     dmca: { title: "Política DMCA — Derechos de Autor | KwaiSave", description: "Política DMCA de KwaiSave. Cómo enviar notificaciones de derechos de autor." },
     uso: { title: "Uso Responsable - Política de Descarga", description: "Política de uso responsable. Cómo descargar videos Kwai de forma ética y legal." },
+    baixarKwai: { title: "Descargar Videos Kwai — Descargador Gratis Sin Marca de Agua | KwaiSave", description: "Descargar videos Kwai sin marca de agua en MP4 HD. Descargador de videos de Kwai online, gratis, ilimitado y por enlace." },
   },
   sidebar: { tagline: "Descargar Videos", others: "Otros Descargadores", version: "v1.0", copyright: "© 2026 baixarvideoskwai.com" },
-  nav: { videos: "Videos", tutorial: "Tutorial", kwaiApk: "Kwai APK", downloads: "Descargas", about: "Acerca de", blog: "Blog", contact: "Contacto", faq: "FAQ" },
+  nav: { videos: "Inicio", baixarKwai: "Descargar Videos Kwai", tutorial: "Tutorial", kwaiApk: "Kwai APK", downloads: "Descargas", about: "Acerca de", blog: "Blog", contact: "Contacto", faq: "FAQ" },
   header: { menu: "Abrir menú", dark: "Modo oscuro", light: "Modo claro", language: "Idioma" },
   hero: {
     h1a: "Descargar Videos Kwai", h1b: "Sin Marca de Agua",
@@ -37,7 +38,7 @@ const es = {
     img2Alt: "Descarga de video Kwai en alta calidad — guardar por enlace",
   },
   results: { title: "Resultados" },
-  tabs: { videos: "Videos" },
+  tabs: { videos: "Inicio" },
   features: { title: "", items: [
     { title: "Sin Marca de Agua", desc: "Descargar video de Kwai sin marca de agua" },
     { title: "Alta Calidad", desc: "Descarga Kwai hasta 1080p Full HD" },

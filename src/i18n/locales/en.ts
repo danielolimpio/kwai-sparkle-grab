@@ -19,9 +19,10 @@ const en = {
     privacidade: { title: "Privacy Policy — Download Kwai Videos Safely", description: "Learn how KwaiSave protects your data when downloading Kwai videos." },
     dmca: { title: "DMCA Policy — Copyright | KwaiSave", description: "KwaiSave DMCA policy. How to submit copyright notifications." },
     uso: { title: "Responsible Use - Download Policy", description: "Responsible use policy. How to download Kwai videos ethically and legally." },
+    baixarKwai: { title: "Download Kwai Videos — Free Downloader Without Watermark | KwaiSave", description: "Download Kwai videos without watermark in MP4 HD. Free Kwai downloader online, unlimited, by link. Paste the link and download now." },
   },
   sidebar: { tagline: "Video Downloader", others: "Other Downloaders", version: "v1.0", copyright: "© 2026 baixarvideoskwai.com" },
-  nav: { videos: "Videos", tutorial: "Tutorial", kwaiApk: "Kwai APK", downloads: "Downloads", about: "About", blog: "Blog", contact: "Contact", faq: "FAQ" },
+  nav: { videos: "Home", baixarKwai: "Download Kwai Videos", tutorial: "Tutorial", kwaiApk: "Kwai APK", downloads: "Downloads", about: "About", blog: "Blog", contact: "Contact", faq: "FAQ" },
   header: { menu: "Open menu", dark: "Switch to dark mode", light: "Switch to light mode", language: "Language" },
   hero: {
     h1a: "Download Kwai Videos", h1b: "Without Watermark",
@@ -37,7 +38,7 @@ const en = {
     img2Alt: "Kwai video download in high quality — save Kwai video by link",
   },
   results: { title: "Results" },
-  tabs: { videos: "Videos" },
+  tabs: { videos: "Home" },
   features: { title: "", items: [
     { title: "No Watermark", desc: "Download Kwai videos without watermark" },
     { title: "High Quality", desc: "Kwai video download up to 1080p Full HD" },
