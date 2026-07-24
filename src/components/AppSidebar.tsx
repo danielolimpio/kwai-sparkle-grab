@@ -117,18 +117,18 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
             <img
               src="/bate-papo-logo.png"
               alt="Bate Papo - Chat grátis online"
-              width={220}
-              height={220}
-              loading="lazy"
+            width={440}
+            height={440}
+            loading="eager"
               decoding="async"
               className="w-32 h-auto object-contain -mb-6"
             />
             <img
               src="/bate-papo-chat.gif"
               alt="Balões de bate papo animados"
-              width={96}
-              height={96}
-              loading="lazy"
+            width={160}
+            height={160}
+            loading="eager"
               decoding="async"
               className="w-14 h-14 object-contain -mt-2"
             />
