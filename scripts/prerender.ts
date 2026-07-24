@@ -137,10 +137,11 @@ async function main() {
       if (render) {
         try {
           const body = await render(`/${lang}${slug}`, lang);
-          html = html.replace(
-            /<div id="root">[\s\S]*?<\/div>\s*<script type="module"/i,
-            `<div id="root">${body}</div>\n    <script type="module"`
-          );
+          const start = html.indexOf('<div id="root">');
+          const end = html.indexOf("</body>", start);
+          if (start === -1 || end === -1) throw new Error("root placeholder not found");
+          const tail = html.slice(start, end).replace(/[\s\S]*<\/div>/, "");
+          html = `${html.slice(0, start)}<div id="root">${body}</div>${tail}${html.slice(end)}`;
         } catch (err) {
           console.warn(`[prerender] render failed for /${lang}${slug}:`, err);
         }
