@@ -109,6 +109,17 @@ async function main() {
   const ssrEntry = resolve("dist-ssr/entry-server.js");
   if (existsSync(ssrEntry)) {
     try {
+      // Minimal browser shims so client-only libs (supabase-js) can load in Node.
+      const store = new Map<string, string>();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (globalThis as any).localStorage ??= {
+        getItem: (k: string) => store.get(k) ?? null,
+        setItem: (k: string, v: string) => void store.set(k, String(v)),
+        removeItem: (k: string) => void store.delete(k),
+        clear: () => store.clear(),
+        key: () => null,
+        length: 0,
+      };
       ({ render } = await import(pathToFileURL(ssrEntry).href));
     } catch (err) {
       console.warn("[prerender] SSR bundle failed to load — falling back to meta-only shells.", err);
