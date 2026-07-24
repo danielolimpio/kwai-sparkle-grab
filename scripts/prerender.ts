@@ -95,7 +95,7 @@ function injectHead(template: string, head: string, htmlAttrs: string): string {
   return html;
 }
 
-function main() {
+async function main() {
   const indexPath = resolve(DIST, "index.html");
   if (!existsSync(indexPath)) {
     console.log("[prerender] dist/index.html not found — skipping (build did not run).");
@@ -103,12 +103,36 @@ function main() {
   }
   const template = readFileSync(indexPath, "utf-8");
 
+  // Load the SSR bundle (built by `vite build --ssr`) to render real page HTML.
+  let render: ((url: string, lang: string) => Promise<string>) | null = null;
+  const ssrEntry = resolve("dist-ssr/entry-server.js");
+  if (existsSync(ssrEntry)) {
+    try {
+      ({ render } = await import(pathToFileURL(ssrEntry).href));
+    } catch (err) {
+      console.warn("[prerender] SSR bundle failed to load — falling back to meta-only shells.", err);
+    }
+  } else {
+    console.warn("[prerender] dist-ssr/entry-server.js not found — writing meta-only shells.");
+  }
+
   let count = 0;
   for (const lang of Object.keys(LOCALES)) {
     for (const route of ROUTES) {
       const { head, htmlAttrs } = buildHead(lang, route.path, route.metaKey);
-      const html = injectHead(template, head, htmlAttrs);
+      let html = injectHead(template, head, htmlAttrs);
       const slug = route.path === "/" ? "" : route.path;
+      if (render) {
+        try {
+          const body = await render(`/${lang}${slug}`, lang);
+          html = html.replace(
+            /<div id="root">[\s\S]*?<\/div>\s*<script type="module"/i,
+            `<div id="root">${body}</div>\n    <script type="module"`
+          );
+        } catch (err) {
+          console.warn(`[prerender] render failed for /${lang}${slug}:`, err);
+        }
+      }
       const outDir = resolve(DIST, `${lang}${slug}`);
       mkdirSync(outDir, { recursive: true });
       writeFileSync(resolve(outDir, "index.html"), html);
