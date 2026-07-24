@@ -5,7 +5,8 @@
 // gives crawlers unique per-route metadata without needing JS execution.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
-import { resolve, dirname } from "path";
+import { resolve } from "path";
+import { pathToFileURL } from "url";
 import pt from "../src/i18n/locales/pt";
 import en from "../src/i18n/locales/en";
 import es from "../src/i18n/locales/es";
@@ -48,10 +49,12 @@ function esc(s: string): string {
 function buildHead(lang: string, path: string, metaKey: keyof Locale["meta"]): { head: string; htmlAttrs: string } {
   const locale = LOCALES[lang];
   const meta = locale.data.meta[metaKey] as { title: string; description: string };
-  const canonical = `${BASE_URL}/${lang}${path === "/" ? "" : path}`;
+  const url = (code: string) =>
+    code === "en" && path === "/" ? `${BASE_URL}/` : `${BASE_URL}/${code}${path === "/" ? "" : path}`;
+  const canonical = url(lang);
 
   const alternates = Object.entries(LOCALES)
-    .map(([code, l]) => `<link rel="alternate" hreflang="${l.hreflang}" href="${BASE_URL}/${code}${path === "/" ? "" : path}" />`)
+    .map(([code, l]) => `<link rel="alternate" hreflang="${l.hreflang}" href="${url(code)}" />`)
     .join("\n    ");
 
   const ogLocaleAlts = Object.values(LOCALES)
@@ -63,7 +66,7 @@ function buildHead(lang: string, path: string, metaKey: keyof Locale["meta"]): {
     <meta name="description" content="${esc(meta.description)}" />
     <link rel="canonical" href="${canonical}" />
     ${alternates}
-    <link rel="alternate" hreflang="x-default" href="${BASE_URL}/en${path === "/" ? "" : path}" />
+    <link rel="alternate" hreflang="x-default" href="${url("en")}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${canonical}" />
     <meta property="og:title" content="${esc(meta.title)}" />
@@ -95,7 +98,7 @@ function injectHead(template: string, head: string, htmlAttrs: string): string {
   return html;
 }
 
-function main() {
+async function main() {
   const indexPath = resolve(DIST, "index.html");
   if (!existsSync(indexPath)) {
     console.log("[prerender] dist/index.html not found — skipping (build did not run).");
@@ -103,15 +106,56 @@ function main() {
   }
   const template = readFileSync(indexPath, "utf-8");
 
+  // Load the SSR bundle (built by `vite build --ssr`) to render real page HTML.
+  let render: ((url: string, lang: string) => Promise<string>) | null = null;
+  const ssrEntry = resolve("dist-ssr/entry-server.js");
+  if (existsSync(ssrEntry)) {
+    try {
+      // Minimal browser shims so client-only libs (supabase-js) can load in Node.
+      const store = new Map<string, string>();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (globalThis as any).localStorage ??= {
+        getItem: (k: string) => store.get(k) ?? null,
+        setItem: (k: string, v: string) => void store.set(k, String(v)),
+        removeItem: (k: string) => void store.delete(k),
+        clear: () => store.clear(),
+        key: () => null,
+        length: 0,
+      };
+      ({ render } = await import(pathToFileURL(ssrEntry).href));
+    } catch (err) {
+      console.warn("[prerender] SSR bundle failed to load — falling back to meta-only shells.", err);
+    }
+  } else {
+    console.warn("[prerender] dist-ssr/entry-server.js not found — writing meta-only shells.");
+  }
+
   let count = 0;
   for (const lang of Object.keys(LOCALES)) {
     for (const route of ROUTES) {
       const { head, htmlAttrs } = buildHead(lang, route.path, route.metaKey);
-      const html = injectHead(template, head, htmlAttrs);
+      let html = injectHead(template, head, htmlAttrs);
       const slug = route.path === "/" ? "" : route.path;
-      const outDir = resolve(DIST, `${lang}${slug}`);
-      mkdirSync(outDir, { recursive: true });
-      writeFileSync(resolve(outDir, "index.html"), html);
+      if (render) {
+        try {
+          const body = await render(`/${lang}${slug}`, lang);
+          const start = html.indexOf('<div id="root">');
+          const end = html.indexOf("</body>", start);
+          if (start === -1 || end === -1) throw new Error("root placeholder not found");
+          const tail = html.slice(start, end).replace(/[\s\S]*<\/div>/, "");
+          html = `${html.slice(0, start)}<div id="root">${body}</div>${tail}${html.slice(end)}`;
+        } catch (err) {
+          console.warn(`[prerender] render failed for /${lang}${slug}:`, err);
+        }
+      }
+      if (lang === "en" && route.path === "/") {
+        // English homepage is the site root itself (avoids a /en duplicate).
+        writeFileSync(resolve(DIST, "index.html"), html);
+      } else {
+        const outDir = resolve(DIST, `${lang}${slug}`);
+        mkdirSync(outDir, { recursive: true });
+        writeFileSync(resolve(outDir, "index.html"), html);
+      }
       count++;
     }
   }

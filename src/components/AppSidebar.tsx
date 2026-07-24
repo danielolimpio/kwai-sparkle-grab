@@ -61,7 +61,7 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
         >
           <img src={logoKwai} alt="KwaiSave" className="h-10 w-10 rounded-xl shadow-kwai" />
           <div>
-            <h1 className="text-lg font-bold text-foreground">KwaiSave</h1>
+            <span className="block text-lg font-bold text-foreground">KwaiSave</span>
             <p className="text-xs text-muted-foreground">{t("sidebar.tagline")}</p>
           </div>
         </div>

@@ -3,7 +3,6 @@ import { writeFileSync } from "fs";
 import { resolve } from "path";
 
 const BASE_URL = "https://baixarvideoskwai.com";
-const today = new Date().toISOString().slice(0, 10);
 
 const LANGS = [
   { code: "pt", hreflang: "pt-BR" },
@@ -36,7 +35,7 @@ const entries: SitemapEntry[] = [
 ];
 
 const langUrl = (lang: string, path: string) =>
-  `${BASE_URL}/${lang}${path === "/" ? "" : path}`;
+  lang === "en" && path === "/" ? `${BASE_URL}/` : `${BASE_URL}/${lang}${path === "/" ? "" : path}`;
 
 const urls: string[] = [];
 for (const e of entries) {
@@ -48,7 +47,6 @@ for (const e of entries) {
       [
         `  <url>`,
         `    <loc>${langUrl(l.code, e.path)}</loc>`,
-        `    <lastmod>${today}</lastmod>`,
         `    <changefreq>${e.changefreq}</changefreq>`,
         `    <priority>${e.priority}</priority>`,
         alternates,

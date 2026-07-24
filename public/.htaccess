@@ -1,0 +1,42 @@
+# KwaiSave — Hostinger (Apache)
+Options -MultiViews
+RewriteEngine On
+
+# 1) Força HTTPS + domínio sem www (evita "Página com redirecionamento" no GSC)
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# 2) Redireciona URLs legadas (sem prefixo de idioma) para /pt/ — 301 real
+RedirectMatch 301 ^/(termos-de-uso|privacidade|dmca|contato|sobre|blog|downloads|uso-responsavel|faq|baixar-tutorial|kwai-apk|baixar-videos-kwai)/?$ https://baixarvideoskwai.com/pt/$1
+
+RedirectMatch 301 ^/en/?$ https://baixarvideoskwai.com/
+
+# 3) Remove barra final duplicada mantendo a URL canônica
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+# 4) SPA fallback: serve o HTML pré-renderizado quando existir, senão o index
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^ /index.html [L]
+
+# Compressão
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>
+
+# Cache
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/gif "access plus 6 months"
+  ExpiresByType image/webp "access plus 6 months"
+</IfModule>

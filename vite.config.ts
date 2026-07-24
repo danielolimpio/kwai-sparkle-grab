@@ -13,6 +13,10 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  ssr: {
+    // Bundle CJS-interop-unfriendly deps so the SSG render step can import them.
+    noExternal: ["react-helmet-async", "react-router-dom", "react-i18next", "i18next"],
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

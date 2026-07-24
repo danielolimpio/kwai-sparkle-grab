@@ -57,10 +57,11 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
     return "/" + parts.join("/");
   })();
   const suffix = rawPath === "/" || rawPath === "" ? "" : rawPath.startsWith("/") ? rawPath : `/${rawPath}`;
-  const fullCanonical = `${SITE_URL}/${lang}${suffix}`;
+  const urlFor = (l: string) => (l === "en" && suffix === "" ? `${SITE_URL}/` : `${SITE_URL}/${l}${suffix}`);
+  const fullCanonical = urlFor(lang);
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} - ${SITE_NAME}`;
 
-  const altUrl = (l: string) => `${SITE_URL}/${l}${suffix}`;
+  const altUrl = (l: string) => urlFor(l);
 
   const websiteSchema = schemaType === "home" ? {
     "@context": "https://schema.org",

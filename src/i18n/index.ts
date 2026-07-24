@@ -18,8 +18,11 @@ export const LANG_META: Record<SupportedLang, { name: string; flag: string; dir:
   ar: { name: "العربية", flag: "🇸🇦", dir: "rtl", ogLocale: "ar_AR", htmlLang: "ar" },
 };
 
+if (typeof window !== "undefined") {
+  i18n.use(LanguageDetector);
+}
+
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
