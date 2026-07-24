@@ -113,7 +113,7 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
             height={576}
             className="w-full h-auto object-cover"
             loading="eager"
-            fetchPriority="high"
+            {...{ fetchpriority: "high" }}
             decoding="async"
           />
         </div>
