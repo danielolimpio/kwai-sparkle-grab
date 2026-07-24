@@ -3,7 +3,6 @@ import { writeFileSync } from "fs";
 import { resolve } from "path";
 
 const BASE_URL = "https://baixarvideoskwai.com";
-const today = new Date().toISOString().slice(0, 10);
 
 const LANGS = [
   { code: "pt", hreflang: "pt-BR" },
@@ -48,7 +47,6 @@ for (const e of entries) {
       [
         `  <url>`,
         `    <loc>${langUrl(l.code, e.path)}</loc>`,
-        `    <lastmod>${today}</lastmod>`,
         `    <changefreq>${e.changefreq}</changefreq>`,
         `    <priority>${e.priority}</priority>`,
         alternates,

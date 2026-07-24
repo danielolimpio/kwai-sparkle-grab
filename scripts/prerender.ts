@@ -5,7 +5,8 @@
 // gives crawlers unique per-route metadata without needing JS execution.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
-import { resolve, dirname } from "path";
+import { resolve } from "path";
+import { pathToFileURL } from "url";
 import pt from "../src/i18n/locales/pt";
 import en from "../src/i18n/locales/en";
 import es from "../src/i18n/locales/es";
