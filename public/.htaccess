@@ -11,6 +11,8 @@ RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 # 2) Redireciona URLs legadas (sem prefixo de idioma) para /pt/ — 301 real
 RedirectMatch 301 ^/(termos-de-uso|privacidade|dmca|contato|sobre|blog|downloads|uso-responsavel|faq|baixar-tutorial|kwai-apk|baixar-videos-kwai)/?$ https://baixarvideoskwai.com/pt/$1
 
+RedirectMatch 301 ^/en/?$ https://baixarvideoskwai.com/
+
 # 3) Remove barra final duplicada mantendo a URL canônica
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { LanguageRedirect, LegacyPtRedirect } from "@/components/LanguageRedirect";
+import { LegacyPtRedirect } from "@/components/LanguageRedirect";
 import { LangGuard } from "@/components/LangGuard";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -19,7 +19,7 @@ import BaixarVideosKwai from "./pages/BaixarVideosKwai";
 export function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<LanguageRedirect />} />
+      <Route path="/" element={<Index />} />
 
       <Route path="/termos-de-uso" element={<LegacyPtRedirect />} />
       <Route path="/privacidade" element={<LegacyPtRedirect />} />

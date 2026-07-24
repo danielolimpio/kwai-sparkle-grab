@@ -35,7 +35,7 @@ const entries: SitemapEntry[] = [
 ];
 
 const langUrl = (lang: string, path: string) =>
-  `${BASE_URL}/${lang}${path === "/" ? "" : path}`;
+  lang === "en" && path === "/" ? `${BASE_URL}/` : `${BASE_URL}/${lang}${path === "/" ? "" : path}`;
 
 const urls: string[] = [];
 for (const e of entries) {

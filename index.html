@@ -61,6 +61,8 @@
           var nav = (navigator.language || "en").toLowerCase().split("-")[0];
           l = langs.indexOf(nav) !== -1 ? nav : "en";
         }
+        // English is served at the root URL itself — no redirect needed.
+        if (l === "en") return;
         window.location.replace("/" + l + window.location.search + window.location.hash);
       })();
     </script>

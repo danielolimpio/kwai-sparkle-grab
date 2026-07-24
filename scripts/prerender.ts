@@ -49,10 +49,12 @@ function esc(s: string): string {
 function buildHead(lang: string, path: string, metaKey: keyof Locale["meta"]): { head: string; htmlAttrs: string } {
   const locale = LOCALES[lang];
   const meta = locale.data.meta[metaKey] as { title: string; description: string };
-  const canonical = `${BASE_URL}/${lang}${path === "/" ? "" : path}`;
+  const url = (code: string) =>
+    code === "en" && path === "/" ? `${BASE_URL}/` : `${BASE_URL}/${code}${path === "/" ? "" : path}`;
+  const canonical = url(lang);
 
   const alternates = Object.entries(LOCALES)
-    .map(([code, l]) => `<link rel="alternate" hreflang="${l.hreflang}" href="${BASE_URL}/${code}${path === "/" ? "" : path}" />`)
+    .map(([code, l]) => `<link rel="alternate" hreflang="${l.hreflang}" href="${url(code)}" />`)
     .join("\n    ");
 
   const ogLocaleAlts = Object.values(LOCALES)
@@ -64,7 +66,7 @@ function buildHead(lang: string, path: string, metaKey: keyof Locale["meta"]): {
     <meta name="description" content="${esc(meta.description)}" />
     <link rel="canonical" href="${canonical}" />
     ${alternates}
-    <link rel="alternate" hreflang="x-default" href="${BASE_URL}/en${path === "/" ? "" : path}" />
+    <link rel="alternate" hreflang="x-default" href="${url("en")}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${canonical}" />
     <meta property="og:title" content="${esc(meta.title)}" />
@@ -146,9 +148,14 @@ async function main() {
           console.warn(`[prerender] render failed for /${lang}${slug}:`, err);
         }
       }
-      const outDir = resolve(DIST, `${lang}${slug}`);
-      mkdirSync(outDir, { recursive: true });
-      writeFileSync(resolve(outDir, "index.html"), html);
+      if (lang === "en" && route.path === "/") {
+        // English homepage is the site root itself (avoids a /en duplicate).
+        writeFileSync(resolve(DIST, "index.html"), html);
+      } else {
+        const outDir = resolve(DIST, `${lang}${slug}`);
+        mkdirSync(outDir, { recursive: true });
+        writeFileSync(resolve(outDir, "index.html"), html);
+      }
       count++;
     }
   }
