@@ -26,9 +26,10 @@ const LOCALES: Record<string, { data: Locale; hreflang: string; ogLocale: string
 };
 
 // route path -> meta key in locale.meta
-const ROUTES: Array<{ path: string; metaKey: keyof Locale["meta"] }> = [
+const ROUTES: Array<{ path: string; metaKey?: keyof Locale["meta"]; meta?: { title: string; description: string } }> = [
   { path: "/", metaKey: "home" },
   { path: "/baixar-videos-kwai", metaKey: "baixarKwai" as keyof Locale["meta"] },
+  ...PLATFORMS.map((p) => ({ path: p.slug, meta: { title: `${p.title} | KwaiSave`, description: p.description } })),
   { path: "/baixar-tutorial", metaKey: "tutorial" },
   { path: "/kwai-apk", metaKey: "kwaiApk" },
   { path: "/faq", metaKey: "faqPage" },
@@ -46,9 +47,17 @@ function esc(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-function buildHead(lang: string, path: string, metaKey: keyof Locale["meta"]): { head: string; htmlAttrs: string } {
+function buildHead(
+  lang: string,
+  path: string,
+  metaKey?: keyof Locale["meta"],
+  inlineMeta?: { title: string; description: string }
+): { head: string; htmlAttrs: string } {
   const locale = LOCALES[lang];
-  const meta = locale.data.meta[metaKey] as { title: string; description: string };
+  const meta = (inlineMeta ?? (locale.data.meta[metaKey as keyof Locale["meta"]] as unknown)) as {
+    title: string;
+    description: string;
+  };
   const url = (code: string) =>
     code === "en" && path === "/" ? `${BASE_URL}/` : `${BASE_URL}/${code}${path === "/" ? "" : path}`;
   const canonical = url(lang);
@@ -133,7 +142,7 @@ async function main() {
   let count = 0;
   for (const lang of Object.keys(LOCALES)) {
     for (const route of ROUTES) {
-      const { head, htmlAttrs } = buildHead(lang, route.path, route.metaKey);
+      const { head, htmlAttrs } = buildHead(lang, route.path, route.metaKey, route.meta);
       let html = injectHead(template, head, htmlAttrs);
       const slug = route.path === "/" ? "" : route.path;
       if (render) {
