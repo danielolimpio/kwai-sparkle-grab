@@ -26,9 +26,49 @@ const LOCALES: Record<string, { data: Locale; hreflang: string; ogLocale: string
 };
 
 // route path -> meta key in locale.meta
-const ROUTES: Array<{ path: string; metaKey: keyof Locale["meta"] }> = [
+const ROUTES: Array<{ path: string; metaKey?: keyof Locale["meta"]; meta?: { title: string; description: string } }> = [
   { path: "/", metaKey: "home" },
   { path: "/baixar-videos-kwai", metaKey: "baixarKwai" as keyof Locale["meta"] },
+  {
+    path: "/baixar-videos-facebook",
+    meta: {
+      title: "Baixar Vídeos do Facebook Grátis e em HD | KwaiSave",
+      description:
+        "Baixar vídeos do Facebook online, grátis e em HD. Salve vídeos e reels do Facebook por link, sem instalar programas — direto no navegador do celular ou PC.",
+    },
+  },
+  {
+    path: "/baixar-videos-youtube",
+    meta: {
+      title: "Baixar Vídeos do YouTube Online e Grátis | KwaiSave",
+      description:
+        "Baixar vídeos do YouTube online em MP4 e alta qualidade. Baixador de vídeos do YouTube grátis, sem programas, funcionando no celular e no PC.",
+    },
+  },
+  {
+    path: "/baixar-videos-instagram",
+    meta: {
+      title: "Baixar Vídeos do Instagram, Reels e Stories | KwaiSave",
+      description:
+        "Baixar vídeos do Instagram, reels e stories em HD e sem marca d'água. Baixador de Instagram online, grátis, no celular ou no PC, sem instalar nada.",
+    },
+  },
+  {
+    path: "/baixar-videos-tiktok",
+    meta: {
+      title: "Baixar Vídeos do TikTok Sem Marca d'Água | KwaiSave",
+      description:
+        "Baixar vídeos do TikTok sem marca d'água em HD, grátis e online. Baixador de TikTok por link, no celular ou PC, sem app e sem cadastro.",
+    },
+  },
+  {
+    path: "/baixar-videos-twitter",
+    meta: {
+      title: "Baixar Vídeos do Twitter (X) em HD | KwaiSave",
+      description:
+        "Baixar vídeos do Twitter (X) online e grátis em MP4. Baixador de vídeos do X por link, em HD, no celular ou no PC, sem instalar nada.",
+    },
+  },
   { path: "/baixar-tutorial", metaKey: "tutorial" },
   { path: "/kwai-apk", metaKey: "kwaiApk" },
   { path: "/faq", metaKey: "faqPage" },
@@ -46,9 +86,17 @@ function esc(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-function buildHead(lang: string, path: string, metaKey: keyof Locale["meta"]): { head: string; htmlAttrs: string } {
+function buildHead(
+  lang: string,
+  path: string,
+  metaKey?: keyof Locale["meta"],
+  inlineMeta?: { title: string; description: string }
+): { head: string; htmlAttrs: string } {
   const locale = LOCALES[lang];
-  const meta = locale.data.meta[metaKey] as { title: string; description: string };
+  const meta = (inlineMeta ?? (locale.data.meta[metaKey as keyof Locale["meta"]] as unknown)) as {
+    title: string;
+    description: string;
+  };
   const url = (code: string) =>
     code === "en" && path === "/" ? `${BASE_URL}/` : `${BASE_URL}/${code}${path === "/" ? "" : path}`;
   const canonical = url(lang);
@@ -133,7 +181,7 @@ async function main() {
   let count = 0;
   for (const lang of Object.keys(LOCALES)) {
     for (const route of ROUTES) {
-      const { head, htmlAttrs } = buildHead(lang, route.path, route.metaKey);
+      const { head, htmlAttrs } = buildHead(lang, route.path, route.metaKey, route.meta);
       let html = injectHead(template, head, htmlAttrs);
       const slug = route.path === "/" ? "" : route.path;
       if (render) {

@@ -21,6 +21,11 @@ interface SitemapEntry {
 const entries: SitemapEntry[] = [
   { path: "/", changefreq: "daily", priority: "1.0" },
   { path: "/baixar-videos-kwai", changefreq: "daily", priority: "0.95" },
+  { path: "/baixar-videos-facebook", changefreq: "weekly", priority: "0.9" },
+  { path: "/baixar-videos-youtube", changefreq: "weekly", priority: "0.9" },
+  { path: "/baixar-videos-instagram", changefreq: "weekly", priority: "0.9" },
+  { path: "/baixar-videos-tiktok", changefreq: "weekly", priority: "0.9" },
+  { path: "/baixar-videos-twitter", changefreq: "weekly", priority: "0.9" },
   { path: "/baixar-tutorial", changefreq: "weekly", priority: "0.9" },
   { path: "/kwai-apk", changefreq: "weekly", priority: "0.9" },
   { path: "/faq", changefreq: "weekly", priority: "0.8" },
