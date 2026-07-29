@@ -29,7 +29,46 @@ const LOCALES: Record<string, { data: Locale; hreflang: string; ogLocale: string
 const ROUTES: Array<{ path: string; metaKey?: keyof Locale["meta"]; meta?: { title: string; description: string } }> = [
   { path: "/", metaKey: "home" },
   { path: "/baixar-videos-kwai", metaKey: "baixarKwai" as keyof Locale["meta"] },
-  ...PLATFORMS.map((p) => ({ path: p.slug, meta: { title: `${p.title} | KwaiSave`, description: p.description } })),
+  {
+    path: "/baixar-videos-facebook",
+    meta: {
+      title: "Baixar Vídeos do Facebook Grátis e em HD | KwaiSave",
+      description:
+        "Baixar vídeos do Facebook online, grátis e em HD. Salve vídeos e reels do Facebook por link, sem instalar programas — direto no navegador do celular ou PC.",
+    },
+  },
+  {
+    path: "/baixar-videos-youtube",
+    meta: {
+      title: "Baixar Vídeos do YouTube Online e Grátis | KwaiSave",
+      description:
+        "Baixar vídeos do YouTube online em MP4 e alta qualidade. Baixador de vídeos do YouTube grátis, sem programas, funcionando no celular e no PC.",
+    },
+  },
+  {
+    path: "/baixar-videos-instagram",
+    meta: {
+      title: "Baixar Vídeos do Instagram, Reels e Stories | KwaiSave",
+      description:
+        "Baixar vídeos do Instagram, reels e stories em HD e sem marca d'água. Baixador de Instagram online, grátis, no celular ou no PC, sem instalar nada.",
+    },
+  },
+  {
+    path: "/baixar-videos-tiktok",
+    meta: {
+      title: "Baixar Vídeos do TikTok Sem Marca d'Água | KwaiSave",
+      description:
+        "Baixar vídeos do TikTok sem marca d'água em HD, grátis e online. Baixador de TikTok por link, no celular ou PC, sem app e sem cadastro.",
+    },
+  },
+  {
+    path: "/baixar-videos-twitter",
+    meta: {
+      title: "Baixar Vídeos do Twitter (X) em HD | KwaiSave",
+      description:
+        "Baixar vídeos do Twitter (X) online e grátis em MP4. Baixador de vídeos do X por link, em HD, no celular ou no PC, sem instalar nada.",
+    },
+  },
   { path: "/baixar-tutorial", metaKey: "tutorial" },
   { path: "/kwai-apk", metaKey: "kwaiApk" },
   { path: "/faq", metaKey: "faqPage" },
