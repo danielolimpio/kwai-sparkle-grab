@@ -5,11 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useCurrentLanguage } from "@/hooks/use-current-language";
 import { buildPath } from "@/hooks/use-current-language";
 import logoKwai from "@/assets/logo-kwai.png";
-import logoInstagram from "@/assets/baixar-instagram.png";
-import logoFacebook from "@/assets/baixar-facebook.png";
-import logoYoutube from "@/assets/baixar-youtube.png";
-import logoTiktok from "@/assets/baixar-tiktok.png";
-import logoTwitter from "@/assets/baixar-twitter.jpg";
+import { PLATFORMS } from "@/data/platforms";
 
 const navConfig = [
   { icon: Home, key: "videos", path: "/" },
@@ -22,14 +18,6 @@ const navConfig = [
   { icon: Mail, key: "contact", path: "/contato" },
   { icon: HelpCircle, key: "faq", path: "/faq" },
 ] as const;
-
-const externalLinks = [
-  { label: "Baixar Instagram", url: "https://baixarvideosinstagram.com", logo: logoInstagram },
-  { label: "Baixar Facebook", url: "https://baixarvideosfacebook.com", logo: logoFacebook },
-  { label: "Baixar YouTube", url: "https://baixarvideoyoutube.com", logo: logoYoutube },
-  { label: "Baixar TikTok", url: "https://baixarvideostiktok.com", logo: logoTiktok },
-  { label: "Baixar Twitter", url: "https://baixarvideostwitter.com", logo: logoTwitter },
-];
 
 interface AppSidebarProps {
   activeTab: string;
@@ -91,18 +79,34 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
 
           <div className="pt-4 mt-4 border-t border-border">
             <p className="px-4 pb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("sidebar.others")}</p>
-            {externalLinks.map((link) => (
-              <a
-                key={link.url}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-all duration-200"
-              >
-                <img src={link.logo} alt={link.label} className="h-6 w-6 rounded-md object-cover" />
-                <span className="truncate">{link.label}</span>
-              </a>
-            ))}
+            {PLATFORMS.map((p) => {
+              const Icon = p.icon;
+              const to = buildPath(lang, p.slug);
+              const isActive = location.pathname === to;
+              return (
+                <button
+                  key={p.slug}
+                  onClick={() => {
+                    navigate(to);
+                    onClose();
+                  }}
+                  className={cn(
+                    "w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
+                    isActive
+                      ? "gradient-kwai text-primary-foreground shadow-kwai"
+                      : "text-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                  )}
+                >
+                  <span
+                    className="h-7 w-7 rounded-lg flex items-center justify-center text-white shrink-0"
+                    style={{ backgroundColor: p.color }}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <span className="truncate">{p.label}</span>
+                </button>
+              );
+            })}
           </div>
         </nav>
 

@@ -1,19 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useCurrentLanguage, buildPath } from "@/hooks/use-current-language";
-import logoInstagram from "@/assets/baixar-instagram.png";
-import logoFacebook from "@/assets/baixar-facebook.png";
-import logoYoutube from "@/assets/baixar-youtube.png";
-import logoTiktok from "@/assets/baixar-tiktok.png";
-import logoTwitter from "@/assets/baixar-twitter.jpg";
-
-const externalLinks = [
-  { label: "Baixar Instagram", url: "https://baixarvideosinstagram.com", logo: logoInstagram },
-  { label: "Baixar Facebook", url: "https://baixarvideosfacebook.com", logo: logoFacebook },
-  { label: "Baixar YouTube", url: "https://baixarvideoyoutube.com", logo: logoYoutube },
-  { label: "Baixar TikTok", url: "https://baixarvideostiktok.com", logo: logoTiktok },
-  { label: "Baixar Twitter", url: "https://baixarvideostwitter.com", logo: logoTwitter },
-];
+import { PLATFORMS } from "@/data/platforms";
 
 export function AppFooter() {
   const { t } = useTranslation();
@@ -35,19 +23,25 @@ export function AppFooter() {
           <Link to={L("/baixar-tutorial")} className="hover:text-primary transition-colors">{t("footer.links.tutorial")}</Link>
           <Link to={L("/kwai-apk")} className="hover:text-primary transition-colors">{t("footer.links.kwaiApk")}</Link>
         </div>
-        <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mb-4">
-          {externalLinks.map((link) => (
-            <a
-              key={link.url}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
-            >
-              <img src={link.logo} alt={link.label} className="w-5 h-5 rounded object-cover" loading="lazy" />
-              <span>{link.label}</span>
-            </a>
-          ))}
+        <div className="flex flex-wrap justify-center gap-3 text-sm text-muted-foreground mb-4">
+          {PLATFORMS.map((p) => {
+            const Icon = p.icon;
+            return (
+              <Link
+                key={p.slug}
+                to={L(p.slug)}
+                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-border bg-background/60 hover:border-primary/40 hover:text-primary transition-all"
+              >
+                <span
+                  className="h-6 w-6 rounded-lg flex items-center justify-center text-white shrink-0"
+                  style={{ backgroundColor: p.color }}
+                >
+                  <Icon className="h-3.5 w-3.5" />
+                </span>
+                <span>{p.label}</span>
+              </Link>
+            );
+          })}
         </div>
         <p className="text-center text-xs text-muted-foreground mb-2">{t("footer.copyright")}</p>
         <p className="text-center text-xs text-muted-foreground max-w-xl mx-auto">{t("footer.disclaimer")}</p>
