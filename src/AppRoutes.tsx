@@ -15,6 +15,8 @@ import FAQPage from "./pages/FAQPage";
 import BaixarTutorial from "./pages/BaixarTutorial";
 import KwaiAPK from "./pages/KwaiAPK";
 import BaixarVideosKwai from "./pages/BaixarVideosKwai";
+import BaixarPlataforma from "./pages/BaixarPlataforma";
+import { PLATFORMS } from "@/data/platforms";
 
 export function AppRoutes() {
   return (
@@ -33,6 +35,9 @@ export function AppRoutes() {
       <Route path="/baixar-tutorial" element={<LegacyPtRedirect />} />
       <Route path="/kwai-apk" element={<LegacyPtRedirect />} />
       <Route path="/baixar-videos-kwai" element={<LegacyPtRedirect />} />
+      {PLATFORMS.map((p) => (
+        <Route key={p.slug} path={p.slug} element={<LegacyPtRedirect />} />
+      ))}
 
       <Route path="/:lang" element={<LangGuard><Index /></LangGuard>} />
       <Route path="/:lang/termos-de-uso" element={<LangGuard><TermosDeUso /></LangGuard>} />
@@ -47,6 +52,13 @@ export function AppRoutes() {
       <Route path="/:lang/baixar-tutorial" element={<LangGuard><BaixarTutorial /></LangGuard>} />
       <Route path="/:lang/kwai-apk" element={<LangGuard><KwaiAPK /></LangGuard>} />
       <Route path="/:lang/baixar-videos-kwai" element={<LangGuard><BaixarVideosKwai /></LangGuard>} />
+      {PLATFORMS.map((p) => (
+        <Route
+          key={p.slug}
+          path={`/:lang${p.slug}`}
+          element={<LangGuard><BaixarPlataforma platform={p} /></LangGuard>}
+        />
+      ))}
 
       <Route path="*" element={<NotFound />} />
     </Routes>
