@@ -8,18 +8,18 @@ export function FeatureCards() {
   const items = (t("features.items", { returnObjects: true }) as { title: string; desc: string }[]) || [];
   const features = items.map((it, i) => ({ ...it, icon: ICONS[i] || CheckCircle }));
   return (
-    <section className="px-4 py-8" aria-label="Recursos do baixador de vídeos do Kwai">
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
+    <section className="px-4 py-12 section-cinematic" aria-label="Recursos do baixador de vídeos do Kwai">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 max-w-5xl mx-auto">
         {features.map((f) => (
           <div
             key={f.title}
-            className="bg-card border border-border rounded-2xl p-5 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            className="card-premium p-5 text-center"
           >
-            <div className="gradient-kwai inline-flex p-3 rounded-2xl mb-3 shadow-kwai">
-              <f.icon className="h-6 w-6 text-primary-foreground" />
+            <div className="icon-premium inline-flex p-3.5 rounded-2xl mb-4">
+              <f.icon className="h-7 w-7 text-primary-foreground" />
             </div>
-            <h3 className="font-semibold text-foreground text-sm mb-1">{f.title}</h3>
-            <p className="text-xs text-muted-foreground">{f.desc}</p>
+            <h3 className="font-display font-bold text-foreground text-base mb-1.5">{f.title}</h3>
+            <p className="text-sm text-muted-foreground">{f.desc}</p>
           </div>
         ))}
       </div>

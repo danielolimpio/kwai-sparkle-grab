@@ -37,12 +37,12 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
   };
 
   return (
-    <section className="text-center py-10 px-4 animate-fade-in">
-      <h1 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3 leading-tight">
+    <section className="text-center py-14 px-4 animate-fade-in section-cinematic">
+      <h1 className="font-display text-4xl md:text-5xl font-extrabold text-foreground mb-4 leading-tight">
         {t("hero.h1a")}{" "}
         <span className="gradient-kwai-text">{t("hero.h1b")}</span>
       </h1>
-      <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-8">
+      <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10">
         {t("hero.subtitle")}
       </p>
 
@@ -56,7 +56,7 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder={t("hero.placeholder")}
-            className="w-full h-14 pl-12 pr-28 rounded-xl border border-input bg-card text-foreground placeholder:text-muted-foreground text-base focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/20 transition-all overflow-hidden text-ellipsis"
+            className="w-full h-16 pl-12 pr-28 rounded-2xl border border-input bg-card text-foreground placeholder:text-muted-foreground text-lg shadow-premium focus:outline-none focus:border-primary focus:ring-[4px] focus:ring-primary/20 transition-all overflow-hidden text-ellipsis"
             aria-label={t("hero.inputAria")}
           />
           <div className="absolute right-2 flex items-center gap-1 bg-card pl-2">
@@ -84,17 +84,17 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
         <button
           type="submit"
           disabled={isLoading}
-          className="mt-4 h-14 px-12 gradient-kwai text-primary-foreground font-bold text-base rounded-xl shadow-kwai hover:shadow-kwai-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2 mx-auto"
+          className="mt-5 h-16 px-14 btn-premium text-primary-foreground font-display font-bold text-lg rounded-2xl disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2 mx-auto"
         >
           {isLoading ? (
-            <div className="h-5 w-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+            <div className="h-6 w-6 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
           ) : (
-            <Download className="h-5 w-5" />
+            <Download className="h-6 w-6" />
           )}
           {isLoading ? t("hero.ctaLoading") : t("hero.cta")}
         </button>
 
-        <p className="mt-4 text-xs text-muted-foreground max-w-lg mx-auto leading-relaxed">
+        <p className="mt-5 text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
           {t("hero.disclaimer")}{" "}
           <a href={buildPath(lang, "/uso-responsavel")} className="text-primary font-semibold hover:underline">{t("hero.learnMore")}</a>
         </p>
@@ -104,25 +104,25 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
       {resultsSlot}
 
       {/* Showcase images */}
-      <div className="max-w-5xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 px-2">
-        <div className="rounded-2xl overflow-hidden border border-border shadow-lg hover:shadow-kwai-lg hover:-translate-y-1 transition-all duration-300">
+      <div className="max-w-5xl mx-auto mt-14 grid grid-cols-1 sm:grid-cols-2 gap-6 px-2">
+        <div className="rounded-3xl overflow-hidden hairline border shadow-premium-lg hover:-translate-y-1 transition-all duration-500">
           <img
             src={kwaiHero1}
             alt={t("hero.img1Alt")}
-            width={1024}
-            height={576}
+            width={1088}
+            height={608}
             className="w-full h-auto object-cover"
             loading="eager"
             {...{ fetchpriority: "high" }}
             decoding="async"
           />
         </div>
-        <div className="rounded-2xl overflow-hidden border border-border shadow-lg hover:shadow-kwai-lg hover:-translate-y-1 transition-all duration-300">
+        <div className="rounded-3xl overflow-hidden hairline border shadow-premium-lg hover:-translate-y-1 transition-all duration-500">
           <img
             src={kwaiHero2}
             alt={t("hero.img2Alt")}
-            width={1024}
-            height={576}
+            width={1088}
+            height={608}
             className="w-full h-auto object-cover"
             loading="lazy"
             decoding="async"

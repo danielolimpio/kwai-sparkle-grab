@@ -17,13 +17,13 @@ export function ContentTabs({ activeTab, onTabChange }: ContentTabsProps) {
           key={tab.id}
           onClick={() => onTabChange(tab.id)}
           className={cn(
-            "flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
+            "flex items-center gap-2 px-7 py-3 rounded-2xl text-base font-semibold transition-all duration-200",
             activeTab === tab.id
-              ? "gradient-kwai text-primary-foreground shadow-kwai"
-              : "bg-card text-muted-foreground border border-border hover:border-primary/30 hover:text-foreground"
+              ? "btn-premium text-primary-foreground"
+              : "card-premium text-muted-foreground hover:text-foreground"
           )}
         >
-          <tab.icon className="h-4 w-4" />
+          <tab.icon className="h-5 w-5" />
           {tab.label}
         </button>
       ))}
