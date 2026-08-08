@@ -52,9 +52,9 @@
     --shadow-kwai: 0 4px 12px hsla(16, 100%, 56%, 0.4);
     --shadow-kwai-lg: 0 8px 24px hsla(16, 100%, 56%, 0.3);
 
-    --gradient-cinematic: radial-gradient(1200px 600px at 15% -10%, hsla(16, 100%, 56%, 0.18), transparent 60%),
-      radial-gradient(900px 500px at 90% 10%, hsla(8, 100%, 50%, 0.14), transparent 60%),
-      radial-gradient(800px 600px at 50% 120%, hsla(27, 100%, 60%, 0.12), transparent 60%);
+    --gradient-cinematic: radial-gradient(1200px 600px at 15% -10%, hsla(16, 100%, 56%, 0.10), transparent 60%),
+      radial-gradient(900px 500px at 90% 10%, hsla(8, 100%, 50%, 0.08), transparent 60%),
+      radial-gradient(800px 600px at 50% 120%, hsla(27, 100%, 60%, 0.07), transparent 60%);
     --gradient-surface: linear-gradient(160deg, hsl(0 0% 100%), hsl(24 60% 99%));
     --shadow-premium: 0 1px 2px hsla(16, 30%, 20%, 0.06), 0 12px 32px -12px hsla(16, 60%, 30%, 0.18);
     --shadow-premium-lg: 0 2px 4px hsla(16, 30%, 20%, 0.06), 0 28px 60px -20px hsla(16, 70%, 35%, 0.28);
