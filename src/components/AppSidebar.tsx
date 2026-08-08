@@ -39,18 +39,18 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
 
       <aside
         className={cn(
-          "fixed top-0 left-0 z-50 h-full w-[280px] border-r border-border bg-card flex flex-col overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden transition-transform duration-300 lg:translate-x-0",
+          "fixed top-0 left-0 z-50 h-full w-[300px] border-r hairline bg-card section-cinematic flex flex-col overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden transition-transform duration-300 lg:translate-x-0",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
         <div
-          className="flex items-center gap-3 px-6 py-6 border-b border-border cursor-pointer shrink-0"
+          className="flex items-center gap-3 px-6 py-7 border-b hairline cursor-pointer shrink-0"
           onClick={() => { navigate(buildPath(lang, "/")); onClose(); }}
         >
-          <img src={logoKwai} alt="KwaiSave" className="h-10 w-10 rounded-xl shadow-kwai" />
+          <img src={logoKwai} alt="KwaiSave" className="h-12 w-12 rounded-2xl shadow-kwai" />
           <div>
-            <span className="block text-lg font-bold text-foreground">KwaiSave</span>
-            <p className="text-xs text-muted-foreground">{t("sidebar.tagline")}</p>
+            <span className="block font-display text-xl font-extrabold text-foreground">KwaiSave</span>
+            <p className="text-sm text-muted-foreground">{t("sidebar.tagline")}</p>
           </div>
         </div>
 
@@ -65,20 +65,21 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
                   onClose();
                 }}
                 className={cn(
-                  "w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200",
+                  "w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl text-base font-semibold transition-all duration-200",
                   isActive
-                    ? "gradient-kwai text-primary-foreground shadow-kwai"
+                    ? "btn-premium text-primary-foreground"
                     : "text-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                 )}
               >
-                <item.icon className="h-5 w-5" />
+                <item.icon className="h-6 w-6" />
                 <span>{item.label}</span>
               </button>
             );
           })}
 
-          <div className="pt-4 mt-4 border-t border-border">
-            <p className="px-4 pb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("sidebar.others")}</p>
+          <div className="pt-4 mt-4">
+            <hr className="divider-premium mb-4" />
+            <p className="px-4 pb-2 text-sm font-bold text-muted-foreground uppercase tracking-wider">{t("sidebar.others")}</p>
             {PLATFORMS.map((p) => {
               const Icon = p.icon;
               const to = buildPath(lang, p.slug);
@@ -91,17 +92,17 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
                     onClose();
                   }}
                   className={cn(
-                    "w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
+                    "w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-base font-semibold transition-all duration-200",
                     isActive
-                      ? "gradient-kwai text-primary-foreground shadow-kwai"
+                      ? "btn-premium text-primary-foreground"
                       : "text-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                   )}
                 >
                   <span
-                    className="h-7 w-7 rounded-lg flex items-center justify-center text-white shrink-0"
+                    className="h-8 w-8 rounded-xl flex items-center justify-center text-white shrink-0 shadow-premium"
                     style={{ backgroundColor: p.color }}
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon className="h-4.5 w-4.5" />
                   </span>
                   <span className="truncate">{p.label}</span>
                 </button>
@@ -110,7 +111,7 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
           </div>
         </nav>
 
-        <div className="px-6 py-4 border-t border-border mt-auto">
+        <div className="px-6 py-4 border-t hairline mt-auto">
           <a
             href="https://batepapogratis.com/"
             target="_blank"
@@ -137,9 +138,9 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
               className="w-14 h-14 object-contain -mt-2"
             />
           </a>
-          <div className="border-t border-border mb-3" />
-          <p className="text-xs text-muted-foreground">KwaiSave {t("sidebar.version")}</p>
-          <p className="text-xs text-muted-foreground">{t("sidebar.copyright")}</p>
+          <hr className="divider-premium mb-3" />
+          <p className="text-sm text-muted-foreground">KwaiSave {t("sidebar.version")}</p>
+          <p className="text-sm text-muted-foreground">{t("sidebar.copyright")}</p>
         </div>
       </aside>
     </>
