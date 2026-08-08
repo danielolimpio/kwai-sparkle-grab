@@ -32,7 +32,7 @@ export function FAQ() {
   const items = (t("faq.items", { returnObjects: true }) as { q: string; a: string }[]) || [];
   return (
     <section className="px-4 py-10 max-w-3xl mx-auto" aria-label={title}>
-      <h2 className="text-2xl font-bold text-foreground text-center mb-8">{title}</h2>
+      <h2 className="text-3xl font-display font-extrabold text-foreground text-center mb-8">{title}</h2>
       <div className="bg-card border border-border rounded-2xl overflow-hidden">
         <Accordion type="single" collapsible className="divide-y divide-border">
           {items.map((faq, i) => (
