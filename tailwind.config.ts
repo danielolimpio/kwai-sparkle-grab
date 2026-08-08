@@ -14,7 +14,19 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Figtree", "system-ui", "sans-serif"],
+        display: ["Outfit", "Figtree", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        xs: ["0.875rem", { lineHeight: "1.5rem" }],
+        sm: ["1rem", { lineHeight: "1.65rem" }],
+        base: ["1.125rem", { lineHeight: "1.8rem" }],
+        lg: ["1.25rem", { lineHeight: "1.9rem" }],
+        xl: ["1.4rem", { lineHeight: "2rem" }],
+        "2xl": ["1.75rem", { lineHeight: "2.25rem" }],
+        "3xl": ["2.25rem", { lineHeight: "2.6rem" }],
+        "4xl": ["2.9rem", { lineHeight: "3.1rem" }],
+        "5xl": ["3.6rem", { lineHeight: "3.8rem" }],
       },
       colors: {
         border: "hsl(var(--border))",
