@@ -39,7 +39,7 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
 
       <aside
         className={cn(
-          "fixed top-0 left-0 z-50 h-full w-[300px] border-r hairline bg-card section-cinematic flex flex-col overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden transition-transform duration-300 lg:translate-x-0",
+          "fixed top-0 left-0 z-50 h-full w-[280px] border-r hairline bg-card section-cinematic flex flex-col overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden transition-transform duration-300 lg:translate-x-0",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
@@ -102,7 +102,7 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
                     className="h-8 w-8 rounded-xl flex items-center justify-center text-white shrink-0 shadow-premium"
                     style={{ backgroundColor: p.color }}
                   >
-                    <Icon className="h-4.5 w-4.5" />
+                    <Icon className="h-4 w-4" />
                   </span>
                   <span className="truncate">{p.label}</span>
                 </button>
