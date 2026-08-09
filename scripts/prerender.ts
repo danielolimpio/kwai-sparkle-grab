@@ -139,10 +139,13 @@ function injectHead(template: string, head: string, htmlAttrs: string): string {
   html = html.replace(/<link\s+rel="alternate"\s+hreflang[^>]*>\s*/gi, "");
   html = html.replace(/<meta\s+property="og:[^"]+"[^>]*>\s*/gi, "");
   html = html.replace(/<meta\s+name="twitter:[^"]+"[^>]*>\s*/gi, "");
+  html = html.replace(/<meta\s+name="(robots|googlebot|author)"[^>]*>\s*/gi, "");
   // Update <html lang="..." dir="...">
   html = html.replace(/<html[^>]*>/i, `<html ${htmlAttrs}>`);
   // Inject the new head block right after <meta charset>
   html = html.replace(/(<meta\s+charset="[^"]+"\s*\/?>)/i, `$1\n    ${head}`);
+  // Helmet emits React-style attribute casing; normalize for static HTML.
+  html = html.replace(/hrefLang=/g, "hreflang=");
   return html;
 }
 
