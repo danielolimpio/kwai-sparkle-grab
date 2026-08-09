@@ -175,6 +175,9 @@
     position: relative;
     background-image: var(--gradient-cinematic);
   }
+  .bg-cinematic {
+    background-image: var(--gradient-cinematic);
+  }
   .divider-premium {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--hairline), hsla(16,100%,56%,.35), var(--hairline), transparent);
