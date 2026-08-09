@@ -139,10 +139,13 @@ function injectHead(template: string, head: string, htmlAttrs: string): string {
   html = html.replace(/<link\s+rel="alternate"\s+hreflang[^>]*>\s*/gi, "");
   html = html.replace(/<meta\s+property="og:[^"]+"[^>]*>\s*/gi, "");
   html = html.replace(/<meta\s+name="twitter:[^"]+"[^>]*>\s*/gi, "");
+  html = html.replace(/<meta\s+name="(robots|googlebot|author)"[^>]*>\s*/gi, "");
   // Update <html lang="..." dir="...">
   html = html.replace(/<html[^>]*>/i, `<html ${htmlAttrs}>`);
   // Inject the new head block right after <meta charset>
   html = html.replace(/(<meta\s+charset="[^"]+"\s*\/?>)/i, `$1\n    ${head}`);
+  // Helmet emits React-style attribute casing; normalize for static HTML.
+  html = html.replace(/hrefLang=/g, "hreflang=");
   return html;
 }
 
@@ -155,7 +158,9 @@ async function main() {
   const template = readFileSync(indexPath, "utf-8");
 
   // Load the SSR bundle (built by `vite build --ssr`) to render real page HTML.
-  let render: ((url: string, lang: string) => Promise<string>) | null = null;
+  let render:
+    | ((url: string, lang: string) => Promise<{ html: string; head: string; htmlAttrs: string }>)
+    | null = null;
   const ssrEntry = resolve("dist-ssr/entry-server.js");
   if (existsSync(ssrEntry)) {
     try {
@@ -181,19 +186,29 @@ async function main() {
   let count = 0;
   for (const lang of Object.keys(LOCALES)) {
     for (const route of ROUTES) {
-      const { head, htmlAttrs } = buildHead(lang, route.path, route.metaKey, route.meta);
-      let html = injectHead(template, head, htmlAttrs);
+      const fallback = buildHead(lang, route.path, route.metaKey, route.meta);
       const slug = route.path === "/" ? "" : route.path;
+      let head = fallback.head;
+      let htmlAttrs = fallback.htmlAttrs;
+      let body: string | null = null;
       if (render) {
         try {
-          const body = await render(`/${lang}${slug}`, lang);
-          const start = html.indexOf('<div id="root">');
-          const end = html.indexOf("</body>", start);
-          if (start === -1 || end === -1) throw new Error("root placeholder not found");
-          const tail = html.slice(start, end).replace(/[\s\S]*<\/div>/, "");
-          html = `${html.slice(0, start)}<div id="root">${body}</div>${tail}${html.slice(end)}`;
+          const result = await render(`/${lang}${slug}`, lang);
+          body = result.html;
+          // Helmet head carries per-route title/description/canonical/hreflang/OG + JSON-LD.
+          if (result.head && result.head.includes("<title")) head = result.head;
+          if (result.htmlAttrs) htmlAttrs = result.htmlAttrs;
         } catch (err) {
           console.warn(`[prerender] render failed for /${lang}${slug}:`, err);
+        }
+      }
+      let html = injectHead(template, head, htmlAttrs);
+      if (body !== null) {
+        const start = html.indexOf('<div id="root">');
+        const end = html.indexOf("</body>", start);
+        if (start !== -1 && end !== -1) {
+          const tail = html.slice(start, end).replace(/[\s\S]*<\/div>/, "");
+          html = `${html.slice(0, start)}<div id="root">${body}</div>${tail}${html.slice(end)}`;
         }
       }
       if (lang === "en" && route.path === "/") {

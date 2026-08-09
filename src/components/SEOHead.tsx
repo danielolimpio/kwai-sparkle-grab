@@ -162,7 +162,16 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
       <html lang={meta.htmlLang} dir={meta.dir} />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+      <meta
+        name="robots"
+        content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"}
+      />
+      <meta
+        name="googlebot"
+        content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"}
+      />
+      <meta name="author" content={SITE_NAME} />
+      <meta name="publisher" content={SITE_NAME} />
       <link rel="canonical" href={fullCanonical} />
       <link rel="alternate" hrefLang="pt-BR" href={altUrl("pt")} />
       <link rel="alternate" hrefLang="pt" href={altUrl("pt")} />
@@ -178,6 +187,9 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image:alt" content={fullTitle} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content={meta.ogLocale} />
       {SUPPORTED_LANGS.filter((l) => l !== lang).map((l) => (
@@ -189,6 +201,7 @@ export function SEOHead({ title, description, canonical, breadcrumbs, faq, noind
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="twitter:image:alt" content={fullTitle} />
 
       {/* Structured Data */}
       {websiteSchema && (

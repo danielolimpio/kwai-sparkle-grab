@@ -39,7 +39,7 @@ export function AppSidebar({ isOpen, onClose }: AppSidebarProps) {
 
       <aside
         className={cn(
-          "fixed top-0 left-0 z-50 h-full w-[280px] border-r hairline bg-card section-cinematic flex flex-col overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden transition-transform duration-300 lg:translate-x-0",
+          "fixed top-0 left-0 z-50 h-full w-[280px] border-r hairline bg-card bg-cinematic flex flex-col overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden transition-transform duration-300 lg:translate-x-0",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
