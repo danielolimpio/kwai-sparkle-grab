@@ -178,6 +178,25 @@
   .bg-cinematic {
     background-image: var(--gradient-cinematic);
   }
+  .cinematic-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .cinematic-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.16;
+    filter: saturate(1.05);
+    -webkit-mask-image: radial-gradient(120% 100% at 50% 40%, #000 30%, transparent 85%);
+    mask-image: radial-gradient(120% 100% at 50% 40%, #000 30%, transparent 85%);
+  }
+  .dark .cinematic-bg img {
+    opacity: 0.5;
+  }
   .divider-premium {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--hairline), hsla(16,100%,56%,.35), var(--hairline), transparent);
