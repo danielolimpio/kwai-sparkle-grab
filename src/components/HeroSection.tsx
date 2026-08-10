@@ -38,7 +38,7 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
   };
 
   return (
-    <section className="relative overflow-hidden text-center py-14 px-4 animate-fade-in section-cinematic">
+    <section className="cinematic-dark relative overflow-hidden text-center py-20 px-4 animate-fade-in">
       <div className="cinematic-bg" aria-hidden="true">
         <img src={bgHero} alt="" width={1920} height={1088} loading="eager" decoding="async" />
       </div>

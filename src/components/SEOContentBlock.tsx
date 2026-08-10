@@ -9,11 +9,11 @@ export function SEOContentBlock() {
   const highlightTexts = (t("seoBlock.highlights", { returnObjects: true }) as string[]) || [];
   const highlights = highlightTexts.map((text, i) => ({ text, icon: ICONS[i] || CheckCircle2 }));
   return (
-    <section className="relative overflow-hidden px-4 py-10" aria-label={t("seoBlock.title") as string}>
+    <section className="cinematic-dark relative overflow-hidden px-4 py-16" aria-label={t("seoBlock.title") as string}>
       <div className="cinematic-bg" aria-hidden="true">
         <img src={bgSection} alt="" width={1920} height={1088} loading="lazy" decoding="async" />
       </div>
-      <div className="relative z-10 max-w-4xl mx-auto card-premium p-8 space-y-6 backdrop-blur-sm">
+      <div className="relative z-10 max-w-4xl mx-auto card-premium p-8 space-y-6 backdrop-blur-md">
         <div>
           <span className="gradient-kwai text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">{t("seoBlock.badge")}</span>
           <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mt-3 mb-2">{t("seoBlock.title")}</h2>

@@ -9,7 +9,7 @@ export function AppFooter() {
   const { lang } = useCurrentLanguage();
   const L = (p: string) => buildPath(lang, p);
   return (
-    <footer className="relative overflow-hidden section-cinematic bg-card border-t hairline mt-12">
+    <footer className="cinematic-dark relative overflow-hidden border-t hairline mt-12">
       <div className="cinematic-bg" aria-hidden="true">
         <img src={bgFooter} alt="" width={1920} height={720} loading="lazy" decoding="async" />
       </div>
