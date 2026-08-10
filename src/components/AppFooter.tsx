@@ -2,14 +2,18 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useCurrentLanguage, buildPath } from "@/hooks/use-current-language";
 import { PLATFORMS } from "@/data/platforms";
+import bgFooter from "@/assets/bg-footer-cinematic.jpg";
 
 export function AppFooter() {
   const { t } = useTranslation();
   const { lang } = useCurrentLanguage();
   const L = (p: string) => buildPath(lang, p);
   return (
-    <footer className="section-cinematic bg-card border-t hairline mt-12">
-      <div className="max-w-5xl mx-auto px-4 py-12">
+    <footer className="relative overflow-hidden section-cinematic bg-card border-t hairline mt-12">
+      <div className="cinematic-bg" aria-hidden="true">
+        <img src={bgFooter} alt="" width={1920} height={720} loading="lazy" decoding="async" />
+      </div>
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-12">
         <div className="flex flex-wrap justify-center gap-x-7 gap-y-3 text-base text-muted-foreground mb-6">
           <Link to={L("/termos-de-uso")} className="hover:text-primary transition-colors">{t("footer.links.terms")}</Link>
           <Link to={L("/privacidade")} className="hover:text-primary transition-colors">{t("footer.links.privacy")}</Link>

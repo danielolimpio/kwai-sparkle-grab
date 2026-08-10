@@ -1,5 +1,6 @@
 import { CheckCircle2, Sparkles, Globe2, ShieldCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import bgSection from "@/assets/bg-section-cinematic.jpg";
 
 const ICONS = [CheckCircle2, Sparkles, Globe2, ShieldCheck];
 
@@ -8,8 +9,11 @@ export function SEOContentBlock() {
   const highlightTexts = (t("seoBlock.highlights", { returnObjects: true }) as string[]) || [];
   const highlights = highlightTexts.map((text, i) => ({ text, icon: ICONS[i] || CheckCircle2 }));
   return (
-    <section className="px-4 py-10 max-w-4xl mx-auto" aria-label={t("seoBlock.title") as string}>
-      <div className="bg-card border border-border rounded-2xl p-8 space-y-6">
+    <section className="relative overflow-hidden px-4 py-10" aria-label={t("seoBlock.title") as string}>
+      <div className="cinematic-bg" aria-hidden="true">
+        <img src={bgSection} alt="" width={1920} height={1088} loading="lazy" decoding="async" />
+      </div>
+      <div className="relative z-10 max-w-4xl mx-auto card-premium p-8 space-y-6 backdrop-blur-sm">
         <div>
           <span className="gradient-kwai text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">{t("seoBlock.badge")}</span>
           <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mt-3 mb-2">{t("seoBlock.title")}</h2>

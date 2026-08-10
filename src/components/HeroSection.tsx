@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useCurrentLanguage, buildPath } from "@/hooks/use-current-language";
 import kwaiHero1 from "@/assets/kwai-hero-1.png";
 import kwaiHero2 from "@/assets/kwai-hero-2.png";
+import bgHero from "@/assets/bg-hero-cinematic.jpg";
 
 interface HeroSectionProps {
   onSearch: (url: string) => void;
@@ -37,7 +38,11 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
   };
 
   return (
-    <section className="text-center py-14 px-4 animate-fade-in section-cinematic">
+    <section className="relative overflow-hidden text-center py-14 px-4 animate-fade-in section-cinematic">
+      <div className="cinematic-bg" aria-hidden="true">
+        <img src={bgHero} alt="" width={1920} height={1088} loading="eager" decoding="async" />
+      </div>
+      <div className="relative z-10">
       <h1 className="font-display text-4xl md:text-5xl font-extrabold text-foreground mb-4 leading-tight">
         {t("hero.h1a")}{" "}
         <span className="gradient-kwai-text">{t("hero.h1b")}</span>
@@ -128,6 +133,7 @@ export function HeroSection({ onSearch, isLoading, resultsSlot }: HeroSectionPro
             decoding="async"
           />
         </div>
+      </div>
       </div>
     </section>
   );
