@@ -1,4 +1,4 @@
-import { Home, Info, BookOpen, Mail, Download, HelpCircle, Smartphone, BookMarked } from "lucide-react";
+import { Download, HelpCircle, Smartphone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -8,16 +8,12 @@ import logoKwai from "@/assets/logo-kwai.png";
 import { PLATFORMS } from "@/data/platforms";
 
 const navConfig = [
-  { icon: Home, key: "videos", path: "/" },
   { icon: Download, key: "baixarKwai", path: "/baixar-videos-kwai" },
-  { icon: BookMarked, key: "tutorial", path: "/baixar-tutorial" },
   { icon: Smartphone, key: "kwaiApk", path: "/kwai-apk" },
   { icon: Download, key: "downloads", path: "/downloads" },
-  { icon: Info, key: "about", path: "/sobre" },
-  { icon: BookOpen, key: "blog", path: "/blog" },
-  { icon: Mail, key: "contact", path: "/contato" },
   { icon: HelpCircle, key: "faq", path: "/faq" },
 ] as const;
+
 
 interface AppSidebarProps {
   activeTab: string;

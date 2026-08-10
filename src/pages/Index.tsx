@@ -5,7 +5,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { AppSidebar } from "@/components/AppSidebar";
 import { AppHeader } from "@/components/AppHeader";
 import { HeroSection } from "@/components/HeroSection";
-import { ContentTabs } from "@/components/ContentTabs";
 import { FeatureCards } from "@/components/FeatureCards";
 import { VideoCard } from "@/components/VideoCard";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -15,6 +14,7 @@ import { SEOContentBlock } from "@/components/SEOContentBlock";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { AppFooter } from "@/components/AppFooter";
 import { SEOHead } from "@/components/SEOHead";
+
 
 export interface VideoResult {
   title: string;
@@ -29,7 +29,6 @@ export interface VideoResult {
 export default function Index() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("home");
-  const [activeTab, setActiveTab] = useState("videos");
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState<VideoResult[]>([]);
   const { t } = useTranslation();
@@ -109,7 +108,6 @@ export default function Index() {
               ) : undefined
             }
           />
-          <ContentTabs activeTab={activeTab} onTabChange={setActiveTab} />
           <FeatureCards />
 
           <HowItWorks />
