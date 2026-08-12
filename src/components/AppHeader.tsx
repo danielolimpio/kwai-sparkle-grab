@@ -16,6 +16,7 @@ const headerNav = [
   { key: "about", path: "/sobre" },
   { key: "tutorial", path: "/baixar-tutorial" },
   { key: "blog", path: "/blog" },
+  { key: "faq", path: "/faq" },
   { key: "contact", path: "/contato" },
 ] as const;
 
