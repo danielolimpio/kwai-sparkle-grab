@@ -83,8 +83,7 @@ const ROUTES: Array<{ path: string; metaKey?: keyof Locale["meta"]; meta?: { tit
   { path: "/dmca", metaKey: "dmca" },
 ];
 
-// Landing pages têm meta próprio por idioma (resolvido em buildHead via LANDING_SLUGS).
-const LANDING_SLUGS = LANDINGS.map((l) => l.slug);
+// Landing pages têm meta próprio por idioma (resolvido em buildHead).
 for (const l of LANDINGS) {
   ROUTES.push({ path: l.slug, meta: { title: "", description: "" } });
 }

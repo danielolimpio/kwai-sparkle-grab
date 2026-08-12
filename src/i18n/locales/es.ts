@@ -10,7 +10,7 @@ const es = {
     },
     sobre: { title: "Sobre KwaiSave — Descargador de Videos Kwai", description: "Conoce KwaiSave, el mejor descargador de videos de Kwai. Herramienta gratuita para descargar videos Kwai sin marca de agua." },
     blog: { title: "Blog — Consejos para Descargar Videos Kwai", description: "Consejos y tutoriales sobre cómo descargar videos Kwai sin marca de agua. Guías actualizadas." },
-    faqPage: { title: "FAQ — Preguntas sobre Descargar Videos Kwai", description: "Resuelve tus dudas sobre descargar videos Kwai sin marca de agua. Calidad, seguridad y cómo guardar." },
+    faqPage: { title: "FAQ Kwai: Descargar Videos Sin Marca de Agua | KwaiSave", description: "Respuestas sobre descargar videos de Kwai en Android, iPhone y PC: calidad MP4, enlaces kw.ai, seguridad y dónde se guardan." },
     contato: { title: "Contacto — Soporte para Descargar Videos Kwai", description: "Contacta al soporte de KwaiSave. Resuelve dudas sobre cómo descargar videos de Kwai." },
     downloads: { title: "Mis Descargas — Videos Kwai Guardados", description: "Historial de videos de Kwai descargados sin marca de agua, guardados localmente en el navegador." },
     tutorial: { title: "Descargar Videos Kwai — Tutorial 2026", description: "Aprende cómo descargar videos de Kwai sin marca de agua en 3 pasos." },
