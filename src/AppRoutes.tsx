@@ -17,6 +17,8 @@ import KwaiAPK from "./pages/KwaiAPK";
 import BaixarVideosKwai from "./pages/BaixarVideosKwai";
 import BaixarPlataforma from "./pages/BaixarPlataforma";
 import { PLATFORMS } from "@/data/platforms";
+import LandingKwai from "./pages/LandingKwai";
+import { LANDINGS } from "@/data/landings";
 
 export function AppRoutes() {
   return (
@@ -38,6 +40,9 @@ export function AppRoutes() {
       {PLATFORMS.map((p) => (
         <Route key={p.slug} path={p.slug} element={<LegacyPtRedirect />} />
       ))}
+      {LANDINGS.map((l) => (
+        <Route key={l.slug} path={l.slug} element={<LegacyPtRedirect />} />
+      ))}
 
       <Route path="/:lang" element={<LangGuard><Index /></LangGuard>} />
       <Route path="/:lang/termos-de-uso" element={<LangGuard><TermosDeUso /></LangGuard>} />
@@ -57,6 +62,14 @@ export function AppRoutes() {
           key={p.slug}
           path={`/:lang${p.slug}`}
           element={<LangGuard><BaixarPlataforma platform={p} /></LangGuard>}
+        />
+      ))}
+
+      {LANDINGS.map((l) => (
+        <Route
+          key={l.slug}
+          path={`/:lang${l.slug}`}
+          element={<LangGuard><LandingKwai landing={l} /></LangGuard>}
         />
       ))}
 
