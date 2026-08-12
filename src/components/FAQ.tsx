@@ -24,6 +24,10 @@ homeFaqs.push(
   { q: "O KwaiSave também serve como baixador do Kuaishou?", a: "Sim. Como o Kwai é a versão internacional do Kuaishou, o mesmo baixador de vídeos do Kwai funciona como Kuaishou downloader — basta colar a URL do vídeo para fazer o Kuaishou video download em MP4." },
   { q: "Onde ficam os vídeos baixados do Kwai?", a: "Os vídeos baixados pelo KwaiSave ficam salvos na pasta padrão de Downloads do seu dispositivo (celular ou computador). Como o site não armazena nada, o arquivo MP4 é totalmente seu." },
   { q: "É possível baixar Kwai sem marca d'água pelo Google Chrome?", a: "Sim. Você pode baixar Kwai sem marca d'água diretamente pelo Google Chrome, Safari, Edge ou Firefox. O KwaiSave dispensa instalar o Kwai pelo Google Play e funciona como kwai baixar pelo Google em qualquer navegador." },
+  { q: "Como baixar vídeos do Kwai no PC sem programa?", a: "Copie o endereço do vídeo na barra do navegador, cole no KwaiSave e clique em Baixar Agora. O download vídeo Kwai acontece direto no navegador, sem instalar programa nem extensão." },
+  { q: "Como baixar vídeo do Kwai no iPhone e salvar na galeria?", a: "No iPhone, cole o link no KwaiSave pelo Safari ou Chrome e toque em baixar. O MP4 vai para o app Arquivos e, de lá, você move o vídeo do Kwai para o rolo da câmera." },
+  { q: "Dá para baixar vídeo do Kwai por link encurtado kw.ai?", a: "Sim. O baixador de vídeos do Kwai reconhece automaticamente links encurtados kw.ai e links completos, resolvendo o endereço antes de gerar o arquivo sem marca d'água." },
+  { q: "Preciso instalar o Kwai APK para baixar vídeos?", a: "Não. O KwaiSave funciona 100% online, sem Kwai APK, Kwai Lite ou mod. Para o aplicativo oficial, use sempre a Google Play ou a App Store." },
 );
 
 export function FAQ() {

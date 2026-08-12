@@ -80,6 +80,12 @@ const pt = {
     { q: "É seguro usar o KwaiSave?", a: "Totalmente! Não armazenamos seus dados, não pedimos login e o site é protegido por HTTPS." },
     { q: "Como baixar video do Kwai pelo celular?", a: "Abra o app Kwai, toque em Compartilhar, copie o link e cole no KwaiSave." },
     { q: "Posso baixar Kwai grátis sem instalar nada?", a: "Sim! O KwaiSave é um Kwai downloader 100% online." },
+    { q: "Como baixar vídeos do Kwai no PC?", a: "Copie o endereço do vídeo no navegador, cole aqui e clique em Baixar Agora — o MP4 vai para a pasta Downloads." },
+    { q: "Como baixar vídeo do Kwai no iPhone?", a: "Use o Safari ou Chrome, cole o link e toque em baixar. O vídeo é salvo no app Arquivos." },
+    { q: "Onde ficam os vídeos baixados do Kwai?", a: "Sempre no seu aparelho: pasta Downloads no Android e no PC, app Arquivos no iPhone." },
+    { q: "O KwaiSave também baixa vídeos do Kuaishou?", a: "Sim. Como o Kwai é a versão internacional do Kuaishou, links das duas plataformas funcionam." },
+    { q: "Preciso do Kwai APK para baixar os vídeos?", a: "Não. Tudo funciona pelo navegador, sem Kwai APK, Kwai Lite ou extensões." },
+    { q: "Dá para baixar vídeo do Kwai por link encurtado?", a: "Sim, links kw.ai são reconhecidos automaticamente pelo baixador." },
   ]},
   related: { title: "Explore mais conteúdos", items: [
     { title: "Tutorial: Como Baixar Vídeos do Kwai", desc: "Guia passo a passo para baixar vídeos do Kwai sem marca d'água em MP4.", url: "/baixar-tutorial", icon: "tutorial" },
