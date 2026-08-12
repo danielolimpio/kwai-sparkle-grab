@@ -16,6 +16,7 @@ const headerNav = [
   { key: "about", path: "/sobre" },
   { key: "tutorial", path: "/baixar-tutorial" },
   { key: "blog", path: "/blog" },
+  { key: "faq", path: "/faq" },
   { key: "contact", path: "/contato" },
 ] as const;
 
@@ -45,7 +46,7 @@ export function AppHeader({ onMenuToggle }: AppHeaderProps) {
         aria-label={t("header.navigation") as string}
         className="order-3 basis-full lg:order-none lg:basis-auto flex-1 min-w-0 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        <div className="flex items-center justify-center lg:justify-start gap-1 min-w-max pb-3 lg:pb-0">
+        <div className="flex items-center justify-center gap-1 min-w-max pb-3 lg:pb-0">
           {headerNav.map((item) => {
             const to = buildPath(lang, item.path);
             const isActive = location.pathname === to;
