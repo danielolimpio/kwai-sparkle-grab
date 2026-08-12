@@ -8,6 +8,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve } from "path";
 import { pathToFileURL } from "url";
 import pt from "../src/i18n/locales/pt";
+import { LANDINGS, getLandingContent } from "../src/data/landings";
 import en from "../src/i18n/locales/en";
 import es from "../src/i18n/locales/es";
 import fr from "../src/i18n/locales/fr";
@@ -82,6 +83,11 @@ const ROUTES: Array<{ path: string; metaKey?: keyof Locale["meta"]; meta?: { tit
   { path: "/dmca", metaKey: "dmca" },
 ];
 
+// Landing pages têm meta próprio por idioma (resolvido em buildHead).
+for (const l of LANDINGS) {
+  ROUTES.push({ path: l.slug, meta: { title: "", description: "" } });
+}
+
 function esc(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -93,7 +99,10 @@ function buildHead(
   inlineMeta?: { title: string; description: string }
 ): { head: string; htmlAttrs: string } {
   const locale = LOCALES[lang];
-  const meta = (inlineMeta ?? (locale.data.meta[metaKey as keyof Locale["meta"]] as unknown)) as {
+  const landing = LANDINGS.find((l) => l.slug === path);
+  const meta = (landing
+    ? getLandingContent(landing, lang)
+    : (inlineMeta ?? (locale.data.meta[metaKey as keyof Locale["meta"]] as unknown))) as {
     title: string;
     description: string;
   };

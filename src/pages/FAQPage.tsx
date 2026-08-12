@@ -7,6 +7,7 @@ import {
 import { PageLayout } from "@/components/PageLayout";
 import { SEOHead } from "@/components/SEOHead";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   Accordion,
   AccordionContent,
@@ -245,11 +246,12 @@ const faqSchemaData = faqCategories.flatMap((cat) =>
 );
 
 export default function FAQPage() {
+  const { t } = useTranslation();
   return (
     <PageLayout breadcrumbs={[{ name: "Início", url: "/" }, { name: "FAQ", url: "/faq" }]}>
       <SEOHead
-        title="FAQ — Perguntas sobre Baixar Vídeos Kwai"
-        description="Tire suas dúvidas sobre baixar vídeos Kwai sem marca d'água. Veja respostas sobre qualidade, segurança e como salvar vídeo do Kwai por link."
+        title={t("meta.faqPage.title") as string}
+        description={t("meta.faqPage.description") as string}
         canonical="/faq"
         breadcrumbs={[
           { name: "Início", url: "/" },

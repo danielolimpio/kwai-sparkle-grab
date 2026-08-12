@@ -10,7 +10,7 @@ const en = {
     },
     sobre: { title: "About KwaiSave — Kwai Video Downloader", description: "Learn about KwaiSave, the best Kwai video downloader. Free tool to download Kwai videos without watermark in HD, online and by link." },
     blog: { title: "Blog — Tips to Download Kwai Videos", description: "Tips and tutorials on how to download Kwai videos without watermark. Updated guides on Kwai video download and saving Kwai videos by link." },
-    faqPage: { title: "FAQ — Download Kwai Videos Questions", description: "Get answers about downloading Kwai videos without watermark. Quality, security and how to save Kwai videos by link." },
+    faqPage: { title: "Kwai Downloader FAQ: Download Videos Without Watermark", description: "Answers on downloading Kwai videos on Android, iPhone and PC: MP4 quality, kw.ai links, safety and where saved files go." },
     contato: { title: "Contact — Kwai Downloader Support", description: "Contact KwaiSave support. Ask questions about how to download Kwai videos without watermark." },
     downloads: { title: "My Downloads — Saved Kwai Videos", description: "History of Kwai videos downloaded without watermark, stored locally in your browser." },
     tutorial: { title: "Download Kwai Videos — Tutorial 2026", description: "Learn how to download Kwai videos without watermark in 3 steps. Illustrated tutorial for downloading Kwai videos by link in MP4." },
