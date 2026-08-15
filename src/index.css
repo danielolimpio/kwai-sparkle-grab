@@ -190,7 +190,7 @@
     height: 100%;
     object-fit: cover;
     opacity: 1;
-    filter: saturate(1.25) contrast(1.12);
+    filter: saturate(1.15) contrast(1.2);
   }
   /* readability scrim: keeps the image vivid, only darkens behind the text column */
   .cinematic-bg::after {
@@ -198,8 +198,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(70% 60% at 50% 45%, hsla(0,0%,0%,.62), transparent 75%),
-      linear-gradient(180deg, hsla(0,0%,0%,.55) 0%, hsla(0,0%,0%,.35) 45%, hsla(0,0%,4%,.75) 100%);
+      radial-gradient(58% 52% at 50% 42%, hsla(0,0%,0%,.66), hsla(0,0%,0%,.30) 70%, transparent 88%),
+      linear-gradient(180deg, hsla(0,0%,0%,.42) 0%, hsla(0,0%,0%,.18) 40%, hsla(0,0%,3%,.68) 100%);
   }
   /* sections that sit on a cinematic image flip to a dark token scope */
   .cinematic-dark {
